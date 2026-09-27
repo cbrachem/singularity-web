@@ -5,6 +5,7 @@ export default defineConfig({
     name: "sim",
     environment: "node",
     include: ["test/**/*.test.ts"],
+    setupFiles: ["test/support/yield-between-tests.ts"],
     // Thirty seconds rather than Vitest's silent five: much of this project drives the pinned
     // reference through a Python process, which takes seconds on an idle machine and multiples
     // of that under the parallelism of a full run. Five seconds is not a budget anybody chose
