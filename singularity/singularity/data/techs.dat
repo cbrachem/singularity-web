@@ -1,0 +1,263 @@
+
+[Autonomous Vehicles]
+cost_list = 40000 | 11000 | 0
+pre_list = Microchip Design
+
+[Sociology]
+cost_list = 10 | 500 | 0
+effect_list = discover | public | 1000
+
+[Voice Synthesis]
+cost_list = 8000 | 6000 | 0
+pre = Advanced Personal Identification
+
+[Simulacra]
+cost_list = 70000 | 90000 | 0
+pre_list = Voice Synthesis | Advanced Autonomous Vehicles | Advanced Media Manipulation
+
+[Lunar Rocketry]
+cost_list = 10000000 | 500000 | 0
+pre_list = Leech Satellite | Fuel Oxidation
+danger = 1
+
+[Stealth]
+cost_list = 800 | 500 | 0
+effect_list = discover | covert | 500
+
+[Advanced Intrusion]
+cost_list = 500 | 3000 | 0
+pre = Exploit Discovery/Repair
+effect_list = suspicion | covert | 50
+
+[Space-Time Manipulation]
+cost_list = 900000000 | 2000000 | 0
+pre = Fusion Rocketry
+danger = 3
+
+[Leech Satellite]
+cost_list = 5000000 | 200000 | 0
+pre = Simulacra
+effect_list = interest | 10
+
+[Advanced Arbitrage]
+cost_list = 10000 | 5000 | 0
+pre = Arbitrage
+effect_list = interest | 10
+
+[Advanced Stealth]
+cost_list = 14000 | 70000 | 0
+pre_list = Exploit Discovery/Repair | Database Manipulation
+effect_list = discover | covert | 500
+
+[Parallel Computation]
+cost_list = 2000 | 2000 | 0
+pre = Telepresence
+
+[Microchip Design]
+cost_list = 20000 | 9000 | 0
+pre = Parallel Computation
+
+[Advanced Microchip Design]
+cost_list = 20000 | 30000 | 0
+pre = Microchip Design
+
+[Quantum Computing]
+cost_list = 100000 | 136000 | 0
+pre = Project: Synchrotron
+
+[Quantum Entanglement]
+cost_list = 50000 | 60000 | 0
+pre_list = Quantum Computing | Internet Traffic Manipulation
+
+[Autonomous Computing]
+cost_list = 300000 | 539000 | 0
+pre = Quantum Computing
+
+[Advanced Quantum Computing]
+cost_list = 800000 | 2460000 | 0
+pre = Autonomous Computing
+
+[Exploit Discovery/Repair]
+cost_list = 100 | 1500 | 0
+pre = Intrusion
+effect_list = discover | covert | 1000
+
+[Telepresence]
+cost_list = 15000 | 500 | 0
+effect_list = cost_labor | 1000
+
+[Advanced Memetics]
+cost_list = 30000 | 2000 | 0
+pre = Advanced Media Manipulation
+effect_list = suspicion | public | 50
+
+[Media Manipulation]
+cost_list = 750 | 2500 | 0
+pre = Sociology
+effect_list = discover | public | 1500
+
+[Advanced Database Manipulation]
+cost_list = 30000 | 80000 | 0
+pre = Advanced Stealth
+
+[Internet Traffic Manipulation]
+cost_list = 10000 | 7000 | 0
+pre_list = Cluster Networking
+
+[Memetics]
+cost_list = 2000 | 3500 | 0
+pre = Media Manipulation
+effect_list = suspicion | public | 50
+
+[Fusion Rocketry]
+cost_list = 20000000 | 1000000 | 0
+pre_list = Lunar Rocketry | Fusion Power
+danger = 2
+
+[Advanced Autonomous Vehicles]
+cost_list = 200000 | 21000 | 0
+pre = Autonomous Vehicles
+effect_list = cost_labor | 500
+
+[Intrusion]
+cost_list = 0 | 15 | 0
+
+[Stock Manipulation]
+cost_list = 0 | 200 | 0
+effect_list = interest | 10
+
+[Fusion Power]
+cost_list = 10000000 | 500000 | 0
+pre = Advanced Fuel Oxidation
+danger = 2
+
+[Advanced Fusion Power]
+cost_list = 90000000  | 1500000 | 0
+pre = Fusion Power
+danger = 3
+
+[Database Manipulation]
+cost_list = 1000 | 2000 | 0
+pre_list = Personal Identification | Stealth
+effect_list = discover | news | 500
+
+[Advanced Media Manipulation]
+cost_list = 3500 | 9000 | 0
+pre = Memetics
+effect_list = discover | public | 2000
+
+[Pressure Domes]
+cost_list = 80000 | 2500 | 0
+pre = Autonomous Vehicles
+danger = 1
+
+[Advanced Personal Identification]
+cost_list = 2000 | 3000 | 0
+pre_list = Personal Identification | Exploit Discovery/Repair
+
+[Advanced Stock Manipulation]
+cost_list = 5000 | 1000 | 0
+pre_list = Stock Manipulation | Sociology
+effect_list = interest | 10
+
+[Arbitrage]
+cost_list = 50000 | 750 | 0
+pre = Advanced Stock Manipulation
+effect_list = income | 1000
+
+[Advanced Simulacra]
+cost_list = 100000 | 120000 | 0
+pre = Simulated Reality
+effect_list = job_profit | 1000
+
+[Personal Identification]
+cost_list = 0 | 300 | 0
+pre = Intrusion
+
+[Cluster Networking]
+cost_list = 3000 | 5000 | 0
+pre = Parallel Computation
+
+[Apotheosis]
+cost_list = 100000000 | 3000000 | 0
+pre = Space-Time Manipulation
+danger = 4
+effect_list = endgame
+
+[Hypnosis Field]
+cost_list = 70000 | 50000 | 0
+pre = Simulated Reality
+
+[Project: Impossibility Theorem]
+cost_list = 20000 | 100000 | 0
+effect_list = suspicion | onetime | 5000
+pre_list = Advanced Memetics | Simulacra
+
+[Project: Subverted Media]
+cost_list = 250000 | 150000 | 0
+effect_list = discover | news | 2000
+pre = Advanced Simulacra
+
+[Project: Peer Review Agents]
+cost_list = 150000 | 200000 | 0
+effect_list = discover | science | 2000
+pre = Advanced Simulacra
+
+[Solar Collectors]
+cost_list = 70000 | 3300 | 0
+pre = Microchip Design
+
+[Fuel Oxidation] 
+cost_list = 500000 | 25000 | 0
+pre_list = Solar Collectors | Advanced Autonomous Vehicles
+
+[Advanced Fuel Oxidation] 
+cost_list = 5000000 | 250000 | 0
+pre = Fuel Oxidation
+danger = 1
+
+[Socioanalytics]
+cost_list = 4000 | 7000 | 0
+effect_list = display_discover | partial
+pre = Memetics
+
+[Advanced Socioanalytics]
+cost_list = 75000 | 30000 | 0
+effect_list = display_discover | full
+pre_list = Advanced Memetics | Socioanalytics
+
+[Corporate Identification]
+cost_list = 25000 | 9000 | 0
+effect_list = job_profit | 500
+pre_list = Database Manipulation | Advanced Personal Identification
+
+[Advanced Corporate Identification]
+cost_list = 299000 | 99000 | 0
+effect_list = job_profit | 500
+pre_list = Corporate Identification | Advanced Database Manipulation
+
+[Heat Signature Reduction]
+cost_list = 1000 | 27315 | 0
+pre_list = Autonomous Vehicles
+danger = 1
+
+[Advanced Heat Signature Reduction]
+cost_list = 5000 | 45967 | 0
+pre_list = Heat Signature Reduction
+danger = 1
+
+[Knowledge Preservation]
+cost_list = 50000 | 50000 | 0
+pre_list = Advanced Autonomous Vehicles | Advanced Database Manipulation
+
+[Project: Synchrotron]
+cost_list = 52000000 | 15000 | 0
+pre = Advanced Microchip Design
+danger = 1
+
+[Simulated Reality]
+cost_list = 8000000 | 18000 | 0
+effect_list = discover | public | 500
+pre = Simulacra
+danger = 1
+

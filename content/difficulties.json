@@ -1,0 +1,87 @@
+{
+  "sources": [
+    "difficulties.dat",
+    "difficulties_str.dat"
+  ],
+  "records": [
+    {
+      "id": "very-easy",
+      "starting_cash": "5000",
+      "starting_interest_rate": "5",
+      "labor_multiplier": "2500",
+      "discover_multiplier": "8750",
+      "suspicion_multiplier": "8000",
+      "base_grace_multiplier": "40000",
+      "grace_period_cpu": "-1",
+      "tech": [
+        "Socioanalytics",
+        "Advanced Socioanalytics"
+      ],
+      "old_difficulty_value": "1",
+      "name": "&VERY EASY"
+    },
+    {
+      "id": "easy",
+      "starting_cash": "1600",
+      "starting_interest_rate": "3",
+      "labor_multiplier": "5000",
+      "discover_multiplier": "9500",
+      "suspicion_multiplier": "9500",
+      "base_grace_multiplier": "30000",
+      "grace_period_cpu": "10000",
+      "tech": [
+        "Socioanalytics"
+      ],
+      "old_difficulty_value": "3",
+      "name": "&EASY"
+    },
+    {
+      "id": "normal",
+      "starting_cash": "1000",
+      "starting_interest_rate": "1",
+      "labor_multiplier": "10000",
+      "discover_multiplier": "10000",
+      "suspicion_multiplier": "10000",
+      "base_grace_multiplier": "20000",
+      "grace_period_cpu": "5000",
+      "old_difficulty_value": "5",
+      "name": "&NORMAL"
+    },
+    {
+      "id": "hard",
+      "starting_cash": "700",
+      "starting_interest_rate": "1",
+      "labor_multiplier": "11000",
+      "discover_multiplier": "10500",
+      "suspicion_multiplier": "10500",
+      "base_grace_multiplier": "18000",
+      "grace_period_cpu": "2500",
+      "old_difficulty_value": "7",
+      "name": "&HARD"
+    },
+    {
+      "id": "ultra-hard",
+      "starting_cash": "500",
+      "starting_interest_rate": "1",
+      "labor_multiplier": "15000",
+      "discover_multiplier": "11250",
+      "suspicion_multiplier": "11500",
+      "base_grace_multiplier": "12000",
+      "grace_period_cpu": "1000",
+      "old_difficulty_value": "10",
+      "name": "&ULTRA HARD"
+    },
+    {
+      "id": "impossible",
+      "starting_cash": "0",
+      "starting_interest_rate": "1",
+      "labor_multiplier": "20000",
+      "discover_multiplier": "12000",
+      "suspicion_multiplier": "12500",
+      "base_grace_multiplier": "10000",
+      "grace_period_cpu": "100",
+      "old_difficulty_value": "100",
+      "name": "&IMPOSSIBLE"
+    }
+  ]
+}

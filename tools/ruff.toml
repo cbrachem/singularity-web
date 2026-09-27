@@ -1,0 +1,17 @@
+# ruff formats and lints everything Python under tools/ — both halves of the gate in one
+# tool. It sits here rather than at the
+# repository root because ruff finds a configuration by walking up from each file, so an
+# editor and `bun run check:python` agree on this file without either naming it.
+
+line-length = 100
+target-version = "py313"
+
+[lint]
+# Chosen rather than inherited: ruff's default set moves between releases, and a gate that
+# changes its mind on an unrelated upgrade is not a gate. E and F are the errors and the
+# undefined or unused names — the class this directory had nothing to catch before. I keeps
+# import blocks ordered, B is the bug-shaped idioms, RUF is ruff's own.
+#
+# pyupgrade (UP) is deliberately absent: it reports 87 findings under tools/, nearly all of
+# them percent formatting that mirrors the reference's own strings.
+select = ["E", "F", "I", "B", "RUF"]

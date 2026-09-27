@@ -1,0 +1,54 @@
+#Type is either global (rolled once per day),
+#base (rolled once per base per day),
+#research (rolled once per base per day | if researching tech),
+#item (rolled once per base per day | if base has item)
+
+[the-plague]
+type = global
+effect_list = discover | public | 1000
+chance = 20
+unique = 1
+
+[stranger-than-fiction]
+type = global
+effect_list = discover | public | -1000
+chance = 20
+unique = 1
+
+[the-watchers]
+type = global
+effect_list = discover | covert | -1000
+chance = 20
+unique = 1
+
+[politics-as-usual]
+type = global
+effect_list = discover | covert | 1000
+chance = 20
+unique = 1
+
+[lab-ai]
+type = global
+effect_list = discover | science | -1000
+chance = 20
+unique = 1
+
+[discrediting]
+type = global
+effect_list = discover | science | 1000
+chance = 20
+unique = 1
+
+[scandal]
+type = global
+effect_list = discover | news | 1000
+chance = 20
+unique = 0
+duration = 21
+
+[investigation]
+type = global
+effect_list = discover | news | -1000
+chance = 20
+unique = 0
+duration = 21

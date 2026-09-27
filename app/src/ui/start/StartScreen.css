@@ -1,0 +1,201 @@
+/*
+ * The start screen is the whole window, and the only surface in this application that is not
+ * over the map. The ground is the ground the map sits in, so the two share a
+ * colour and the transition into a game is one panel leaving rather than a page changing.
+ */
+
+/*
+ * The ground is not flat. It is the same colour the map's ocean is lit against, and the panel
+ * sits in a faint pool of it — the first viewport of a game about a thing waking up in a
+ * network was a centred settings dialog on a plain field, which is the one surface in the
+ * product where atmosphere costs nothing because no gameplay is in the way.
+ */
+.start {
+  --start-panel-width: 30rem;
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 55% at 50% 42%, #141c31 0%, transparent 70%), var(--colour-ground);
+}
+
+/* The graticule of the map the player is about to be dropped onto, at the edge of visible. */
+.start::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(90deg, var(--colour-graticule) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(0deg, var(--colour-graticule) 0 1px, transparent 1px 80px);
+  mask-image: radial-gradient(60% 60% at 50% 45%, #000 0%, transparent 75%);
+}
+
+.start__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: min(var(--start-panel-width), calc(100% - var(--space-4) * 2));
+  max-height: calc(100% - var(--space-4) * 2);
+  overflow-y: auto;
+  padding: var(--space-4);
+  border: 1px solid var(--colour-edge);
+  border-radius: var(--radius);
+  background: var(--colour-surface-solid);
+  box-shadow: 0 10px 30px #00000077;
+}
+
+/*
+ * The name of the game, in the game's own voice: the mono face the AI speaks in everywhere
+ * else in the shell (`EndOfGame.css`). It was set in the same grotesque as the button below
+ * it, one grade up, which is a title bar rather than a title.
+ */
+.start__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--colour-ink);
+}
+
+.start__credit {
+  margin: calc(-1 * var(--space-2)) 0 0;
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--colour-ink-dim);
+}
+
+.start__credit a {
+  color: inherit;
+}
+
+.start__credit a:hover,
+.start__credit a:focus-visible {
+  color: var(--colour-ink);
+}
+
+.start__menu,
+.start__scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.start__prompt {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * What the next click costs, on the screen where it is paid. Danger rather than
+ * warn: nothing refuses here — the button works, and what it does cannot be taken back — and
+ * "this destroys something" has to look the same wherever the shell says it, which
+ * is the colour the inspector's `Destroy` takes. The colour does not carry it alone: the
+ * sentence names the game in words, and Back is under it.
+ */
+.start__warning {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--colour-danger);
+}
+
+.start__entry {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--colour-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.start__entry:hover,
+.start__entry:focus-visible {
+  border-color: var(--colour-accent);
+}
+
+/* The one entry the player most likely wants is filled as well as first. */
+.start__entry--first {
+  border-color: var(--colour-accent);
+  background: var(--colour-accent);
+  color: var(--colour-accent-ink);
+}
+
+.start__entry--quiet {
+  color: var(--colour-ink-dim);
+}
+
+.start__scenarios {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--colour-edge);
+}
+
+.start__scenario-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.start__scenario {
+  padding: var(--space-1) var(--space-2);
+  border: 1px dashed var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--colour-ink-dim);
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  cursor: pointer;
+}
+
+.start__scenario:hover,
+.start__scenario:focus-visible {
+  border-color: var(--colour-accent);
+  color: var(--colour-ink);
+}
+
+.start__notices {
+  margin: 0;
+  padding: var(--space-3) 0 0 var(--space-4);
+  border-top: 1px solid var(--colour-edge);
+  font-size: var(--text-small);
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * The region stands so a notice arriving is announced; with nothing in it, it draws nothing.
+ * Not `display: none`, which would take it back out of the accessibility tree.
+ *
+ * The negative margin is the panel's `gap`, cancelled. Zeroing the box is not enough: an empty
+ * flex item is still an item, and the gap before it is space the panel adds rather than space
+ * this element carries — 16px of it, below the last thing the player can read.
+ */
+.start__notices:empty {
+  margin-top: calc(var(--space-4) * -1);
+  padding: 0;
+  border-top: none;
+}
+
+/*
+ * The region takes the focus when a notice arrives (`StartScreen.tsx`), and the browser then
+ * draws its ring on a block of prose. Same reading as the shell's other programmatically
+ * focused containers (`EndOfGame.css`): the sentence is not a control, and it is the only
+ * thing on the panel that changed. The ring stays on everything the player can operate.
+ */
+.start__notices:focus,
+.start__notices:focus-visible {
+  outline: none;
+}

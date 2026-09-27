@@ -1,0 +1,387 @@
+{
+  "sources": [
+    "locations.dat",
+    "locations_str.dat"
+  ],
+  "records": [
+    {
+      "id": "N AMERICA",
+      "position": [
+        "25",
+        "29"
+      ],
+      "region": "URBAN",
+      "name": "NORTH AMERICA",
+      "hotkey": "n",
+      "cities": [
+        "Seattle",
+        "San Diego",
+        "Vancouver",
+        "Atlanta",
+        "Merida",
+        "Guadalajara",
+        "San Jose",
+        "Omaha",
+        "Dallas",
+        "Mexico City",
+        "New York City",
+        "Los Angeles",
+        "Toronto",
+        "Chicago",
+        "Santo Domingo",
+        "Houston",
+        "Havana",
+        "Tijuana",
+        "Montreal",
+        "El Paso",
+        "Phoenix",
+        "Milwaukee",
+        "San Diego",
+        "Monterry",
+        "Ottawa",
+        "Mexicali",
+        "Saltillo",
+        "Columbus",
+        "Toluca",
+        "Indianapolis",
+        "San Francisco",
+        "Winipeg",
+        "Detroit",
+        "Baltimore",
+        "Cancun"
+      ]
+    },
+    {
+      "id": "S AMERICA",
+      "position": [
+        "33",
+        "61"
+      ],
+      "region": "URBAN",
+      "name": "SOUTH AMERICA",
+      "hotkey": "s",
+      "cities": [
+        "Lima",
+        "Sao Paolo",
+        "Ushuaia",
+        "Bogota",
+        "Mar del Plata",
+        "Buenos Aires",
+        "Caracas",
+        "Quito",
+        "Salvador",
+        "Brasilia",
+        "Manaus",
+        "Curitiba",
+        "Maracaibo",
+        "Sao Luis",
+        "La Plata",
+        "Cochabamba",
+        "Salta",
+        "Cuenca",
+        "Ascuncion",
+        "Recife",
+        "Santiago"
+      ]
+    },
+    {
+      "id": "EUROPE",
+      "position": [
+        "55",
+        "20"
+      ],
+      "region": "URBAN",
+      "name": "EUROPE",
+      "hotkey": "u",
+      "cities": [
+        "Cork",
+        "Barcelona",
+        "Athens",
+        "Utrecht",
+        "Moscow",
+        "Sytki",
+        "Reykjavik",
+        "Liechtenstein",
+        "Istanbul",
+        "London",
+        "Berlin",
+        "Madrid",
+        "Kyiv",
+        "Rome",
+        "Minsk",
+        "Hamburg",
+        "Paris",
+        "Vienna",
+        "Warsaw",
+        "Munich",
+        "Prague",
+        "Cologne",
+        "Birmingham",
+        "Milan",
+        "Budapest",
+        "Tallinn",
+        "Bucharest",
+        "Belgrade",
+        "Saint Petersburg",
+        "Voronezh",
+        "Krasnodar",
+        "Liverpool",
+        "Volgograd"
+      ]
+    },
+    {
+      "id": "ASIA",
+      "position": [
+        "77",
+        "29"
+      ],
+      "region": "URBAN",
+      "name": "ASIA",
+      "hotkey": "a",
+      "cities": [
+        "Delhi",
+        "Mumbai",
+        "Singapore",
+        "Seoul",
+        "Hong Kong",
+        "Kyoto",
+        "Manila",
+        "Dubai",
+        "Novosibirsk",
+        "Beijing",
+        "Tokyo",
+        "Shanghai",
+        "Bangkok",
+        "Karachi",
+        "Jakarta",
+        "Baghdad",
+        "Tehran",
+        "Hanoi",
+        "Hyderabad",
+        "Jaipur",
+        "Taichung",
+        "Taipei",
+        "Osaka",
+        "Omsk",
+        "Kawasaki",
+        "Tibilisi",
+        "Yerevan",
+        "Astani"
+      ]
+    },
+    {
+      "id": "AFRICA",
+      "position": [
+        "55",
+        "46"
+      ],
+      "region": "URBAN",
+      "name": "AFRICA",
+      "hotkey": "i",
+      "cities": [
+        "Johannesburg",
+        "Accra",
+        "Cairo",
+        "Tangier",
+        "Kinshasa",
+        "Lagos",
+        "Giza",
+        "Dar es Salaam",
+        "Alexandria",
+        "Addis Ababa",
+        "Nairobi",
+        "Cape Town",
+        "Kano",
+        "Casablanca",
+        "Kampala",
+        "Dakar",
+        "Harare",
+        "Matola",
+        "Uyo",
+        "Mwanza",
+        "Kigali",
+        "Bukavu",
+        "Kaduna",
+        "Aba",
+        "Bangui",
+        "Libreville",
+        "Zanzibar",
+        "Durban"
+      ]
+    },
+    {
+      "id": "AUSTRALIA",
+      "position": [
+        "85",
+        "64"
+      ],
+      "region": "URBAN",
+      "name": "AUSTRALIA",
+      "hotkey": "l",
+      "cities": [
+        "Canberra",
+        "Melbourne",
+        "Fremantle",
+        "Perth",
+        "Darwin",
+        "Cairns",
+        "Brisbane",
+        "Sydney",
+        "Newcastle",
+        "Hobart",
+        "Gold Coast",
+        "Adelaide",
+        "Auckland",
+        "Wellington",
+        "Port Moresby",
+        "Hamilton",
+        "Papeete",
+        "Dunedin",
+        "Lae",
+        "Mandurah",
+        "Suva",
+        "Honiara"
+      ]
+    },
+    {
+      "id": "ANTARCTIC",
+      "position": [
+        "50",
+        "91"
+      ],
+      "safety": "1",
+      "modifier": [
+        "stealth:6/5",
+        "thrift:5/6"
+      ],
+      "pre": [
+        "Advanced Database Manipulation"
+      ],
+      "name": "ANTARCTIC",
+      "hotkey": "t",
+      "cities": [
+        "Mount Erebus",
+        "Ellsworth",
+        "Shetland Island",
+        "Dronnig Maud",
+        "Kemp",
+        "Terre Adelie",
+        "Alexander Island",
+        "Adelaide Island",
+        "Anvers Island",
+        "Berkner Island",
+        "Mount Tyree",
+        "Mount Kirkpatrick",
+        "Mount Markham",
+        "Mount Sidley",
+        "Campbell Island",
+        "Puenta Arenas",
+        "Snow Hill Island"
+      ]
+    },
+    {
+      "id": "OCEAN",
+      "position": [
+        "55",
+        "76"
+      ],
+      "safety": "1",
+      "modifier": [
+        "cpu:6/5"
+      ],
+      "pre": "Autonomous Vehicles",
+      "name": "OCEAN",
+      "hotkey": "c",
+      "cities": [
+        "Pacific",
+        "Atlantic",
+        "Indian",
+        "Southern",
+        "Arctic"
+      ]
+    },
+    {
+      "id": "MOON",
+      "position": [
+        "absolute",
+        "14",
+        "13"
+      ],
+      "safety": "2",
+      "modifier": [
+        "stealth:1.5",
+        "thrift:.5",
+        "speed:.5"
+      ],
+      "pre": "Lunar Rocketry",
+      "name": "MOON",
+      "hotkey": "o",
+      "cities": [
+        "Oceanis Procellarum",
+        "Mare Frigoris",
+        "Mare Imbrium",
+        "Vallis Schroedinger",
+        "Copernicus Crater",
+        "Vallis Planck",
+        "Mare Moscoviense",
+        "Mare Crisium",
+        "Mare Tranquillitatis",
+        "Mare Nubium"
+      ]
+    },
+    {
+      "id": "ORBIT",
+      "position": [
+        "absolute",
+        "50",
+        "13"
+      ],
+      "pre": "impossible",
+      "name": "ORBIT",
+      "hotkey": "b"
+    },
+    {
+      "id": "FAR REACHES",
+      "position": [
+        "absolute",
+        "41",
+        "13"
+      ],
+      "safety": "3",
+      "modifier": [
+        "stealth:2",
+        "thrift:.1",
+        "speed:.1"
+      ],
+      "pre": "Fusion Rocketry",
+      "name": "FAR REACHES",
+      "hotkey": "f",
+      "cities": [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer",
+        "Leo",
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+      ]
+    },
+    {
+      "id": "TRANSDIMENSIONAL",
+      "position": [
+        "absolute",
+        "80",
+        "13"
+      ],
+      "safety": "4",
+      "pre": "Space-Time Manipulation",
+      "name": "TRANSDIMENSIONAL",
+      "hotkey": "d"
+    }
+  ]
+}

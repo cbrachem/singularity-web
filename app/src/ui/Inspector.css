@@ -1,0 +1,591 @@
+.inspector {
+  /* A refusal, which is neither ink nor accent. Shared, since the shell says it elsewhere. */
+  --inspector-warn: var(--colour-warn);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: var(--band-height);
+  width: var(--inspector-width);
+  overflow: hidden auto;
+  border-left: 1px solid var(--colour-edge-strong);
+  background: var(--colour-surface-solid);
+  color: var(--colour-ink);
+  animation: inspector-in var(--duration) var(--ease-out);
+}
+
+/* The same arrival the research sheet makes, from the edge this surface comes in from. */
+@keyframes inspector-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+}
+
+.inspector__header,
+.inspector__body {
+  padding: var(--space-4);
+}
+.inspector__header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--colour-edge);
+}
+/* The panel's top of hierarchy: the location's name takes the display grade, one step over
+   the readouts under it, so the header reads as a header. */
+.inspector__header h1 {
+  margin: 0;
+  font-size: var(--text-display);
+}
+.inspector__base h2 {
+  margin: 0;
+  font-size: var(--text-readout);
+}
+.inspector__type,
+.inspector__summary,
+.inspector__empty {
+  margin: 0;
+  color: var(--colour-ink-dim);
+}
+.inspector__slots span,
+.inspector__numbers dt {
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.inspector__close {
+  border: 0;
+  background: none;
+  color: var(--colour-ink-dim);
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.inspector__close:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+.inspector__back,
+.inspector__more,
+.inspector__bases button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.inspector__back,
+.inspector__more {
+  padding: var(--space-2) 0;
+  color: var(--colour-accent);
+}
+/* The status table (`screens/location.py:221-269`). Five columns inside the panel's fixed
+   width: the name cell takes the slack and holds two lines — the name, the type dimmed under
+   it — each a single line that ellipsizes rather than wraps. */
+.inspector__bases {
+  width: 100%;
+  margin: var(--space-4) 0;
+  border-collapse: collapse;
+  font-size: var(--text-small);
+}
+.inspector__bases th {
+  font-size: var(--text-label);
+  font-weight: 400;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-dim);
+}
+.inspector__bases th,
+.inspector__bases td {
+  padding: var(--space-1) var(--space-2) var(--space-1) 0;
+  text-align: left;
+  vertical-align: top;
+}
+.inspector__bases th:last-child,
+.inspector__bases td:last-child {
+  padding-right: 0;
+}
+.inspector__bases td {
+  border-top: 1px solid var(--colour-edge);
+}
+.inspector__bases button {
+  padding: 0;
+  color: var(--colour-accent);
+  text-align: left;
+}
+/* The row's tick box was 16×16. 24px is the minimum target, and it is
+   the box itself rather than padding around it: a checkbox draws over its own padding. Its
+   focus ring is the shell's one rule for every focusable, in `tokens.css`. */
+.inspector__bases input {
+  width: var(--target-min);
+  height: var(--target-min);
+}
+/* `width: 100%` hands the name cell every spare pixel; `max-width: 0` is what lets its
+   content ellipsize instead of propping the column open. */
+.inspector__name {
+  width: 100%;
+  max-width: 0;
+}
+/* `max-width: 100%` because a block button still shrink-wraps to its label and would
+   otherwise run past the cell. */
+.inspector__name button,
+.inspector__base-type {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.inspector__base-type {
+  color: var(--colour-ink-dim);
+}
+.inspector__cpu {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.inspector__status {
+  white-space: nowrap;
+}
+.inspector__back:focus-visible,
+.inspector__more:focus-visible,
+.inspector__bases button:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+.inspector__base {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--colour-edge);
+}
+.inspector__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+}
+.inspector__numbers div {
+  display: grid;
+  gap: var(--space-1);
+}
+.inspector__numbers dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  min-width: 7ch;
+}
+.inspector__slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+  padding: 0;
+  list-style: none;
+}
+.inspector__slots li {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: 1px solid var(--colour-edge);
+}
+.inspector__slots strong {
+  font-size: var(--text-small);
+  font-weight: 400;
+}
+/* The build line reads as secondary beside the item's name, and steps out of the
+   uppercase label styling the slot's other span carries. */
+.inspector__slots .inspector__slot-build {
+  font-size: var(--text-small);
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--colour-ink-dim);
+}
+.inspector__detection {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+.inspector__detection caption {
+  padding: var(--space-2) 0;
+  text-align: left;
+  color: var(--colour-ink-dim);
+}
+.inspector__detection th,
+.inspector__detection td {
+  padding: var(--space-1) 0;
+  border-top: 1px solid var(--colour-edge);
+  text-align: left;
+  font-weight: 400;
+}
+.inspector__detection td {
+  text-align: right;
+  white-space: nowrap;
+}
+/* The danger ramp on one base's chances — the shared tokens the threat band wears, and
+   never colour alone: the level's word is printed beside the figure. */
+.inspector__chance {
+  color: var(--level-colour, var(--colour-ink));
+}
+.inspector__chance[data-level="0"] {
+  --level-colour: var(--danger-0);
+}
+.inspector__chance[data-level="1"] {
+  --level-colour: var(--danger-1);
+}
+.inspector__chance[data-level="2"] {
+  --level-colour: var(--danger-2);
+}
+.inspector__chance[data-level="3"] {
+  --level-colour: var(--danger-3);
+}
+.inspector__chance-word {
+  margin-left: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* The way back and the cycle through the location's bases, on one row. */
+.inspector__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.inspector__cycle {
+  display: flex;
+  gap: var(--space-3);
+}
+.inspector__cycle button {
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--colour-accent);
+  font: inherit;
+  cursor: pointer;
+}
+.inspector__cycle button:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+
+/* The forced-hardware sentence, in the AI's mono voice like the acknowledgment line. */
+.inspector__fixed {
+  margin: var(--space-3) 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * The disclosure the bulk row recedes behind: a tertiary — bare text, dim ink —
+ * because the row it reveals is the secondary path and the table above it is the surface's
+ * lead. It opens itself when a row is ticked, so it rarely needs to be found.
+ */
+.inspector__bulk-toggle {
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--colour-ink-dim);
+  font: inherit;
+  font-size: var(--text-small);
+  cursor: pointer;
+}
+.inspector__bulk-toggle:hover {
+  color: var(--colour-ink);
+}
+.inspector__bulk-toggle:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+
+/* The two bulk affordances: the multi-select's controls, and the quantity dial. */
+.inspector__selection,
+.inspector__dial {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.inspector__selection button,
+.inspector__dial button,
+.inspector__rename button,
+.inspector__power,
+.inspector__order {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.inspector__selection button:focus-visible,
+.inspector__dial button:focus-visible,
+.inspector__rename button:focus-visible,
+.inspector__power:focus-visible,
+.inspector__order:focus-visible,
+.inspector__field select:focus-visible,
+.inspector__field input:focus-visible,
+.inspector__dial input:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+/* The name field and its button, drawn the way the base-type field is: the entry sunk to the
+   ground colour so it reads as something to type in. */
+.inspector__rename {
+  margin-top: var(--space-2);
+}
+.inspector__field input[type="text"] {
+  padding: var(--space-2);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background-color: var(--colour-ground);
+  color: inherit;
+  font: inherit;
+}
+.inspector__rename button[aria-disabled="true"] {
+  border-color: var(--colour-edge-strong);
+  color: var(--colour-ink-faint);
+  cursor: not-allowed;
+}
+/*
+ * The one action on this surface that cannot be taken back. It sat as a visual peer of
+ * `Select all` and `Clear` — same border, same ink, same size — so the control that removes
+ * the player's bases looked exactly like the control that unticks a checkbox. It is not a
+ * peer, and it does not sit with them: it takes the danger colour, it is pushed to the far
+ * end of the row, and it asks first (`Inspector.tsx`).
+ */
+.inspector__destroy {
+  margin-left: auto;
+  border-color: color-mix(in srgb, var(--colour-danger) 55%, transparent);
+  color: var(--colour-danger);
+}
+
+.inspector__destroy:hover:not([aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--colour-danger) 14%, transparent);
+}
+
+/* Asked, not done. The second press is a different button, and it says so. */
+.inspector__destroy[data-confirming="true"] {
+  border-color: var(--colour-danger);
+  background: var(--colour-danger);
+  color: var(--colour-ground);
+}
+
+.inspector__destroy[aria-disabled="true"],
+.inspector__dial button[aria-disabled="true"] {
+  border-color: var(--colour-edge-strong);
+  color: var(--colour-ink-faint);
+  cursor: not-allowed;
+}
+.inspector__power {
+  margin-top: var(--space-2);
+}
+/* Standing while it is empty, so the announcement works, and taking no space until it says
+   something — the acknowledgment line below is the same arrangement. */
+.inspector__refusal {
+  display: block;
+  color: var(--inspector-warn);
+}
+.inspector__refusal:not(:empty) {
+  margin-top: var(--space-2);
+}
+/*
+ * The estate's answer, in the AI's voice — the mono face. The region stands even
+ * while it is empty, so the live announcement works; the gap appears only with the text.
+ */
+.inspector__acknowledgment {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--colour-ink-dim);
+}
+.inspector__acknowledgment:not(:empty) {
+  margin-top: var(--space-3);
+}
+.inspector__build {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--colour-edge);
+}
+.inspector__field {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+.inspector__field span,
+.inspector__projection dt {
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-dim);
+}
+/*
+ * The base type. It was a native `<select>` on the panel's own colour — so it had no edge the
+ * player could see, and it drew the platform's chevron in the platform's grey, which is the
+ * one mark in this surface that belongs to no palette. The field is sunk to the ground colour
+ * so it reads as something to open, and the arrow is drawn here.
+ */
+.inspector__field select {
+  appearance: none;
+  padding: var(--space-2) calc(var(--space-4) + var(--space-3)) var(--space-2) var(--space-2);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background-color: var(--colour-ground);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--colour-ink-dim) 50%),
+    linear-gradient(135deg, var(--colour-ink-dim) 50%, transparent 50%);
+  background-position:
+    right var(--space-4) center,
+    calc(100% - var(--space-3)) center;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.inspector__field select:hover {
+  border-color: var(--colour-accent);
+}
+/* What the chosen type is, before it is ordered — secondary under the select:
+   dim ink, small text, and the detail's own detection table. */
+.inspector__type-info {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-small);
+  color: var(--colour-ink-dim);
+}
+.inspector__type-info p {
+  margin: 0;
+}
+.inspector__type-info .inspector__detection caption {
+  padding: 0;
+}
+/* The figure the slider means, in mono so it does not wander as it counts.
+   `MAX_ORDER` is 99, so two figures is the widest it gets. */
+.inspector__dial output {
+  min-width: 2ch;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/*
+ * The dial's slider — the research sheet's control for the same decision, so
+ * the track and thumb are drawn its way (`ResearchSheet.css`). The track carries the order
+ * as a fill up to the thumb; `--slide` is written inline by the dial.
+ */
+.inspector__slide {
+  --slide-track: linear-gradient(
+    to right,
+    var(--colour-accent) var(--slide),
+    var(--colour-edge-strong) var(--slide)
+  );
+
+  flex: 1;
+  min-width: 5rem;
+  height: 14px;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.inspector__slide::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 1px;
+  background: var(--slide-track);
+}
+
+.inspector__slide::-moz-range-track {
+  height: 2px;
+  border-radius: 1px;
+  background: var(--slide-track);
+}
+
+.inspector__slide::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -6px;
+  appearance: none;
+  border: none;
+  border-radius: 50%;
+  background: var(--colour-accent);
+}
+
+.inspector__slide::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background: var(--colour-accent);
+}
+/*
+ * Three named pairs rather than one grid of six, because the six figures answer three
+ * different questions and a flat grid says they answer one. The last group is the answer the
+ * dial is for — can the estate carry this — so it is drawn as one rather than as a third
+ * peer.
+ */
+.inspector__projections {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.inspector__projection-group h2 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-dim);
+}
+
+.inspector__projection-group--answer {
+  padding: var(--space-3);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: #ffffff08;
+}
+
+.inspector__projection-group--answer h2 {
+  color: var(--colour-ink);
+}
+
+.inspector__projection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin: 0;
+}
+.inspector__projection div {
+  display: grid;
+  gap: var(--space-1);
+}
+.inspector__projection dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+/*
+ * The primary action of the surface, and so it is the filled one. The shell has three button
+ * roles and no more: filled is the one thing this surface is for, outlined is a way out or a
+ * way across, and bare text is a tertiary. It was outlined-and-accent-lettered, which is a
+ * fourth treatment for a control that is already the most important thing in the panel.
+ */
+.inspector__order {
+  width: 100%;
+  border-color: var(--colour-accent);
+  background: var(--colour-accent);
+  color: var(--colour-accent-ink);
+  font-weight: 600;
+}
+
+.inspector__order:hover {
+  background: color-mix(in srgb, var(--colour-accent) 85%, #ffffff);
+}

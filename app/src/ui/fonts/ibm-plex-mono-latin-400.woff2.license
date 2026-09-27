@@ -1,0 +1,9 @@
+IBM Plex Mono, 400, latin subset — ibm-plex-mono-latin-400.woff2
+
+Source:     Google Fonts, https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2
+Upstream:   https://github.com/IBM/plex
+Licence:    SIL Open Font License 1.1 — see LICENSE.OFL-1.1.txt beside this file
+Copyright 2017 IBM Corp. All rights reserved.
+
+Fetched and verified by tools/assets/fetch_fonts.py. This is the subset Google Fonts
+serves for the `latin` unicode-range; no glyphs were added, removed or reshaped.

@@ -1,0 +1,116 @@
+/*
+ * A document rather than a panel: one column, scrolling, over the solid surface. The notice
+ * itself is monospaced and preformatted because its words and its line breaks are both part
+ * of what it says.
+ */
+
+/*
+ * The console's layer rather than one of its own: over the map this surface is opened from
+ * the console and covers it whole, and it is drawn after it, so the same z-index puts it in
+ * front. A layer above the console would put it above the scrim as well, which it is not —
+ * a notification or an ending is still in front of this (`ui/surfaces.ts`).
+ */
+.licences {
+  --licences-measure: 78ch;
+
+  position: absolute;
+  inset: 0 0 var(--band-height) 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  background: var(--colour-surface-solid);
+  color: var(--colour-ink);
+}
+
+.licences__head {
+  display: flex;
+  gap: var(--space-4);
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--colour-edge-strong);
+}
+
+.licences__title {
+  margin: 0;
+  font-size: var(--text-readout);
+  font-weight: 600;
+}
+
+.licences__back {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--colour-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.licences__back:hover,
+.licences__back:focus-visible {
+  border-color: var(--colour-accent);
+}
+
+.licences__stamp {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--colour-edge-strong);
+  font-size: var(--text-small);
+}
+
+.licences__stamp dt {
+  color: var(--colour-ink-dim);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  font-size: var(--text-label);
+  font-weight: 600;
+  align-self: center;
+}
+
+.licences__stamp dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.licences__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.licences__preamble,
+.licences__section {
+  max-width: var(--licences-measure);
+}
+
+.licences__preamble {
+  margin: 0 0 var(--space-4);
+  color: var(--colour-ink-dim);
+  white-space: pre-wrap;
+}
+
+.licences__heading {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-body);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--colour-ink-dim);
+}
+
+.licences__text {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.licences a {
+  color: var(--colour-accent);
+}

@@ -1,0 +1,31 @@
+
+# The upstream working clone, used only to produce vendored updates of singularity/.
+.upstream-clone/
+
+# The shared Python environment for tools/
+.venv/
+
+# Python bytecode
+__pycache__/
+
+# ruff's incremental cache — see tools/ruff.toml
+.ruff_cache/
+
+# Recorded traces — megabytes per scenario. What is committed is scenarios/manifest.json.
+# See tools/trace/record.py.
+*.trace.jsonl
+
+# Local tooling scratch
+.playwright-mcp/
+.claude/
+.worktrees/
+
+# Node/bun install tree and build output
+node_modules/
+app/dist/
+app/.tsbuild/
+sim/dist/
+# The declaration output of tsconfig.root.json, the project that typechecks the root configs
+# and tools/ — nothing consumes it.
+/.tsbuild/
+*.tsbuildinfo

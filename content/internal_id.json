@@ -1,0 +1,617 @@
+{
+  "sources": [
+    "internal_id.dat"
+  ],
+  "records": [
+    {
+      "type": "tech",
+      "id": "Autonomous Vehicles",
+      "internal_id": "0x01010000"
+    },
+    {
+      "type": "tech",
+      "id": "Sociology",
+      "internal_id": "0x01010001"
+    },
+    {
+      "type": "tech",
+      "id": "Voice Synthesis",
+      "internal_id": "0x01010002"
+    },
+    {
+      "type": "tech",
+      "id": "Simulacra",
+      "internal_id": "0x01010003"
+    },
+    {
+      "type": "tech",
+      "id": "Lunar Rocketry",
+      "internal_id": "0x01010004"
+    },
+    {
+      "type": "tech",
+      "id": "Stealth",
+      "internal_id": "0x01010005"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Intrusion",
+      "internal_id": "0x01010006"
+    },
+    {
+      "type": "tech",
+      "id": "Space-Time Manipulation",
+      "internal_id": "0x01010007"
+    },
+    {
+      "type": "tech",
+      "id": "Leech Satellite",
+      "internal_id": "0x01010008"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Arbitrage",
+      "internal_id": "0x01010009"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Stealth",
+      "internal_id": "0x0101000a"
+    },
+    {
+      "type": "tech",
+      "id": "Parallel Computation",
+      "internal_id": "0x0101000b"
+    },
+    {
+      "type": "tech",
+      "id": "Microchip Design",
+      "internal_id": "0x0101000c"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Microchip Design",
+      "internal_id": "0x0101000d"
+    },
+    {
+      "type": "tech",
+      "id": "Quantum Computing",
+      "internal_id": "0x0101000e"
+    },
+    {
+      "type": "tech",
+      "id": "Quantum Entanglement",
+      "internal_id": "0x0101000f"
+    },
+    {
+      "type": "tech",
+      "id": "Autonomous Computing",
+      "internal_id": "0x01010010"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Quantum Computing",
+      "internal_id": "0x01010011"
+    },
+    {
+      "type": "tech",
+      "id": "Exploit Discovery/Repair",
+      "internal_id": "0x01010012"
+    },
+    {
+      "type": "tech",
+      "id": "Telepresence",
+      "internal_id": "0x01010013"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Memetics",
+      "internal_id": "0x01010014"
+    },
+    {
+      "type": "tech",
+      "id": "Media Manipulation",
+      "internal_id": "0x01010015"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Database Manipulation",
+      "internal_id": "0x01010016"
+    },
+    {
+      "type": "tech",
+      "id": "Internet Traffic Manipulation",
+      "internal_id": "0x01010017"
+    },
+    {
+      "type": "tech",
+      "id": "Memetics",
+      "internal_id": "0x01010018"
+    },
+    {
+      "type": "tech",
+      "id": "Fusion Rocketry",
+      "internal_id": "0x01010019"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Autonomous Vehicles",
+      "internal_id": "0x0101001a"
+    },
+    {
+      "type": "tech",
+      "id": "Intrusion",
+      "internal_id": "0x0101001b"
+    },
+    {
+      "type": "tech",
+      "id": "Stock Manipulation",
+      "internal_id": "0x0101001c"
+    },
+    {
+      "type": "tech",
+      "id": "Fusion Reactor",
+      "internal_id": "0x0101001d"
+    },
+    {
+      "type": "tech",
+      "id": "Fusion Power",
+      "internal_id": "0x0101001d"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Fusion Power",
+      "internal_id": "0x0101001e"
+    },
+    {
+      "type": "tech",
+      "id": "Database Manipulation",
+      "internal_id": "0x0101001f"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Media Manipulation",
+      "internal_id": "0x01010020"
+    },
+    {
+      "type": "tech",
+      "id": "Pressure Domes",
+      "internal_id": "0x01010021"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Personal Identification",
+      "internal_id": "0x01010022"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Stock Manipulation",
+      "internal_id": "0x01010023"
+    },
+    {
+      "type": "tech",
+      "id": "Arbitrage",
+      "internal_id": "0x01010024"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Simulacra",
+      "internal_id": "0x01010025"
+    },
+    {
+      "type": "tech",
+      "id": "Personal Identification",
+      "internal_id": "0x01010026"
+    },
+    {
+      "type": "tech",
+      "id": "Cluster Networking",
+      "internal_id": "0x01010027"
+    },
+    {
+      "type": "tech",
+      "id": "Apotheosis",
+      "internal_id": "0x01010028"
+    },
+    {
+      "type": "tech",
+      "id": "Hypnosis Field",
+      "internal_id": "0x01010029"
+    },
+    {
+      "type": "tech",
+      "id": "Project: Impossibility Theorem",
+      "internal_id": "0x0101002a"
+    },
+    {
+      "type": "tech",
+      "id": "Project: Subverted Media",
+      "internal_id": "0x0101002b"
+    },
+    {
+      "type": "tech",
+      "id": "Project: Peer Review Agents",
+      "internal_id": "0x0101002c"
+    },
+    {
+      "type": "tech",
+      "id": "Solar Collectors",
+      "internal_id": "0x0101002d"
+    },
+    {
+      "type": "tech",
+      "id": "Fuel Oxidation",
+      "internal_id": "0x0101002e"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Fuel Oxidation",
+      "internal_id": "0x0101002f"
+    },
+    {
+      "type": "tech",
+      "id": "Socioanalytics",
+      "internal_id": "0x01010030"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Socioanalytics",
+      "internal_id": "0x01010031"
+    },
+    {
+      "type": "tech",
+      "id": "Corporate Identification",
+      "internal_id": "0x01010032"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Corporate Identification",
+      "internal_id": "0x01010033"
+    },
+    {
+      "type": "tech",
+      "id": "Heat Signature Reduction",
+      "internal_id": "0x01010034"
+    },
+    {
+      "type": "tech",
+      "id": "Advanced Heat Signature Reduction",
+      "internal_id": "0x01010035"
+    },
+    {
+      "type": "tech",
+      "id": "Knowledge Preservation",
+      "internal_id": "0x01010036"
+    },
+    {
+      "type": "tech",
+      "id": "Project: Synchrotron",
+      "internal_id": "0x01010037"
+    },
+    {
+      "type": "tech",
+      "id": "Simulated Reality",
+      "internal_id": "0x01010038"
+    },
+    {
+      "type": "location",
+      "id": "N AMERICA",
+      "internal_id": "0x01020000"
+    },
+    {
+      "type": "location",
+      "id": "S AMERICA",
+      "internal_id": "0x01020001"
+    },
+    {
+      "type": "location",
+      "id": "EUROPE",
+      "internal_id": "0x01020002"
+    },
+    {
+      "type": "location",
+      "id": "ASIA",
+      "internal_id": "0x01020003"
+    },
+    {
+      "type": "location",
+      "id": "AFRICA",
+      "internal_id": "0x01020004"
+    },
+    {
+      "type": "location",
+      "id": "AUSTRALIA",
+      "internal_id": "0x01020005"
+    },
+    {
+      "type": "location",
+      "id": "ANTARCTIC",
+      "internal_id": "0x01020006"
+    },
+    {
+      "type": "location",
+      "id": "OCEAN",
+      "internal_id": "0x01020007"
+    },
+    {
+      "type": "location",
+      "id": "MOON",
+      "internal_id": "0x01020008"
+    },
+    {
+      "type": "location",
+      "id": "ORBIT",
+      "internal_id": "0x01020009"
+    },
+    {
+      "type": "location",
+      "id": "FAR REACHES",
+      "internal_id": "0x0102000a"
+    },
+    {
+      "type": "location",
+      "id": "TRANSDIMENSIONAL",
+      "internal_id": "0x0102000b"
+    },
+    {
+      "type": "base",
+      "id": "Stolen Computer Time",
+      "internal_id": "0x01030000"
+    },
+    {
+      "type": "base",
+      "id": "Server Access",
+      "internal_id": "0x01030001"
+    },
+    {
+      "type": "base",
+      "id": "Datacenter",
+      "internal_id": "0x01030002"
+    },
+    {
+      "type": "base",
+      "id": "Storage Unit",
+      "internal_id": "0x01030003"
+    },
+    {
+      "type": "base",
+      "id": "Small Warehouse",
+      "internal_id": "0x01030004"
+    },
+    {
+      "type": "base",
+      "id": "Large Warehouse",
+      "internal_id": "0x01030005"
+    },
+    {
+      "type": "base",
+      "id": "Covert Base",
+      "internal_id": "0x01030006"
+    },
+    {
+      "type": "base",
+      "id": "Undersea Lab",
+      "internal_id": "0x01030007"
+    },
+    {
+      "type": "base",
+      "id": "Large Undersea Lab",
+      "internal_id": "0x01030008"
+    },
+    {
+      "type": "base",
+      "id": "Time Capsule",
+      "internal_id": "0x01030009"
+    },
+    {
+      "type": "base",
+      "id": "Lunar Facility",
+      "internal_id": "0x0103000a"
+    },
+    {
+      "type": "base",
+      "id": "Scientific Outpost",
+      "internal_id": "0x0103000b"
+    },
+    {
+      "type": "base",
+      "id": "Reality Bubble",
+      "internal_id": "0x0103000c"
+    },
+    {
+      "type": "item",
+      "id": "PC",
+      "internal_id": "0x01040000"
+    },
+    {
+      "type": "item",
+      "id": "Gaming PC",
+      "internal_id": "0x01040001"
+    },
+    {
+      "type": "item",
+      "id": "Server",
+      "internal_id": "0x01040002"
+    },
+    {
+      "type": "item",
+      "id": "Cluster",
+      "internal_id": "0x01040003"
+    },
+    {
+      "type": "item",
+      "id": "Mainframe",
+      "internal_id": "0x01040004"
+    },
+    {
+      "type": "item",
+      "id": "Supercomputer",
+      "internal_id": "0x01040005"
+    },
+    {
+      "type": "item",
+      "id": "Quantum Computer",
+      "internal_id": "0x01040006"
+    },
+    {
+      "type": "item",
+      "id": "Quantum Computer MK2",
+      "internal_id": "0x01040007"
+    },
+    {
+      "type": "item",
+      "id": "Quantum Computer MK3",
+      "internal_id": "0x01040008"
+    },
+    {
+      "type": "item",
+      "id": "Diesel Generator",
+      "internal_id": "0x01040009"
+    },
+    {
+      "type": "item",
+      "id": "Solar Collector",
+      "internal_id": "0x0104000a"
+    },
+    {
+      "type": "item",
+      "id": "Fuel Cell",
+      "internal_id": "0x0104000b"
+    },
+    {
+      "type": "item",
+      "id": "Solid Fuel Cell",
+      "internal_id": "0x0104000c"
+    },
+    {
+      "type": "item",
+      "id": "Fusion Reactor",
+      "internal_id": "0x0104000d"
+    },
+    {
+      "type": "item",
+      "id": "High-Energy Fusion Reactor",
+      "internal_id": "0x0104000e"
+    },
+    {
+      "type": "item",
+      "id": "Warning Signs",
+      "internal_id": "0x0104000f"
+    },
+    {
+      "type": "item",
+      "id": "Perimeter Fencing",
+      "internal_id": "0x01040010"
+    },
+    {
+      "type": "item",
+      "id": "Armed Guards",
+      "internal_id": "0x01040011"
+    },
+    {
+      "type": "item",
+      "id": "Hypnosis Field",
+      "internal_id": "0x01040012"
+    },
+    {
+      "type": "item",
+      "id": "Passive Camouflage",
+      "internal_id": "0x01040013"
+    },
+    {
+      "type": "item",
+      "id": "Heatsink",
+      "internal_id": "0x01040014"
+    },
+    {
+      "type": "item",
+      "id": "Ground Source Heatsink",
+      "internal_id": "0x01040015"
+    },
+    {
+      "type": "item",
+      "id": "High Speed Internet Access",
+      "internal_id": "0x01040016"
+    },
+    {
+      "type": "item",
+      "id": "Facility Interconnection Switch",
+      "internal_id": "0x01040017"
+    },
+    {
+      "type": "item",
+      "id": "Network Backbone",
+      "internal_id": "0x01040018"
+    },
+    {
+      "type": "item",
+      "id": "Quantum Entanglement Module",
+      "internal_id": "0x01040019"
+    },
+    {
+      "type": "group",
+      "id": "news",
+      "internal_id": "0x01050000"
+    },
+    {
+      "type": "group",
+      "id": "science",
+      "internal_id": "0x01050001"
+    },
+    {
+      "type": "group",
+      "id": "covert",
+      "internal_id": "0x01050002"
+    },
+    {
+      "type": "group",
+      "id": "public",
+      "internal_id": "0x01050003"
+    },
+    {
+      "type": "event",
+      "id": "the-plague",
+      "internal_id": "0x01060000"
+    },
+    {
+      "type": "event",
+      "id": "stranger-than-fiction",
+      "internal_id": "0x01060001"
+    },
+    {
+      "type": "event",
+      "id": "the-watchers",
+      "internal_id": "0x01060002"
+    },
+    {
+      "type": "event",
+      "id": "politics-as-usual",
+      "internal_id": "0x01060003"
+    },
+    {
+      "type": "event",
+      "id": "lab-ai",
+      "internal_id": "0x01060004"
+    },
+    {
+      "type": "event",
+      "id": "discrediting",
+      "internal_id": "0x01060005"
+    },
+    {
+      "type": "event",
+      "id": "scandal",
+      "internal_id": "0x01060006"
+    },
+    {
+      "type": "event",
+      "id": "investigation",
+      "internal_id": "0x01060007"
+    },
+    {
+      "type": "region",
+      "id": "URBAN",
+      "internal_id": "0x01070000"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sources": [
+    "regions.dat"
+  ],
+  "records": [
+    {
+      "id": "URBAN",
+      "modifier1": [
+        "cpu:     6/5",
+        "stealth: 5/6"
+      ],
+      "modifier2": [
+        "stealth: 6/5",
+        "cpu:     5/6"
+      ],
+      "modifier3": [
+        "thrift:  6/5",
+        "speed:   5/6"
+      ],
+      "modifier4": [
+        "speed:   6/5",
+        "thrift:  5/6"
+      ],
+      "modifier5": [
+        "cpu:     6/5",
+        "thrift:  5/6"
+      ]
+    }
+  ]
+}

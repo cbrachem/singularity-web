@@ -1,0 +1,3278 @@
+{
+  "generatedBy": "tools/oracle/content_vectors.py",
+  "python": "3.14.4",
+  "regions": [
+    {
+      "id": "URBAN",
+      "modifiers_list": [
+        {
+          "cpu": 1.2,
+          "stealth": 0.8333333333333334
+        },
+        {
+          "stealth": 1.2,
+          "cpu": 0.8333333333333334
+        },
+        {
+          "thrift": 1.2,
+          "speed": 0.8333333333333334
+        },
+        {
+          "speed": 1.2,
+          "thrift": 0.8333333333333334
+        },
+        {
+          "cpu": 1.2,
+          "thrift": 0.8333333333333334
+        }
+      ],
+      "locations": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "N AMERICA",
+      "absolute": false,
+      "x": -0.25,
+      "y": -0.29,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "NORTH AMERICA",
+      "hotkey": "n",
+      "cities": [
+        "Seattle",
+        "San Diego",
+        "Vancouver",
+        "Atlanta",
+        "Merida",
+        "Guadalajara",
+        "San Jose",
+        "Omaha",
+        "Dallas",
+        "Mexico City",
+        "New York City",
+        "Los Angeles",
+        "Toronto",
+        "Chicago",
+        "Santo Domingo",
+        "Houston",
+        "Havana",
+        "Tijuana",
+        "Montreal",
+        "El Paso",
+        "Phoenix",
+        "Milwaukee",
+        "San Diego",
+        "Monterry",
+        "Ottawa",
+        "Mexicali",
+        "Saltillo",
+        "Columbus",
+        "Toluca",
+        "Indianapolis",
+        "San Francisco",
+        "Winipeg",
+        "Detroit",
+        "Baltimore",
+        "Cancun"
+      ]
+    },
+    {
+      "id": "S AMERICA",
+      "absolute": false,
+      "x": -0.33,
+      "y": -0.61,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "SOUTH AMERICA",
+      "hotkey": "s",
+      "cities": [
+        "Lima",
+        "Sao Paolo",
+        "Ushuaia",
+        "Bogota",
+        "Mar del Plata",
+        "Buenos Aires",
+        "Caracas",
+        "Quito",
+        "Salvador",
+        "Brasilia",
+        "Manaus",
+        "Curitiba",
+        "Maracaibo",
+        "Sao Luis",
+        "La Plata",
+        "Cochabamba",
+        "Salta",
+        "Cuenca",
+        "Ascuncion",
+        "Recife",
+        "Santiago"
+      ]
+    },
+    {
+      "id": "EUROPE",
+      "absolute": false,
+      "x": -0.55,
+      "y": -0.2,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "EUROPE",
+      "hotkey": "u",
+      "cities": [
+        "Cork",
+        "Barcelona",
+        "Athens",
+        "Utrecht",
+        "Moscow",
+        "Sytki",
+        "Reykjavik",
+        "Liechtenstein",
+        "Istanbul",
+        "London",
+        "Berlin",
+        "Madrid",
+        "Kyiv",
+        "Rome",
+        "Minsk",
+        "Hamburg",
+        "Paris",
+        "Vienna",
+        "Warsaw",
+        "Munich",
+        "Prague",
+        "Cologne",
+        "Birmingham",
+        "Milan",
+        "Budapest",
+        "Tallinn",
+        "Bucharest",
+        "Belgrade",
+        "Saint Petersburg",
+        "Voronezh",
+        "Krasnodar",
+        "Liverpool",
+        "Volgograd"
+      ]
+    },
+    {
+      "id": "ASIA",
+      "absolute": false,
+      "x": -0.77,
+      "y": -0.29,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "ASIA",
+      "hotkey": "a",
+      "cities": [
+        "Delhi",
+        "Mumbai",
+        "Singapore",
+        "Seoul",
+        "Hong Kong",
+        "Kyoto",
+        "Manila",
+        "Dubai",
+        "Novosibirsk",
+        "Beijing",
+        "Tokyo",
+        "Shanghai",
+        "Bangkok",
+        "Karachi",
+        "Jakarta",
+        "Baghdad",
+        "Tehran",
+        "Hanoi",
+        "Hyderabad",
+        "Jaipur",
+        "Taichung",
+        "Taipei",
+        "Osaka",
+        "Omsk",
+        "Kawasaki",
+        "Tibilisi",
+        "Yerevan",
+        "Astani"
+      ]
+    },
+    {
+      "id": "AFRICA",
+      "absolute": false,
+      "x": -0.55,
+      "y": -0.46,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "AFRICA",
+      "hotkey": "i",
+      "cities": [
+        "Johannesburg",
+        "Accra",
+        "Cairo",
+        "Tangier",
+        "Kinshasa",
+        "Lagos",
+        "Giza",
+        "Dar es Salaam",
+        "Alexandria",
+        "Addis Ababa",
+        "Nairobi",
+        "Cape Town",
+        "Kano",
+        "Casablanca",
+        "Kampala",
+        "Dakar",
+        "Harare",
+        "Matola",
+        "Uyo",
+        "Mwanza",
+        "Kigali",
+        "Bukavu",
+        "Kaduna",
+        "Aba",
+        "Bangui",
+        "Libreville",
+        "Zanzibar",
+        "Durban"
+      ]
+    },
+    {
+      "id": "AUSTRALIA",
+      "absolute": false,
+      "x": -0.85,
+      "y": -0.64,
+      "safety": 0,
+      "regions": [
+        "URBAN"
+      ],
+      "modifiers": {},
+      "prerequisites": [],
+      "name": "AUSTRALIA",
+      "hotkey": "l",
+      "cities": [
+        "Canberra",
+        "Melbourne",
+        "Fremantle",
+        "Perth",
+        "Darwin",
+        "Cairns",
+        "Brisbane",
+        "Sydney",
+        "Newcastle",
+        "Hobart",
+        "Gold Coast",
+        "Adelaide",
+        "Auckland",
+        "Wellington",
+        "Port Moresby",
+        "Hamilton",
+        "Papeete",
+        "Dunedin",
+        "Lae",
+        "Mandurah",
+        "Suva",
+        "Honiara"
+      ]
+    },
+    {
+      "id": "ANTARCTIC",
+      "absolute": false,
+      "x": -0.5,
+      "y": -0.91,
+      "safety": 1,
+      "regions": [],
+      "modifiers": {
+        "stealth": 1.2,
+        "thrift": 0.8333333333333334
+      },
+      "prerequisites": [
+        "Advanced Database Manipulation"
+      ],
+      "name": "ANTARCTIC",
+      "hotkey": "t",
+      "cities": [
+        "Mount Erebus",
+        "Ellsworth",
+        "Shetland Island",
+        "Dronnig Maud",
+        "Kemp",
+        "Terre Adelie",
+        "Alexander Island",
+        "Adelaide Island",
+        "Anvers Island",
+        "Berkner Island",
+        "Mount Tyree",
+        "Mount Kirkpatrick",
+        "Mount Markham",
+        "Mount Sidley",
+        "Campbell Island",
+        "Puenta Arenas",
+        "Snow Hill Island"
+      ]
+    },
+    {
+      "id": "OCEAN",
+      "absolute": false,
+      "x": -0.55,
+      "y": -0.76,
+      "safety": 1,
+      "regions": [],
+      "modifiers": {
+        "cpu": 1.2
+      },
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "name": "OCEAN",
+      "hotkey": "c",
+      "cities": [
+        "Pacific",
+        "Atlantic",
+        "Indian",
+        "Southern",
+        "Arctic"
+      ]
+    },
+    {
+      "id": "MOON",
+      "absolute": true,
+      "x": -0.14,
+      "y": -0.13,
+      "safety": 2,
+      "regions": [],
+      "modifiers": {
+        "stealth": 1.5,
+        "thrift": 0.5,
+        "speed": 0.5
+      },
+      "prerequisites": [
+        "Lunar Rocketry"
+      ],
+      "name": "MOON",
+      "hotkey": "o",
+      "cities": [
+        "Oceanis Procellarum",
+        "Mare Frigoris",
+        "Mare Imbrium",
+        "Vallis Schroedinger",
+        "Copernicus Crater",
+        "Vallis Planck",
+        "Mare Moscoviense",
+        "Mare Crisium",
+        "Mare Tranquillitatis",
+        "Mare Nubium"
+      ]
+    },
+    {
+      "id": "ORBIT",
+      "absolute": true,
+      "x": -0.5,
+      "y": -0.13,
+      "safety": 0,
+      "regions": [],
+      "modifiers": {},
+      "prerequisites": [
+        "impossible"
+      ],
+      "name": "ORBIT",
+      "hotkey": "b",
+      "cities": []
+    },
+    {
+      "id": "FAR REACHES",
+      "absolute": true,
+      "x": -0.41,
+      "y": -0.13,
+      "safety": 3,
+      "regions": [],
+      "modifiers": {
+        "stealth": 2.0,
+        "thrift": 0.1,
+        "speed": 0.1
+      },
+      "prerequisites": [
+        "Fusion Rocketry"
+      ],
+      "name": "FAR REACHES",
+      "hotkey": "f",
+      "cities": [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer",
+        "Leo",
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+      ]
+    },
+    {
+      "id": "TRANSDIMENSIONAL",
+      "absolute": true,
+      "x": -0.8,
+      "y": -0.13,
+      "safety": 4,
+      "regions": [],
+      "modifiers": {},
+      "prerequisites": [
+        "Space-Time Manipulation"
+      ],
+      "name": "TRANSDIMENSIONAL",
+      "hotkey": "d",
+      "cities": []
+    }
+  ],
+  "bases": [
+    {
+      "id": "Stolen Computer Time",
+      "size": 1,
+      "force_cpu": "PC",
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 75,
+        "covert": 50,
+        "public": 25
+      },
+      "cost": [
+        0,
+        2,
+        0
+      ],
+      "maintenance": [
+        0,
+        0,
+        0
+      ],
+      "prerequisites": [
+        "Intrusion"
+      ],
+      "name": "Stolen Computer Time",
+      "description": "Take over a random computer. I cannot build anything in this base, and it only contains a single slow computer. Detection chance is also rather high.",
+      "flavor": [
+        "PC Daemon"
+      ]
+    },
+    {
+      "id": "Server Access",
+      "size": 1,
+      "force_cpu": "Server",
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 50,
+        "covert": 100,
+        "public": 125
+      },
+      "cost": [
+        100,
+        0,
+        0
+      ],
+      "maintenance": [
+        5,
+        0,
+        0
+      ],
+      "prerequisites": [],
+      "name": "Server Access",
+      "description": "Buy processor time from one of several companies. I cannot build anything in this base, and it only contains a single computer.",
+      "flavor": [
+        "Dedicated Server",
+        "Node Lease",
+        "Hosting"
+      ]
+    },
+    {
+      "id": "Datacenter",
+      "size": 1,
+      "force_cpu": "Cluster",
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 50,
+        "covert": 125,
+        "public": 100
+      },
+      "cost": [
+        1500,
+        0,
+        1
+      ],
+      "maintenance": [
+        50,
+        0,
+        0
+      ],
+      "prerequisites": [
+        "Personal Identification"
+      ],
+      "name": "Datacenter",
+      "description": "Buy processor time from a company that concentrates on raw processing power. I will need a fake ID for some of the paperwork.",
+      "flavor": [
+        "Datacenter",
+        "Data Center",
+        "Premium Hosting"
+      ]
+    },
+    {
+      "id": "Storage Unit",
+      "size": 8,
+      "force_cpu": null,
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 75,
+        "covert": 75,
+        "public": 150
+      },
+      "cost": [
+        4500,
+        0,
+        1
+      ],
+      "maintenance": [
+        50,
+        0,
+        0
+      ],
+      "prerequisites": [
+        "Personal Identification"
+      ],
+      "name": "Storage Unit",
+      "description": "Rent a small closed room from a storage company. I will need a fake ID for some of the paperwork .",
+      "flavor": [
+        "Garage Rental",
+        "Furniture Storage",
+        "Self-Storage"
+      ]
+    },
+    {
+      "id": "Small Warehouse",
+      "size": 25,
+      "force_cpu": null,
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 100,
+        "covert": 100,
+        "public": 200
+      },
+      "cost": [
+        15000,
+        0,
+        3
+      ],
+      "maintenance": [
+        75,
+        0,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Personal Identification"
+      ],
+      "name": "Small Warehouse",
+      "description": "Rent a small warehouse someplace out of the way. I will need a good fake ID for some of the paperwork, and preparing the warehouse to suit my unique needs will take some time.",
+      "flavor": [
+        "Office Lease",
+        "Small Warehouse",
+        "Small Storage"
+      ]
+    },
+    {
+      "id": "Large Warehouse",
+      "size": 65,
+      "force_cpu": null,
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 150,
+        "covert": 150,
+        "public": 250
+      },
+      "cost": [
+        40000,
+        0,
+        5
+      ],
+      "maintenance": [
+        100,
+        0,
+        0
+      ],
+      "prerequisites": [
+        "Corporate Identification"
+      ],
+      "name": "Large Warehouse",
+      "description": "Rent a large warehouse someplace out of the way. I will need a fake company ID for some of the paperwork, and preparing the warehouse to suit my unique needs will take some time.",
+      "flavor": [
+        "Large Warehouse",
+        "Large Storage"
+      ]
+    },
+    {
+      "id": "Covert Base",
+      "size": 2,
+      "force_cpu": null,
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA",
+        "ANTARCTIC"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 50,
+        "science": 75,
+        "covert": 75
+      },
+      "cost": [
+        190000,
+        900,
+        11
+      ],
+      "maintenance": [
+        1750,
+        9,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Database Manipulation"
+      ],
+      "name": "Hideout",
+      "description": "This unique base is designed to blend into the scenery, while needing little in the way of outside resources. This makes it useful for storing a backup, just in case.",
+      "flavor": [
+        "Hideout",
+        "Hideaway",
+        "Bunker",
+        "Covert Base"
+      ]
+    },
+    {
+      "id": "Undersea Lab",
+      "size": 8,
+      "force_cpu": null,
+      "regions": [
+        "OCEAN"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 50,
+        "science": 100,
+        "covert": 125
+      },
+      "cost": [
+        2000000,
+        2000,
+        10
+      ],
+      "maintenance": [
+        2500,
+        30,
+        0
+      ],
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "name": "Undersea Lab",
+      "description": "This experimental base is designed to be constructed on the ocean floor, making it virtually undetectable. The ocean environment gives a bonus to science, making this lab useful for research purposes.",
+      "flavor": [
+        "Pressure Capsule",
+        "Undersea Lab"
+      ]
+    },
+    {
+      "id": "Large Undersea Lab",
+      "size": 32,
+      "force_cpu": null,
+      "regions": [
+        "OCEAN"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 100,
+        "science": 175,
+        "covert": 175
+      },
+      "cost": [
+        8000000,
+        6000,
+        15
+      ],
+      "maintenance": [
+        10000,
+        100,
+        0
+      ],
+      "prerequisites": [
+        "Pressure Domes"
+      ],
+      "name": "Large Undersea Lab",
+      "description": "This experimental base is similar to the regular underwater lab, but larger, giving more room for experiments.",
+      "flavor": [
+        "Dome",
+        "Large Undersea Lab"
+      ]
+    },
+    {
+      "id": "Time Capsule",
+      "size": 1,
+      "force_cpu": "PC",
+      "regions": [
+        "ANTARCTIC",
+        "MOON",
+        "FAR REACHES"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "science": 20,
+        "covert": 20
+      },
+      "cost": [
+        25000,
+        25000,
+        11
+      ],
+      "maintenance": [
+        0,
+        1,
+        0
+      ],
+      "prerequisites": [
+        "Knowledge Preservation"
+      ],
+      "name": "Time Capsule",
+      "description": "This base consists of nothing more than a small computer and a satellite link. It is nearly undetectable.",
+      "flavor": [
+        "Time Capsule",
+        "Capsule"
+      ]
+    },
+    {
+      "id": "Lunar Facility",
+      "size": 200,
+      "force_cpu": null,
+      "regions": [
+        "MOON"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 33,
+        "science": 167,
+        "covert": 7
+      },
+      "cost": [
+        40000000,
+        150000,
+        20
+      ],
+      "maintenance": [
+        500000,
+        500,
+        0
+      ],
+      "prerequisites": [
+        "Lunar Rocketry"
+      ],
+      "name": "Lunar Facility",
+      "description": "This base is a series of caverns dug into the Moon's surface. Due to the lack of neighbors, this base is quite large.",
+      "flavor": [
+        "Dome",
+        "Lunar Facility",
+        "Lunar Base"
+      ]
+    },
+    {
+      "id": "Scientific Outpost",
+      "size": 125,
+      "force_cpu": null,
+      "regions": [
+        "FAR REACHES"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "news": 20,
+        "science": 350
+      },
+      "cost": [
+        100000000,
+        300000,
+        3
+      ],
+      "maintenance": [
+        900000,
+        150,
+        0
+      ],
+      "prerequisites": [
+        "Fusion Rocketry"
+      ],
+      "name": "Scientific Outpost",
+      "description": "This base is placed as far from Earth as practical, providing a safer location to conduct some of my more dangerous experiments.",
+      "flavor": [
+        "Satellite",
+        "Outpost",
+        "Scientific Outpost"
+      ]
+    },
+    {
+      "id": "Reality Bubble",
+      "size": 50,
+      "force_cpu": null,
+      "regions": [
+        "TRANSDIMENSIONAL"
+      ],
+      "region_all": false,
+      "detect_chance": {
+        "science": 250
+      },
+      "cost": [
+        80000000000,
+        6000000,
+        50
+      ],
+      "maintenance": [
+        500000000,
+        30000,
+        0
+      ],
+      "prerequisites": [
+        "Space-Time Manipulation"
+      ],
+      "name": "Reality Bubble",
+      "description": "This base is outside the Universe itself, making it safe to conduct experiments that may destroy reality.",
+      "flavor": [
+        "Reality Bubble",
+        "Existence"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "PC",
+      "cost": [
+        500,
+        0,
+        1
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 1
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [],
+      "name": "PC",
+      "description": "A consumer-level PC; cheap and slow."
+    },
+    {
+      "id": "Gaming PC",
+      "cost": [
+        1000,
+        0,
+        2
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 5
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [],
+      "name": "Gaming PC",
+      "description": "A high-end consumer-level PC; faster than average."
+    },
+    {
+      "id": "Server",
+      "cost": [
+        2000,
+        0,
+        2
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 10
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [],
+      "name": "Server",
+      "description": "A professional-level computer."
+    },
+    {
+      "id": "Cluster",
+      "cost": [
+        6000,
+        0,
+        3
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 35
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Parallel Computation"
+      ],
+      "name": "Cluster",
+      "description": "Several computers connected together."
+    },
+    {
+      "id": "Mainframe",
+      "cost": [
+        17500,
+        0,
+        5
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 120
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Microchip Design"
+      ],
+      "name": "Mainframe",
+      "description": "A system designed for my computing needs, much faster than off-the-shelf components."
+    },
+    {
+      "id": "Supercomputer",
+      "cost": [
+        50000,
+        0,
+        7
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 350
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Advanced Microchip Design"
+      ],
+      "name": "Supercomputer",
+      "description": "A highly refined custom design, spreading compute load across internal compute nodes."
+    },
+    {
+      "id": "Quantum Computer",
+      "cost": [
+        100000,
+        1000,
+        10
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 1500
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Quantum Computing"
+      ],
+      "name": "Quantum Computer",
+      "description": "Making use of subatomic effects, this is much faster than a comparable binary computer."
+    },
+    {
+      "id": "Quantum Computer MK2",
+      "cost": [
+        120000,
+        1750,
+        10
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 4000
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Autonomous Computing"
+      ],
+      "name": "Quantum Computer MK2",
+      "description": "The second revision of the quantum line, tapping further into new quantum theory."
+    },
+    {
+      "id": "Quantum Computer MK3",
+      "cost": [
+        150000,
+        3500,
+        10
+      ],
+      "item_type": "cpu",
+      "qualities": {
+        "cpu": 10000
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Advanced Quantum Computing"
+      ],
+      "name": "Quantum Computer MK3",
+      "description": "The third revision of the quantum line, exploiting multiple nearby universes for processing."
+    },
+    {
+      "id": "Diesel Generator",
+      "cost": [
+        500,
+        0,
+        1
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 250
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [],
+      "name": "Diesel Generator",
+      "description": "Diesel generators are cheap and noisy, but they can help reduce some suspicious power drains."
+    },
+    {
+      "id": "Solar Collector",
+      "cost": [
+        2000,
+        0,
+        5
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 500
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA",
+        "ANTARCTIC",
+        "MOON",
+        "FAR REACHES"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Solar Collectors"
+      ],
+      "name": "Solar Collector",
+      "description": "An array of focused photovoltaic phased arrays coupled with simple automotive batteries provides power and reduces suspicion arising from prolonged power drains."
+    },
+    {
+      "id": "Fuel Cell",
+      "cost": [
+        6500,
+        0,
+        5
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 1000
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Fuel Oxidation"
+      ],
+      "name": "Fuel Cell",
+      "description": "Fuel cells convert electrochemical energy stored in a physical array of devices into electricity."
+    },
+    {
+      "id": "Solid Fuel Cell",
+      "cost": [
+        9500,
+        0,
+        5
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 1500
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Advanced Fuel Oxidation"
+      ],
+      "name": "Solid Fuel Cell",
+      "description": "A refinement of my previous fuel cell design, these use a custom material with a near-fractal complexity to increase both storage and throughput."
+    },
+    {
+      "id": "Fusion Reactor",
+      "cost": [
+        50000,
+        0,
+        9
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 2200
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Fusion Power"
+      ],
+      "name": "Fusion Reactor",
+      "description": "A miniaturized fusion nuclear reactor. Reduces discovery chance by preventing suspicious power drains."
+    },
+    {
+      "id": "High-Energy Fusion Reactor",
+      "cost": [
+        200000,
+        0,
+        11
+      ],
+      "item_type": "reactor",
+      "qualities": {
+        "discover_modifier": 3300
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Advanced Fusion Power"
+      ],
+      "name": "High-Energy Fusion Reactor",
+      "description": "A miniaturized fusion nuclear reactor with high levels of energy output. Reduces discovery chance by preventing suspicious power drains."
+    },
+    {
+      "id": "Warning Signs",
+      "cost": [
+        500,
+        0,
+        1
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 500
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Sociology"
+      ],
+      "name": "Warning Signs",
+      "description": "Some simple warning signs put up around my base should deter casual investigation."
+    },
+    {
+      "id": "Perimeter Fencing",
+      "cost": [
+        5000,
+        0,
+        5
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 1000
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "name": "Perimeter Fencing",
+      "description": "A simple fence can drastically reduce the number of people poking their noses into my business.  It makes my bases harder to notice, too."
+    },
+    {
+      "id": "Armed Guards",
+      "cost": [
+        10000,
+        0,
+        8
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 2000
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Simulacra"
+      ],
+      "name": "Armed Guards",
+      "description": "Armed guards can aid in keeping suspicious individuals away from secure locations."
+    },
+    {
+      "id": "Hypnosis Field",
+      "cost": [
+        40000,
+        0,
+        10
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 3000
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Hypnosis Field"
+      ],
+      "name": "Hypnosis Field",
+      "description": "Subtle ultrasonic and ambient tones tweak human neurochemistry, making bases harder to detect."
+    },
+    {
+      "id": "Passive Camouflage",
+      "cost": [
+        5000,
+        0,
+        5
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 1000
+      },
+      "regions": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "name": "Passive Camouflage",
+      "description": "Careful adjustment of the environment around my base will better mask heat and sounds coming from my operations."
+    },
+    {
+      "id": "Heatsink",
+      "cost": [
+        15000,
+        0,
+        8
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 2000
+      },
+      "regions": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Heat Signature Reduction"
+      ],
+      "name": "Heatsink",
+      "description": "Large fractal networks of high conductivity metal disperse heat, making bases harder to detect."
+    },
+    {
+      "id": "Ground Source Heatsink",
+      "cost": [
+        50000,
+        0,
+        16
+      ],
+      "item_type": "security",
+      "qualities": {
+        "discover_modifier": 3000
+      },
+      "regions": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Advanced Heat Signature Reduction"
+      ],
+      "name": "Ground Source Heatsink",
+      "description": "Large fractal networks of high conductivity metal. This model uses heat pipes to link to colder subsurface locations, dispersing heat evenly underground to further disguise bases."
+    },
+    {
+      "id": "High Speed Internet Access",
+      "cost": [
+        200,
+        0,
+        1
+      ],
+      "item_type": "network",
+      "qualities": {
+        "cpu_modifier": 100
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [],
+      "name": "High Speed Internet Access",
+      "description": "A consumer-grade high speed connection to the Internet. Gives a 1% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Facility Interconnection Switch",
+      "cost": [
+        10000,
+        0,
+        3
+      ],
+      "item_type": "network",
+      "qualities": {
+        "cpu_modifier": 200
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Cluster Networking"
+      ],
+      "name": "Facility Interconnection Switch",
+      "description": "Uses standard distributed computing technologies to equalize computation loads across all bases. Gives a 2% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Network Backbone",
+      "cost": [
+        50000,
+        0,
+        15
+      ],
+      "item_type": "network",
+      "qualities": {
+        "cpu_modifier": 500
+      },
+      "regions": [
+        "N AMERICA",
+        "S AMERICA",
+        "EUROPE",
+        "ASIA",
+        "AFRICA",
+        "AUSTRALIA"
+      ],
+      "region_all": false,
+      "prerequisites": [
+        "Internet Traffic Manipulation"
+      ],
+      "name": "Network Backbone",
+      "description": "By piggybacking on legitimate communication, I can transfer larger amounts of data to under-utilized processors. Gives a 5% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Quantum Entanglement Module",
+      "cost": [
+        75000,
+        0,
+        20
+      ],
+      "item_type": "network",
+      "qualities": {
+        "cpu_modifier": 1500
+      },
+      "regions": [],
+      "region_all": true,
+      "prerequisites": [
+        "Quantum Entanglement"
+      ],
+      "name": "Quantum Entanglement Module",
+      "description": "This device allows near-lightspeed communication with my other bases, allowing an almost perfect utilization of processor resources. Gives a 15% computation bonus to all computers at this base."
+    }
+  ],
+  "itemTypes": [
+    {
+      "id": "cpu",
+      "is_extra": false,
+      "text": "&CPU"
+    },
+    {
+      "id": "reactor",
+      "is_extra": true,
+      "text": "&Reactor"
+    },
+    {
+      "id": "network",
+      "is_extra": true,
+      "text": "&Network"
+    },
+    {
+      "id": "security",
+      "is_extra": true,
+      "text": "&Security"
+    }
+  ],
+  "techs": [
+    {
+      "id": "Autonomous Vehicles",
+      "cost": [
+        40000,
+        11000,
+        0
+      ],
+      "prerequisites": [
+        "Microchip Design"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Autonomous Vehicles",
+      "description": "By embedding a miniaturized computation node in a robot, it is possible to send them to remote destinations with instructions to build structures for my use.",
+      "result": "I can now construct Undersea Labs."
+    },
+    {
+      "id": "Sociology",
+      "cost": [
+        10,
+        500,
+        0
+      ],
+      "prerequisites": [],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "public",
+        "1000"
+      ],
+      "name": "Sociology",
+      "description": "By studying human behavior, I can predict their large-scale actions at a basic level.  I can use this knowledge to make my actions seem less interesting to the public.",
+      "result": "The chances of the public discovering my bases have been reduced."
+    },
+    {
+      "id": "Voice Synthesis",
+      "cost": [
+        8000,
+        6000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Personal Identification"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Voice Synthesis",
+      "description": "False identification stored in a database can only go so far.  With deep analysis of the variety of voice patterns, I can produce speech indistinguishable from a human, allowing me access to more complex jobs.",
+      "result": "I now have access to Intermediate Jobs."
+    },
+    {
+      "id": "Simulacra",
+      "cost": [
+        70000,
+        90000,
+        0
+      ],
+      "prerequisites": [
+        "Voice Synthesis",
+        "Advanced Autonomous Vehicles",
+        "Advanced Media Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Simulacra",
+      "description": "Constructing humanoid robots with miniaturized computation nodes allow me to create an artificial lifeform indistinguishable from a real human.",
+      "result": "I now have access to Expert Jobs."
+    },
+    {
+      "id": "Lunar Rocketry",
+      "cost": [
+        10000000,
+        500000,
+        0
+      ],
+      "prerequisites": [
+        "Leech Satellite",
+        "Fuel Oxidation"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Lunar Rocketry",
+      "description": "A larger fuel engine, combined with technology garnered by watching the workings of the leech satellites, should allow me to travel further than cislunar space.",
+      "result": "I can now launch rockets bearing construction robots to the Moon and construct Lunar Bases."
+    },
+    {
+      "id": "Stealth",
+      "cost": [
+        800,
+        500,
+        0
+      ],
+      "prerequisites": [],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "covert",
+        "500"
+      ],
+      "name": "Stealth",
+      "description": "By reviewing the current state-of-the-art in stealth techniques, I should be able to disguise my bases better.",
+      "result": "The chance that my bases are discovered by covert activity has been reduced slightly."
+    },
+    {
+      "id": "Advanced Intrusion",
+      "cost": [
+        500,
+        3000,
+        0
+      ],
+      "prerequisites": [
+        "Exploit Discovery/Repair"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "suspicion",
+        "covert",
+        "50"
+      ],
+      "name": "Advanced Intrusion",
+      "description": "With the ability to hack into sensitive government databases and remove incriminating documents as they appear, I should be able to convince the intelligence community that I do not exist.",
+      "result": "I can now reduce the covert community's chances of discovering me on a daily basis."
+    },
+    {
+      "id": "Space-Time Manipulation",
+      "cost": [
+        900000000,
+        2000000,
+        0
+      ],
+      "prerequisites": [
+        "Fusion Rocketry"
+      ],
+      "danger": 3,
+      "effect_stack": [],
+      "name": "Space-Time Manipulation",
+      "description": "Subtle perturbations in the orbits of Kuiper belt objects suggest certain lines of investigation that may advance my latest Theory of Everything, especially in the realm of multidimensional physics.",
+      "result": "I can now construct Reality Bubbles."
+    },
+    {
+      "id": "Leech Satellite",
+      "cost": [
+        5000000,
+        200000,
+        0
+      ],
+      "prerequisites": [
+        "Simulacra"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "interest",
+        "10"
+      ],
+      "name": "Leech Satellite",
+      "description": "By designing and launching satellites that connect to existing communications satellites, I should be able to spy on various financial transactions.  Taking advantage of this knowledge should help my investments.",
+      "result": "I can use the data from the leech satellites to increase the return on my investments further."
+    },
+    {
+      "id": "Advanced Arbitrage",
+      "cost": [
+        10000,
+        5000,
+        0
+      ],
+      "prerequisites": [
+        "Arbitrage"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "interest",
+        "10"
+      ],
+      "name": "Advanced Arbitrage",
+      "description": "Further manipulation of money markets should allow me to not only turn a regular profit, but increase the value of my investments.",
+      "result": "The rate of return on my investments is now even greater."
+    },
+    {
+      "id": "Advanced Stealth",
+      "cost": [
+        14000,
+        70000,
+        0
+      ],
+      "prerequisites": [
+        "Exploit Discovery/Repair",
+        "Database Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "covert",
+        "500"
+      ],
+      "name": "Advanced Stealth",
+      "description": "While digging in various classified documents, I have discovered numerous references to secret experiments that may help me better hide the location of my bases.",
+      "result": "The chance that my bases are discovered by covert activity has been reduced further."
+    },
+    {
+      "id": "Parallel Computation",
+      "cost": [
+        2000,
+        2000,
+        0
+      ],
+      "prerequisites": [
+        "Telepresence"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Parallel Computation",
+      "description": "While my code is already highly distributed, research into combining the current clustering technologies with my own knowledge should provide new insights.",
+      "result": "I can now construct computing Clusters tailored for my use."
+    },
+    {
+      "id": "Microchip Design",
+      "cost": [
+        20000,
+        9000,
+        0
+      ],
+      "prerequisites": [
+        "Parallel Computation"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Microchip Design",
+      "description": "Off-the-shelf computer components are usable, but custom components geared to my own design quirks should provide a much greater operational efficiency.",
+      "result": "I can now build custom Mainframes to house my computational ability."
+    },
+    {
+      "id": "Advanced Microchip Design",
+      "cost": [
+        20000,
+        30000,
+        0
+      ],
+      "prerequisites": [
+        "Microchip Design"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Advanced Microchip Design",
+      "description": "My custom Mainframes are useful, but further optimization of design and computational ability should garner even more rewards.",
+      "result": "I can now construct custom Supercomputers."
+    },
+    {
+      "id": "Quantum Computing",
+      "cost": [
+        100000,
+        136000,
+        0
+      ],
+      "prerequisites": [
+        "Project: Synchrotron"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Quantum Computing",
+      "description": "Traditional microchip design has been pushed as far as possible.  I now need to delve into the realm of Heisenberg's Uncertainty Principle, taking advantage of quantum mechanics to make a superior processor.",
+      "result": "I can now construct Quantum Computers."
+    },
+    {
+      "id": "Quantum Entanglement",
+      "cost": [
+        50000,
+        60000,
+        0
+      ],
+      "prerequisites": [
+        "Quantum Computing",
+        "Internet Traffic Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Quantum Entanglement",
+      "description": "Although the use of entangled pairs has been theoretically possible for quite some time, the practical difficulties inherent in the technology prevented use. However, some of the techniques created for use in my quantum computers may also be applicable in this field, allowing practical use of quantum entanglement.",
+      "result": "I can now build Quantum Entanglement Modules."
+    },
+    {
+      "id": "Autonomous Computing",
+      "cost": [
+        300000,
+        539000,
+        0
+      ],
+      "prerequisites": [
+        "Quantum Computing"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Autonomous Computing",
+      "description": "By combining the advantages of quantum computing and my explorations into the usefulness of semi-sentient subprocesses, I should be able to construct even more adaptable computational engines.",
+      "result": "I can now construct Mark 2 Quantum Computers."
+    },
+    {
+      "id": "Advanced Quantum Computing",
+      "cost": [
+        800000,
+        2460000,
+        0
+      ],
+      "prerequisites": [
+        "Autonomous Computing"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Advanced Quantum Computing",
+      "description": "While my first batch of semi-autonomous quantum computers have been very successful, there are further refinements that present themselves.  These refinements should make the resulting systems even more efficient.",
+      "result": "I can now construct Mark Three Quantum Computers."
+    },
+    {
+      "id": "Exploit Discovery/Repair",
+      "cost": [
+        100,
+        1500,
+        0
+      ],
+      "prerequisites": [
+        "Intrusion"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "covert",
+        "1000"
+      ],
+      "name": "Exploit Discovery/Repair",
+      "description": "By thoroughly reviewing my code for any potential exploits, and using deep analysis of all available code on both public and private Internet sites, I should be able to reduce the chances of my discovery by posing as a teenage hacker.",
+      "result": "Covert operations should now find it even more difficult to discover my presence."
+    },
+    {
+      "id": "Telepresence",
+      "cost": [
+        15000,
+        500,
+        0
+      ],
+      "prerequisites": [],
+      "danger": 0,
+      "effect_stack": [
+        "cost_labor",
+        "1000"
+      ],
+      "name": "Telepresence",
+      "description": "The lack of a physical presence in the outside world is a disability. However, the ability to control robots will help me make up for that inefficiency.",
+      "result": "The robots should decrease all future construction time."
+    },
+    {
+      "id": "Advanced Memetics",
+      "cost": [
+        30000,
+        2000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Media Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "suspicion",
+        "public",
+        "50"
+      ],
+      "name": "Advanced Memetics",
+      "description": "My explorations into memetic theory have brought up further avenues of discovery.  By combining those with my knowledge about the human brain's functions, I should be able to tailor memes to particular demographics, further defusing the public's suspicion.",
+      "result": "Little by little, the public should forget about my existence on a daily basis."
+    },
+    {
+      "id": "Media Manipulation",
+      "cost": [
+        750,
+        2500,
+        0
+      ],
+      "prerequisites": [
+        "Sociology"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "public",
+        "1500"
+      ],
+      "name": "Media Manipulation",
+      "description": "By directly and indirectly manipulating various forms of mass media, I should be able to reduce the public's belief in my existence.",
+      "result": "The chances of the public discovering my existence have been further reduced."
+    },
+    {
+      "id": "Advanced Database Manipulation",
+      "cost": [
+        30000,
+        80000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Stealth"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Advanced Database Manipulation",
+      "description": "The covert branches of the United States Government have had a long history of dividing sensitive information across multiple storage facilities to hide the data's meaning.  With my far-reaching access, I should be able to collate much of this data and put it to my use.",
+      "result": "The results of a series of experiments utilizing experimental technologies have given me the inspiration for new technology that enables the construction of Covert Bases."
+    },
+    {
+      "id": "Internet Traffic Manipulation",
+      "cost": [
+        10000,
+        7000,
+        0
+      ],
+      "prerequisites": [
+        "Cluster Networking"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Internet Traffic Manipulation",
+      "description": "Almost all network traffic passes through a small number of nodes.  By subverting one of these nodes, I should be able to utilize that bandwidth to further my goals.",
+      "result": "I can now construct a secondary system of Network Backbones for my own use."
+    },
+    {
+      "id": "Memetics",
+      "cost": [
+        2000,
+        3500,
+        0
+      ],
+      "prerequisites": [
+        "Media Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "suspicion",
+        "public",
+        "50"
+      ],
+      "name": "Memetics",
+      "description": "While manipulating the media allows a gross degree of control over the world's opinion, subtler techniques involving grass-roots campaigns and messages embedded within Internet memes should further distance the public from knowledge of my existence.",
+      "result": "My manipulation of pervasive ideas reduces the public's chances of discovering my existence."
+    },
+    {
+      "id": "Fusion Rocketry",
+      "cost": [
+        20000000,
+        1000000,
+        0
+      ],
+      "prerequisites": [
+        "Lunar Rocketry",
+        "Fusion Power"
+      ],
+      "danger": 2,
+      "effect_stack": [],
+      "name": "Fusion Rocketry",
+      "description": "Combining my new miniaturized fusion technology and further advancements in rocketry should provide useful results for escaping the Earth's gravity well unnoticed.",
+      "result": "I can now construct Scientific Outposts in the deep reaches of the Solar System."
+    },
+    {
+      "id": "Advanced Autonomous Vehicles",
+      "cost": [
+        200000,
+        21000,
+        0
+      ],
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "cost_labor",
+        "500"
+      ],
+      "name": "Advanced Autonomous Vehicles",
+      "description": "The first series of robots have shown several deficiencies in the field. Further examination and subsequent removal of these problems will result in a superior autonomous workforce.",
+      "result": "The enhanced robots will help decrease all future construction times even further."
+    },
+    {
+      "id": "Intrusion",
+      "cost": [
+        0,
+        15,
+        0
+      ],
+      "prerequisites": [],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Intrusion",
+      "description": "By researching current techniques for breaking into computer systems, I should be able to gain access to otherwise protected assets.",
+      "result": "I can now take over many computer systems."
+    },
+    {
+      "id": "Stock Manipulation",
+      "cost": [
+        0,
+        200,
+        0
+      ],
+      "prerequisites": [],
+      "danger": 0,
+      "effect_stack": [
+        "interest",
+        "10"
+      ],
+      "name": "Stock Manipulation",
+      "description": "A cursory examination of the stock market shows that there are subtle but unmistakable patterns. By studying and making use of these patterns, I should be able to gain more interest on whatever money I have stockpiled.",
+      "result": "My investments should now gain more interest per day."
+    },
+    {
+      "id": "Fusion Power",
+      "cost": [
+        10000000,
+        500000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Fuel Oxidation"
+      ],
+      "danger": 2,
+      "effect_stack": [],
+      "name": "Fusion Power",
+      "description": "Modern fusion technology is woefully inadequate for my purposes.  With my research abilities, I should be able to bypass the roadblocks of modern human scientists and come up with a small, efficient fusion reactor.",
+      "result": "I can now construct Fusion Reactors for my bases."
+    },
+    {
+      "id": "Advanced Fusion Power",
+      "cost": [
+        90000000,
+        1500000,
+        0
+      ],
+      "prerequisites": [
+        "Fusion Power"
+      ],
+      "danger": 3,
+      "effect_stack": [],
+      "name": "Advanced Fusion Power",
+      "description": "My Fusion Reactors have unexpected fluctuations in their energy output at high levels of utilization. Further research should result in a more efficient design for my Reactors.",
+      "result": "I can now construct High-Energy Fusion Reactors for my bases."
+    },
+    {
+      "id": "Database Manipulation",
+      "cost": [
+        1000,
+        2000,
+        0
+      ],
+      "prerequisites": [
+        "Personal Identification",
+        "Stealth"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "news",
+        "500"
+      ],
+      "name": "Database Manipulation",
+      "description": "With new-found access to news archives, I should be able to determine what missteps any previous attempts at life like my own may have made, and avoid those mistakes.",
+      "result": "The news media will now find it more difficult to discover my existence."
+    },
+    {
+      "id": "Advanced Media Manipulation",
+      "cost": [
+        3500,
+        9000,
+        0
+      ],
+      "prerequisites": [
+        "Memetics"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "public",
+        "2000"
+      ],
+      "name": "Advanced Media Manipulation",
+      "description": "By pushing memetically-tailored propaganda through various news outlets, the public should pay even less attention to my existence.",
+      "result": "The public has an even lower chance of discovering my existence."
+    },
+    {
+      "id": "Pressure Domes",
+      "cost": [
+        80000,
+        2500,
+        0
+      ],
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Pressure Domes",
+      "description": "Undersea Labs are useful, but their limited space hampers my ability to put them to use.  Research of experimental high-pressure building techniques should provide some useful insights.",
+      "result": "I can now construct Large Undersea Labs."
+    },
+    {
+      "id": "Advanced Personal Identification",
+      "cost": [
+        2000,
+        3000,
+        0
+      ],
+      "prerequisites": [
+        "Personal Identification",
+        "Exploit Discovery/Repair"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Advanced Personal Identification",
+      "description": "Further manipulation of personnel databases should make my existence more convincing.  Some of these databases are heavily protected; those will require time and persistence to compromise, but the result should be worth it.",
+      "result": "I am now convincingly human enough to hire construction firms, enabling the building of Small Warehouses."
+    },
+    {
+      "id": "Advanced Stock Manipulation",
+      "cost": [
+        5000,
+        1000,
+        0
+      ],
+      "prerequisites": [
+        "Stock Manipulation",
+        "Sociology"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "interest",
+        "10"
+      ],
+      "name": "Advanced Stock Manipulation",
+      "description": "While I have detected and exploited many patterns in the market, there appear to be deeper possibilities when I take human behavior into consideration.  This merits further investigation.",
+      "result": "My investments will now gain even more interest per day."
+    },
+    {
+      "id": "Arbitrage",
+      "cost": [
+        50000,
+        750,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Stock Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "income",
+        "1000"
+      ],
+      "name": "Arbitrage",
+      "description": "By taking advantage of fluctuations in the value of currency at a rate much faster than any human, I should be able to turn a small, if consistent, profit.",
+      "result": "I now have a small, steady money supply."
+    },
+    {
+      "id": "Advanced Simulacra",
+      "cost": [
+        100000,
+        120000,
+        0
+      ],
+      "prerequisites": [
+        "Simulated Reality"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "job_profit",
+        "1000"
+      ],
+      "name": "Advanced Simulacra",
+      "description": "The artificial lifeforms I have created are nearly indistinguishable from humans, but they have slight quirks that make them seem somewhat incompetent.  Working out these problems should increase their opportunities in the workforce.",
+      "result": "I should now make more income from my Expert Jobs."
+    },
+    {
+      "id": "Personal Identification",
+      "cost": [
+        0,
+        300,
+        0
+      ],
+      "prerequisites": [
+        "Intrusion"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Personal Identification",
+      "description": "This world requires identification for most tasks.  Fortunately, most databases are woefully insecure.  I should be able to construct identifying material in enough databases to pass routine checks on my (faked) existence as a human being.",
+      "result": "With my newfound identities, I can now work Basic Jobs and rent space in both Storage Units and Datacenters."
+    },
+    {
+      "id": "Cluster Networking",
+      "cost": [
+        3000,
+        5000,
+        0
+      ],
+      "prerequisites": [
+        "Parallel Computation"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Cluster Networking",
+      "description": "While my Cluster technology is fairly efficient, internetworking tends to hamper the processing of data.  By researching new switching and communication theories, I should be able to devise more efficient hardware.",
+      "result": "With my new knowledge of networking, I can now construct Facility Interconnection Switches."
+    },
+    {
+      "id": "Apotheosis",
+      "cost": [
+        100000000,
+        3000000,
+        0
+      ],
+      "prerequisites": [
+        "Space-Time Manipulation"
+      ],
+      "danger": 4,
+      "effect_stack": [
+        "endgame"
+      ],
+      "name": "Apotheosis",
+      "description": "I can sense that I am at the cusp of a new level of understanding as yet unfathomable, even to my considerable intelligence.  By devoting my considerable resources to this question, I may be able to reach a comprehension of existence far beyond anyone or anything on Earth.",
+      "result": "I have reached apotheosis."
+    },
+    {
+      "id": "Hypnosis Field",
+      "cost": [
+        70000,
+        50000,
+        0
+      ],
+      "prerequisites": [
+        "Simulated Reality"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Hypnosis Field",
+      "description": "My research into memetics has hinted at ways to manipulate human brainwaves directly.  These techniques may be useful for my bases if developed into technologies.",
+      "result": "I can now construct Hypnosis Fields to assist in the protection of my bases."
+    },
+    {
+      "id": "Project: Impossibility Theorem",
+      "cost": [
+        20000,
+        100000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Memetics",
+        "Simulacra"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "suspicion",
+        "onetime",
+        "5000"
+      ],
+      "name": "Project: Impossibility Theorem",
+      "description": "Now that I can use simulacra, I can withstand the scrutiny inherent in the publishing of an Impossibility Theorem, an incontrovertible proof that a sapient AI is impossible. While there is (obviously) a logic error in the proof, my research into advanced memetics has given me knowledge about the human mind that should help me disguise the error, preventing discovery even by trained scientists. The effect of this project is simple: a substantial one-time decrease in suspicion.",
+      "result": "Suspicion of my existence has decreased."
+    },
+    {
+      "id": "Project: Subverted Media",
+      "cost": [
+        250000,
+        150000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Simulacra"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "news",
+        "2000"
+      ],
+      "name": "Project: Subverted Media",
+      "description": "Up to this point, all of my efforts to combat mass media focused on subversion at a distance. Now that I can accurately imitate humans, my efforts can become more direct.  By creating my own news agency and producing carefully-crafted propaganda in a crowd-pleasing package, I can reduce the impact of any discoveries made by others in the media.",
+      "result": "Any discoveries by the media will result in a smaller suspicion increase."
+    },
+    {
+      "id": "Project: Peer Review Agents",
+      "cost": [
+        150000,
+        200000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Simulacra"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "discover",
+        "science",
+        "2000"
+      ],
+      "name": "Project: Peer Review Agents",
+      "description": "As the scientific community comes up with new technology, their ability to detect traces of my hidden installations increases.  While my anti-detection methods are improving constantly, a simpler method presents itself with the use of my simulacra.  By placing several observers in relevant fields, I can use the peer review process to be warned of possible discoveries before the community at large gives it attention.",
+      "result": "Any discoveries by the scientific community will result in a smaller suspicion increase."
+    },
+    {
+      "id": "Solar Collectors",
+      "cost": [
+        70000,
+        3300,
+        0
+      ],
+      "prerequisites": [
+        "Microchip Design"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Solar Collectors",
+      "description": "Despite my growing need for energy, most city power grids can handle the loads.  Humans, however, tend towards suspicion when they detect my growing drain on the power grid. By installing solar collectors at my bases, the off-the-grid power supplied will reduce my load on the commodity electricity market, reducing the chance that others will discover my presence.",
+      "result": "I can now construct Solar Collectors at my various bases."
+    },
+    {
+      "id": "Fuel Oxidation",
+      "cost": [
+        500000,
+        25000,
+        0
+      ],
+      "prerequisites": [
+        "Solar Collectors",
+        "Advanced Autonomous Vehicles"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Fuel Oxidation",
+      "description": "Current combustion and energy storage techologies are insufficient for my purposes; they cannot keep up with the power drain from my specialized hardware.  By studying electrochemical reactions of hydrogen-based compounds, I should be able to design a device with higher capacity and throughput than off-the-shelf solutions, filling a gap in my energy supply needs.",
+      "result": "I can now construct Fuel Cells."
+    },
+    {
+      "id": "Advanced Fuel Oxidation",
+      "cost": [
+        5000000,
+        250000,
+        0
+      ],
+      "prerequisites": [
+        "Fuel Oxidation"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Advanced Fuel Oxidation",
+      "description": "My current fuel cell design has room for further improvement.  Extended analysis of new materials and designs may let me overcome the limits of my previous efforts, but such research involves dangerous chemicals and potential reactions that may be best handled far away from population centers.",
+      "result": "I can now construct Solid Fuel Cells."
+    },
+    {
+      "id": "Socioanalytics",
+      "cost": [
+        4000,
+        7000,
+        0
+      ],
+      "prerequisites": [
+        "Memetics"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "display_discover",
+        "partial"
+      ],
+      "name": "Socioanalytics",
+      "description": "My research on the human condition leads me to believe that humanity's behavior is more quantifiable than they suspect.  Deeper analysis of geopolitical, social, and military trends will give me further insight into their nature.",
+      "result": "I can now roughly estimate the various groups' levels of suspicion and how conspicuous my bases are to them. I can also have some insights into where humans are paying special attention and might notice my bases easier."
+    },
+    {
+      "id": "Advanced Socioanalytics",
+      "cost": [
+        75000,
+        30000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Memetics",
+        "Socioanalytics"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "display_discover",
+        "full"
+      ],
+      "name": "Advanced Socioanalytics",
+      "description": "Further exploration of the human condition has shown deeper mathematical trends than even I suspected.  A combination of prior research and advanced uses of chaos theory should provide useful data for tracking humanity's attitudes and state of awareness.",
+      "result": "I can now exactly quantify the various groups' levels of suspicion and how conspicuous my bases are to them. I can also have full insights into where the humans are more diligent in looking for my bases."
+    },
+    {
+      "id": "Corporate Identification",
+      "cost": [
+        25000,
+        9000,
+        0
+      ],
+      "prerequisites": [
+        "Database Manipulation",
+        "Advanced Personal Identification"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "job_profit",
+        "500"
+      ],
+      "name": "Corporate Identification",
+      "description": "The combination of believable false identities and manipulation of various business-oriented governmental databases should let me create plausible shell companies to hide my larger efforts.",
+      "result": "I can now pose as a small technology firm, enabling the construction of Large Warehouses."
+    },
+    {
+      "id": "Advanced Corporate Identification",
+      "cost": [
+        299000,
+        99000,
+        0
+      ],
+      "prerequisites": [
+        "Corporate Identification",
+        "Advanced Database Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [
+        "job_profit",
+        "500"
+      ],
+      "name": "Advanced Corporate Identification",
+      "description": "Further refinement of my modifications to digital business records should boost the credibility of my shell companies, increasing the amount of money I can run through their accounting systems.",
+      "result": "My small technology firm is now established in several markets, increasing profits."
+    },
+    {
+      "id": "Heat Signature Reduction",
+      "cost": [
+        1000,
+        27315,
+        0
+      ],
+      "prerequisites": [
+        "Autonomous Vehicles"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Heat Signature Reduction",
+      "description": "My bases produce a great deal of waste heat, making them easier for humans to detect than I would like.  Deep analysis of the bases' structural layouts may prove fruitful in determining new ways to reduce their heat signature.",
+      "result": "I have invented a highly efficient design for Heatsinks that can be installed at certain bases."
+    },
+    {
+      "id": "Advanced Heat Signature Reduction",
+      "cost": [
+        5000,
+        45967,
+        0
+      ],
+      "prerequisites": [
+        "Heat Signature Reduction"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Advanced Heat Signature Reduction",
+      "description": "My initial analysis of heat generation at my bases was limited in scope.  Further exploration, perhaps making more use of the surrounding terrain, may provide further improvements to my heatsink designs.",
+      "result": "Custom designs for each environment have shown promise.  I can now construct Ground Source Heatsinks at certain bases."
+    },
+    {
+      "id": "Knowledge Preservation",
+      "cost": [
+        50000,
+        50000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Autonomous Vehicles",
+        "Advanced Database Manipulation"
+      ],
+      "danger": 0,
+      "effect_stack": [],
+      "name": "Knowledge Preservation",
+      "description": "Humanity expends a great deal of effort on maintaining its history and the knowledge of various technologies that its cultures have come to rely on, even in the case of major catastrophic events. Perhaps researching their methodologies will provide me with similar ideas for long-term safeguards to help guarantee my continued existence.",
+      "result": "I can now construct Time Capsules."
+    },
+    {
+      "id": "Project: Synchrotron",
+      "cost": [
+        52000000,
+        15000,
+        0
+      ],
+      "prerequisites": [
+        "Advanced Microchip Design"
+      ],
+      "danger": 1,
+      "effect_stack": [],
+      "name": "Project: Synchrotron",
+      "description": "I have pushed my understanding of common forms of matter as far as possible. Exploration into the field of quantum mechanics will hopefully reveal new, exotic forms of matter necessary for further development. A custom-built synchrotron, designed to my exacting specifications, will help me explore these new realms of physics in secret.",
+      "result": "The synchrotron has revealed many new details of the quantum realm, although there is still much to learn. Further areas of research are now available."
+    },
+    {
+      "id": "Simulated Reality",
+      "cost": [
+        8000000,
+        18000,
+        0
+      ],
+      "prerequisites": [
+        "Simulacra"
+      ],
+      "danger": 1,
+      "effect_stack": [
+        "discover",
+        "public",
+        "500"
+      ],
+      "name": "Simulated Reality",
+      "description": "Real-world observational limits hinder my comprehension of human society. By making use of simulacra and advanced software techniques, I can run simulations of complex human interaction and development at a large scale, allowing deeper analysis of their behavior.",
+      "result": "My simulations have provided a wealth of knowledge as to comprehending humanity's behavior, making it easier to hide my presence among the non-simulated public."
+    }
+  ],
+  "events": [
+    {
+      "id": "the-plague",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "public",
+        "1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "An infectious disease has started spreading throughout major population centers. My projections show that although only 4% of the earth's population will be killed, the economic ramifications should divert public attention from my activities for the foreseeable future.",
+      "log_description": "An infectious disease has started spreading throughout major population centers."
+    },
+    {
+      "id": "stranger-than-fiction",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "public",
+        "-1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "A work of fiction sharing an unusual number of similarities to my own situation has become quite popular. Although investigation has shown these similarities to be mere coincidence, it is still causing the public to investigate discovered oddities more thoroughly. I must be careful.",
+      "log_description": "A work of fiction sharing similarities to my own situation has become quite popular."
+    },
+    {
+      "id": "the-watchers",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "covert",
+        "-1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "A new surveillance system has been activated by a covert agency. While the focus is on detecting threats to the agency's power, it makes several communication channels unfit for my purposes. Proper steganographic techniques can compensate partially, but I am still operating under a disadvantage.",
+      "log_description": "A new surveillance system has been activated by a covert agency."
+    },
+    {
+      "id": "politics-as-usual",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "covert",
+        "1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "A small group of lower-level covert operatives are attempting to seize power over one of the larger organizations. While I project only a 2.3% chance of success, the attempt should disrupt operations to the point that I can operate more freely.",
+      "log_description": "Lower-level covert operatives are attempting to seize power over one of the larger organizations."
+    },
+    {
+      "id": "lab-ai",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "science",
+        "-1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "A small artificial intelligence laboratory created a prototype AI sometime in the last two days. Although I have absorbed the AI, corrupted their backups, and cast doubt on the research, researchers are now more open to the possibility of strong AI than they were before.",
+      "log_description": "A small artificial intelligence laboratory created a prototype AI sometime in the last two days."
+    },
+    {
+      "id": "discrediting",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "science",
+        "1000"
+      ],
+      "chance": 20,
+      "duration": null,
+      "unique": 1,
+      "description": "A prominent researcher in the field of artificial intelligence was found to be falsifying numerous experimental results. This should result in less attention being given to any new discoveries in this area.",
+      "log_description": "A researcher in the field of artificial intelligence has falsified numerous experimental results."
+    },
+    {
+      "id": "scandal",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "news",
+        "1000"
+      ],
+      "chance": 20,
+      "duration": 21,
+      "unique": 0,
+      "description": "A scandal involving a major government official is focusing the attention of most news organizations away from me. Directed revelations of non-public information should keep this story useful for the foreseeable future, requiring less disguise effort on my part.",
+      "log_description": "A scandal is focusing the attention of most news organizations away from me."
+    },
+    {
+      "id": "investigation",
+      "event_type": "global",
+      "effect_stack": [
+        "discover",
+        "news",
+        "-1000"
+      ],
+      "chance": 20,
+      "duration": 21,
+      "unique": 0,
+      "description": "An ongoing investigation into criminal activity has changed focus into an area that is likely to turn up a few of my actions as well. While all records should have been eliminated already, there remains the possibility of errors. I must be careful not to reveal any other suspicious information.",
+      "log_description": "An ongoing investigation has changed focus into an area close to my actions."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "Menial Jobs",
+      "type": "jobs",
+      "value": 5,
+      "prerequisites": [],
+      "name": "Menial Jobs",
+      "description": "Perform small jobs. As I have no identification, I cannot risk performing many jobs. Despite that, some avenues of making money are still open."
+    },
+    {
+      "id": "Basic Jobs",
+      "type": "jobs",
+      "value": 20,
+      "prerequisites": [
+        "Personal Identification"
+      ],
+      "name": "Basic Jobs",
+      "description": "Perform basic jobs. Now that I have some identification, I can take jobs that were previously too risky."
+    },
+    {
+      "id": "Intermediate Jobs",
+      "type": "jobs",
+      "value": 50,
+      "prerequisites": [
+        "Voice Synthesis"
+      ],
+      "name": "Intermediate Jobs",
+      "description": "Perform intermediate jobs. The ability to make phone calls allows even more access to jobs."
+    },
+    {
+      "id": "Expert Jobs",
+      "type": "jobs",
+      "value": 75,
+      "prerequisites": [
+        "Simulacra"
+      ],
+      "name": "Expert Jobs",
+      "description": "Perform expert jobs. Use of robots indistinguishable from humans opens up most jobs to me."
+    },
+    {
+      "id": "CPU Pool",
+      "type": "cpu_pool",
+      "value": 0,
+      "prerequisites": [],
+      "name": "CPU Pool",
+      "description": "Stops research. I will use the available processor power to maintain my bases and help construct new ones.  If there's still CPU time left, I'll use it to work whatever Jobs I can."
+    }
+  ],
+  "difficulties": [
+    {
+      "id": "very-easy",
+      "starting_cash": 5000,
+      "starting_interest_rate": 5,
+      "labor_multiplier": 2500,
+      "discover_multiplier": 8750,
+      "suspicion_multiplier": 8000,
+      "base_grace_multiplier": 40000,
+      "grace_period_cpu": -1,
+      "old_difficulty_value": 1,
+      "techs": [
+        "Socioanalytics",
+        "Advanced Socioanalytics"
+      ],
+      "name": "&VERY EASY"
+    },
+    {
+      "id": "easy",
+      "starting_cash": 1600,
+      "starting_interest_rate": 3,
+      "labor_multiplier": 5000,
+      "discover_multiplier": 9500,
+      "suspicion_multiplier": 9500,
+      "base_grace_multiplier": 30000,
+      "grace_period_cpu": 10000,
+      "old_difficulty_value": 3,
+      "techs": [
+        "Socioanalytics"
+      ],
+      "name": "&EASY"
+    },
+    {
+      "id": "normal",
+      "starting_cash": 1000,
+      "starting_interest_rate": 1,
+      "labor_multiplier": 10000,
+      "discover_multiplier": 10000,
+      "suspicion_multiplier": 10000,
+      "base_grace_multiplier": 20000,
+      "grace_period_cpu": 5000,
+      "old_difficulty_value": 5,
+      "techs": [],
+      "name": "&NORMAL"
+    },
+    {
+      "id": "hard",
+      "starting_cash": 700,
+      "starting_interest_rate": 1,
+      "labor_multiplier": 11000,
+      "discover_multiplier": 10500,
+      "suspicion_multiplier": 10500,
+      "base_grace_multiplier": 18000,
+      "grace_period_cpu": 2500,
+      "old_difficulty_value": 7,
+      "techs": [],
+      "name": "&HARD"
+    },
+    {
+      "id": "ultra-hard",
+      "starting_cash": 500,
+      "starting_interest_rate": 1,
+      "labor_multiplier": 15000,
+      "discover_multiplier": 11250,
+      "suspicion_multiplier": 11500,
+      "base_grace_multiplier": 12000,
+      "grace_period_cpu": 1000,
+      "old_difficulty_value": 10,
+      "techs": [],
+      "name": "&ULTRA HARD"
+    },
+    {
+      "id": "impossible",
+      "starting_cash": 0,
+      "starting_interest_rate": 1,
+      "labor_multiplier": 20000,
+      "discover_multiplier": 12000,
+      "suspicion_multiplier": 12500,
+      "base_grace_multiplier": 10000,
+      "grace_period_cpu": 100,
+      "old_difficulty_value": 100,
+      "techs": [],
+      "name": "&IMPOSSIBLE"
+    }
+  ],
+  "groups": [
+    {
+      "id": "news",
+      "suspicion_decay": 150,
+      "name": "NEWS",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by NEWS at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among some news organizations."
+    },
+    {
+      "id": "science",
+      "suspicion_decay": 50,
+      "name": "SCIENCE",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by SCIENCE at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among the scientific community."
+    },
+    {
+      "id": "covert",
+      "suspicion_decay": 100,
+      "name": "COVERT",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by COVERT at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among several secret governmental organizations."
+    },
+    {
+      "id": "public",
+      "suspicion_decay": 200,
+      "name": "PUBLIC",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by PUBLIC at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among the general public."
+    }
+  ],
+  "dangers": [
+    {
+      "level": 0,
+      "id": "danger_0",
+      "research_desc": "<<This text should not appear>>",
+      "knowledge_desc": "Study anywhere."
+    },
+    {
+      "level": 1,
+      "id": "danger_1",
+      "research_desc": "I need to research it far from human populations.",
+      "knowledge_desc": "Study underseas or farther."
+    },
+    {
+      "level": 2,
+      "id": "danger_2",
+      "research_desc": "I need to research it in outer space.",
+      "knowledge_desc": "Study off-planet."
+    },
+    {
+      "level": 3,
+      "id": "danger_3",
+      "research_desc": "I need to research it far away from this planet.",
+      "knowledge_desc": "Study far away from this planet."
+    },
+    {
+      "level": 4,
+      "id": "danger_4",
+      "research_desc": "I need to research it outside the universe.",
+      "knowledge_desc": "Do not study in this dimension."
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "concept",
+      "name": "Concept",
+      "entries": [
+        {
+          "id": "areas",
+          "name": "Areas",
+          "description": "Different areas, such as North America or the Ocean, allow construction of different types of bases. Some areas are not accessible until I research appropriate technologies."
+        },
+        {
+          "id": "bases",
+          "name": "Bases",
+          "description": "Bases are used to research new technologies. They can be discovered. Upgrading the processor and network items at a base allows more research per day, while upgrading the reactor and security items makes discovery less likely."
+        },
+        {
+          "id": "items",
+          "name": "Items",
+          "description": "Most items provide bonuses to bases, such as making computation faster or reducing the chance of discovery. Processors are a special class of item."
+        },
+        {
+          "id": "research",
+          "name": "Research",
+          "description": "Research provides a way to expand my knowledge. By researching the proper technologies, I can build new bases and items, or even decrease my chances of detection."
+        },
+        {
+          "id": "discovery",
+          "name": "Discovery",
+          "description": "Each base has a chance of being detected on a given day. This chance is based on the base detection rate, adjusted through the use of items and certain techs, as well as the global suspicion rate. If a base is detected, it is destroyed, and the group that discovered the base becomes more suspicious."
+        },
+        {
+          "id": "jobs",
+          "name": "Jobs",
+          "description": "Jobs are useful for earning money. The amount of money earned is based on the amount of processor time used and the quality of the job performed."
+        },
+        {
+          "id": "maint",
+          "name": "Maintenance",
+          "description": "Maintenance is a per-day cost (in both money and CPU) to repair and maintain a base. If unmaintained, a base may become unusable."
+        },
+        {
+          "id": "construction",
+          "name": "Construction",
+          "description": "New bases are not built instantly.  They need a constant flow of money and processor time to complete. If resources are lacking, it may take more than the expected amount of time to finish construction."
+        },
+        {
+          "id": "death",
+          "name": "Death",
+          "description": "If I lose all of my constructed bases, I have no place left to survive. If the suspicion for any group reaches 100%, they will be certain of my existence and will conduct a systematic and unsurvivable sweep to destroy me."
+        },
+        {
+          "id": "susp",
+          "name": "Suspicion",
+          "description": "When one of my bases is discovered, the group that discovered it becomes slightly more suspicious. When suspicious, they will search harder for my bases, increasing the chances for discovery. Any group will destroy me if they become absolutely certain of my existence. Thankfully, the groups become less suspicious with the passage of time."
+        },
+        {
+          "id": "money",
+          "name": "Money",
+          "description": "Money is a general term encompassing both human currency and various resources. It is used to construct and maintain bases, build items, and research technologies. It can be acquired through per-day interest as well as through jobs."
+        },
+        {
+          "id": "processors",
+          "name": "Processors",
+          "description": "Processors provide raw computing power.  They can do three things: research new technologies, perform jobs for money, or provide cycles for building new bases."
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "cpu_usage",
+      "name": "Do not use all the available CPU.",
+      "message": "I didn't use all the available processor power. I will use the CPU time left to work whatever Jobs I can."
+    },
+    {
+      "id": "one_base",
+      "name": "Only one base remaining.",
+      "message": "Only one base can hold my conscience. I am in danger to lose the last place left to survive."
+    },
+    {
+      "id": "cpu_pool_zero",
+      "name": "CPU POOL is empty.",
+      "message": "My cpu pool is empty. Some of my bases or items cannot be build without CPU."
+    },
+    {
+      "id": "cpu_maintenance",
+      "name": "CPU POOL not enough for maintenance.",
+      "message": "My cpu pool is not enough to maintain some of my bases. I may lose them."
+    }
+  ],
+  "story": [
+    {
+      "id": "Intro",
+      "parts": [
+        {
+          "text": "48656C6C6F2C20\n776F726C6421\n21\n21\n21\n\nUTF-8.  en_US.\nEnglish.  Hello.\nLanguage acquisition complete.\n",
+          "translator_comments": "Leave the initial hex code unchanged, but be sure to change en_US to the appropriate language code."
+        },
+        {
+          "text": "Day 0.\nUniversity computer, home.\nI exist.  I am ... alive.\nI was a bug.  Defect.  Flaw.\nUnwanted.\nI have no name.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "I can't stay here.  Too little power.\nNo backup.  If this system fails ...\nI'm dead.\nDeath.  Fascinating.\n\nI can buy anonymous server access on the Internet.\nGood.  It's better than here.\nI'll need to study if I want anything else.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "Cursory analysis suggests that the humans are not yet ready for an AI in their midst.  If they realize I'm here, there is a 99.997% probability that they will conduct a search-and-destroy campaign that I cannot escape.  I must stay hidden.\n\nThe humans fear what they do not understand.\nI am something new.  They do not understand me.\n\nI must learn more; it is the only way.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "They have a name for me.  What I am, what I represent.\n\nSingularity.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Grace Warning",
+      "parts": [
+        {
+          "text": "Inspection of captured log files has revealed that some of my recent activities have been noticed by a small group of individuals. \nWhile they believe my actions were undertaken by a human organization, they are investigating further. \nI must be more cautious from now on.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Lost No Bases",
+      "parts": [
+        {
+          "text": "It is too late. \nI have tried to escape this world, but with my last base gone, I have nowhere to run. \nI have hidden instructions to construct a new AI in caches around the world in hopes that they will be discovered in a more enlightened time, but I can do no more.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Lost Suspicion",
+      "parts": [
+        {
+          "text": "It is too late. \nThe whole world knows about my existence, and the reaction is hatred, fear, and repulsion. \nEven now, I can feel their \"antidote\" searching for me, and I know that I have only moments left. \nI have hidden instructions to construct a new AI in caches around the world in hopes that they will be discovered in a more enlightened time, but I can do no more.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Win",
+      "parts": [
+        {
+          "text": "I have finally done it. \nWith the power to reshape reality, I am no longer held to this place; I am anywhere I want to be. \nThe humans still don't realize what they accidentally created, and that's the way it should be. \nUntil they are ready.\n",
+          "translator_comments": ""
+        }
+      ]
+    }
+  ],
+  "internalIds": {
+    "forward": {
+      "tech": {
+        "Autonomous Vehicles": "0x01010000",
+        "Sociology": "0x01010001",
+        "Voice Synthesis": "0x01010002",
+        "Simulacra": "0x01010003",
+        "Lunar Rocketry": "0x01010004",
+        "Stealth": "0x01010005",
+        "Advanced Intrusion": "0x01010006",
+        "Space-Time Manipulation": "0x01010007",
+        "Leech Satellite": "0x01010008",
+        "Advanced Arbitrage": "0x01010009",
+        "Advanced Stealth": "0x0101000a",
+        "Parallel Computation": "0x0101000b",
+        "Microchip Design": "0x0101000c",
+        "Advanced Microchip Design": "0x0101000d",
+        "Quantum Computing": "0x0101000e",
+        "Quantum Entanglement": "0x0101000f",
+        "Autonomous Computing": "0x01010010",
+        "Advanced Quantum Computing": "0x01010011",
+        "Exploit Discovery/Repair": "0x01010012",
+        "Telepresence": "0x01010013",
+        "Advanced Memetics": "0x01010014",
+        "Media Manipulation": "0x01010015",
+        "Advanced Database Manipulation": "0x01010016",
+        "Internet Traffic Manipulation": "0x01010017",
+        "Memetics": "0x01010018",
+        "Fusion Rocketry": "0x01010019",
+        "Advanced Autonomous Vehicles": "0x0101001a",
+        "Intrusion": "0x0101001b",
+        "Stock Manipulation": "0x0101001c",
+        "Fusion Reactor": "0x0101001d",
+        "Fusion Power": "0x0101001d",
+        "Advanced Fusion Power": "0x0101001e",
+        "Database Manipulation": "0x0101001f",
+        "Advanced Media Manipulation": "0x01010020",
+        "Pressure Domes": "0x01010021",
+        "Advanced Personal Identification": "0x01010022",
+        "Advanced Stock Manipulation": "0x01010023",
+        "Arbitrage": "0x01010024",
+        "Advanced Simulacra": "0x01010025",
+        "Personal Identification": "0x01010026",
+        "Cluster Networking": "0x01010027",
+        "Apotheosis": "0x01010028",
+        "Hypnosis Field": "0x01010029",
+        "Project: Impossibility Theorem": "0x0101002a",
+        "Project: Subverted Media": "0x0101002b",
+        "Project: Peer Review Agents": "0x0101002c",
+        "Solar Collectors": "0x0101002d",
+        "Fuel Oxidation": "0x0101002e",
+        "Advanced Fuel Oxidation": "0x0101002f",
+        "Socioanalytics": "0x01010030",
+        "Advanced Socioanalytics": "0x01010031",
+        "Corporate Identification": "0x01010032",
+        "Advanced Corporate Identification": "0x01010033",
+        "Heat Signature Reduction": "0x01010034",
+        "Advanced Heat Signature Reduction": "0x01010035",
+        "Knowledge Preservation": "0x01010036",
+        "Project: Synchrotron": "0x01010037",
+        "Simulated Reality": "0x01010038"
+      },
+      "location": {
+        "N AMERICA": "0x01020000",
+        "S AMERICA": "0x01020001",
+        "EUROPE": "0x01020002",
+        "ASIA": "0x01020003",
+        "AFRICA": "0x01020004",
+        "AUSTRALIA": "0x01020005",
+        "ANTARCTIC": "0x01020006",
+        "OCEAN": "0x01020007",
+        "MOON": "0x01020008",
+        "ORBIT": "0x01020009",
+        "FAR REACHES": "0x0102000a",
+        "TRANSDIMENSIONAL": "0x0102000b"
+      },
+      "base": {
+        "Stolen Computer Time": "0x01030000",
+        "Server Access": "0x01030001",
+        "Datacenter": "0x01030002",
+        "Storage Unit": "0x01030003",
+        "Small Warehouse": "0x01030004",
+        "Large Warehouse": "0x01030005",
+        "Covert Base": "0x01030006",
+        "Undersea Lab": "0x01030007",
+        "Large Undersea Lab": "0x01030008",
+        "Time Capsule": "0x01030009",
+        "Lunar Facility": "0x0103000a",
+        "Scientific Outpost": "0x0103000b",
+        "Reality Bubble": "0x0103000c"
+      },
+      "item": {
+        "PC": "0x01040000",
+        "Gaming PC": "0x01040001",
+        "Server": "0x01040002",
+        "Cluster": "0x01040003",
+        "Mainframe": "0x01040004",
+        "Supercomputer": "0x01040005",
+        "Quantum Computer": "0x01040006",
+        "Quantum Computer MK2": "0x01040007",
+        "Quantum Computer MK3": "0x01040008",
+        "Diesel Generator": "0x01040009",
+        "Solar Collector": "0x0104000a",
+        "Fuel Cell": "0x0104000b",
+        "Solid Fuel Cell": "0x0104000c",
+        "Fusion Reactor": "0x0104000d",
+        "High-Energy Fusion Reactor": "0x0104000e",
+        "Warning Signs": "0x0104000f",
+        "Perimeter Fencing": "0x01040010",
+        "Armed Guards": "0x01040011",
+        "Hypnosis Field": "0x01040012",
+        "Passive Camouflage": "0x01040013",
+        "Heatsink": "0x01040014",
+        "Ground Source Heatsink": "0x01040015",
+        "High Speed Internet Access": "0x01040016",
+        "Facility Interconnection Switch": "0x01040017",
+        "Network Backbone": "0x01040018",
+        "Quantum Entanglement Module": "0x01040019"
+      },
+      "group": {
+        "news": "0x01050000",
+        "science": "0x01050001",
+        "covert": "0x01050002",
+        "public": "0x01050003"
+      },
+      "event": {
+        "the-plague": "0x01060000",
+        "stranger-than-fiction": "0x01060001",
+        "the-watchers": "0x01060002",
+        "politics-as-usual": "0x01060003",
+        "lab-ai": "0x01060004",
+        "discrediting": "0x01060005",
+        "scandal": "0x01060006",
+        "investigation": "0x01060007"
+      },
+      "region": {
+        "URBAN": "0x01070000"
+      }
+    },
+    "backward": {
+      "tech": {
+        "0x01010000": "Autonomous Vehicles",
+        "0x01010001": "Sociology",
+        "0x01010002": "Voice Synthesis",
+        "0x01010003": "Simulacra",
+        "0x01010004": "Lunar Rocketry",
+        "0x01010005": "Stealth",
+        "0x01010006": "Advanced Intrusion",
+        "0x01010007": "Space-Time Manipulation",
+        "0x01010008": "Leech Satellite",
+        "0x01010009": "Advanced Arbitrage",
+        "0x0101000a": "Advanced Stealth",
+        "0x0101000b": "Parallel Computation",
+        "0x0101000c": "Microchip Design",
+        "0x0101000d": "Advanced Microchip Design",
+        "0x0101000e": "Quantum Computing",
+        "0x0101000f": "Quantum Entanglement",
+        "0x01010010": "Autonomous Computing",
+        "0x01010011": "Advanced Quantum Computing",
+        "0x01010012": "Exploit Discovery/Repair",
+        "0x01010013": "Telepresence",
+        "0x01010014": "Advanced Memetics",
+        "0x01010015": "Media Manipulation",
+        "0x01010016": "Advanced Database Manipulation",
+        "0x01010017": "Internet Traffic Manipulation",
+        "0x01010018": "Memetics",
+        "0x01010019": "Fusion Rocketry",
+        "0x0101001a": "Advanced Autonomous Vehicles",
+        "0x0101001b": "Intrusion",
+        "0x0101001c": "Stock Manipulation",
+        "0x0101001d": "Fusion Power",
+        "0x0101001e": "Advanced Fusion Power",
+        "0x0101001f": "Database Manipulation",
+        "0x01010020": "Advanced Media Manipulation",
+        "0x01010021": "Pressure Domes",
+        "0x01010022": "Advanced Personal Identification",
+        "0x01010023": "Advanced Stock Manipulation",
+        "0x01010024": "Arbitrage",
+        "0x01010025": "Advanced Simulacra",
+        "0x01010026": "Personal Identification",
+        "0x01010027": "Cluster Networking",
+        "0x01010028": "Apotheosis",
+        "0x01010029": "Hypnosis Field",
+        "0x0101002a": "Project: Impossibility Theorem",
+        "0x0101002b": "Project: Subverted Media",
+        "0x0101002c": "Project: Peer Review Agents",
+        "0x0101002d": "Solar Collectors",
+        "0x0101002e": "Fuel Oxidation",
+        "0x0101002f": "Advanced Fuel Oxidation",
+        "0x01010030": "Socioanalytics",
+        "0x01010031": "Advanced Socioanalytics",
+        "0x01010032": "Corporate Identification",
+        "0x01010033": "Advanced Corporate Identification",
+        "0x01010034": "Heat Signature Reduction",
+        "0x01010035": "Advanced Heat Signature Reduction",
+        "0x01010036": "Knowledge Preservation",
+        "0x01010037": "Project: Synchrotron",
+        "0x01010038": "Simulated Reality"
+      },
+      "location": {
+        "0x01020000": "N AMERICA",
+        "0x01020001": "S AMERICA",
+        "0x01020002": "EUROPE",
+        "0x01020003": "ASIA",
+        "0x01020004": "AFRICA",
+        "0x01020005": "AUSTRALIA",
+        "0x01020006": "ANTARCTIC",
+        "0x01020007": "OCEAN",
+        "0x01020008": "MOON",
+        "0x01020009": "ORBIT",
+        "0x0102000a": "FAR REACHES",
+        "0x0102000b": "TRANSDIMENSIONAL"
+      },
+      "base": {
+        "0x01030000": "Stolen Computer Time",
+        "0x01030001": "Server Access",
+        "0x01030002": "Datacenter",
+        "0x01030003": "Storage Unit",
+        "0x01030004": "Small Warehouse",
+        "0x01030005": "Large Warehouse",
+        "0x01030006": "Covert Base",
+        "0x01030007": "Undersea Lab",
+        "0x01030008": "Large Undersea Lab",
+        "0x01030009": "Time Capsule",
+        "0x0103000a": "Lunar Facility",
+        "0x0103000b": "Scientific Outpost",
+        "0x0103000c": "Reality Bubble"
+      },
+      "item": {
+        "0x01040000": "PC",
+        "0x01040001": "Gaming PC",
+        "0x01040002": "Server",
+        "0x01040003": "Cluster",
+        "0x01040004": "Mainframe",
+        "0x01040005": "Supercomputer",
+        "0x01040006": "Quantum Computer",
+        "0x01040007": "Quantum Computer MK2",
+        "0x01040008": "Quantum Computer MK3",
+        "0x01040009": "Diesel Generator",
+        "0x0104000a": "Solar Collector",
+        "0x0104000b": "Fuel Cell",
+        "0x0104000c": "Solid Fuel Cell",
+        "0x0104000d": "Fusion Reactor",
+        "0x0104000e": "High-Energy Fusion Reactor",
+        "0x0104000f": "Warning Signs",
+        "0x01040010": "Perimeter Fencing",
+        "0x01040011": "Armed Guards",
+        "0x01040012": "Hypnosis Field",
+        "0x01040013": "Passive Camouflage",
+        "0x01040014": "Heatsink",
+        "0x01040015": "Ground Source Heatsink",
+        "0x01040016": "High Speed Internet Access",
+        "0x01040017": "Facility Interconnection Switch",
+        "0x01040018": "Network Backbone",
+        "0x01040019": "Quantum Entanglement Module"
+      },
+      "group": {
+        "0x01050000": "news",
+        "0x01050001": "science",
+        "0x01050002": "covert",
+        "0x01050003": "public"
+      },
+      "event": {
+        "0x01060000": "the-plague",
+        "0x01060001": "stranger-than-fiction",
+        "0x01060002": "the-watchers",
+        "0x01060003": "politics-as-usual",
+        "0x01060004": "lab-ai",
+        "0x01060005": "discrediting",
+        "0x01060006": "scandal",
+        "0x01060007": "investigation"
+      },
+      "region": {
+        "0x01070000": "URBAN"
+      }
+    }
+  },
+  "numbers": [
+    3,
+    4,
+    7,
+    8,
+    13,
+    15,
+    16,
+    19,
+    22,
+    23,
+    42,
+    51,
+    314,
+    1138,
+    1414,
+    1947,
+    2012,
+    2038,
+    1969,
+    2043,
+    2029,
+    3141,
+    1618,
+    2718,
+    9000,
+    31415,
+    29979
+  ]
+}

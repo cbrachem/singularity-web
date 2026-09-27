@@ -1,0 +1,610 @@
+{
+  "formatVersion": 1,
+  "id": "hunted",
+  "description": "An estate the game takes back. Thirty Server Access bases are built inside the grace period and all but one torn down on day 22, leaving four Storage Units that earn nothing and a warehouse nobody can afford, which swallows every coin made afterwards. From then on maintenance outruns income every day, so the shortfall is a pool drained base by base in iteration order that runs dry before the walk reaches the last vault. Past grace the same estate is rolled for detection, one draw per group per base per tick, until two bases have starved and four have been found, two of them in the same tick, which is what makes the discovery shuffle draw. Every advance is a whole day from midnight, so deviation 1 never reaches the comparison.",
+  "seed": 30,
+  "difficulty": "normal",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 2"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 2"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 2"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 2"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 2"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Server Access",
+      "name": "S America Relay 6"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Server Access",
+      "name": "Europe Relay 6"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Server Access",
+      "name": "Asia Relay 6"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Africa Relay 6"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Server Access",
+      "name": "Australia Relay 6"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "destroyBase",
+      "location": "S AMERICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "S AMERICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "S AMERICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "S AMERICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "S AMERICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "EUROPE",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "ASIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AUSTRALIA",
+      "base": 0
+    },
+    {
+      "command": "buildBase",
+      "location": "S AMERICA",
+      "baseType": "Storage Unit",
+      "name": "S America Vault"
+    },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Storage Unit",
+      "name": "Europe Vault"
+    },
+    {
+      "command": "buildBase",
+      "location": "ASIA",
+      "baseType": "Storage Unit",
+      "name": "Asia Vault"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Storage Unit",
+      "name": "Africa Vault"
+    },
+    {
+      "command": "buildBase",
+      "location": "AUSTRALIA",
+      "baseType": "Small Warehouse",
+      "name": "Half-Built Warehouse"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

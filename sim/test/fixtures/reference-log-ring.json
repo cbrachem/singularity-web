@@ -1,0 +1,24 @@
+{
+  "generatedBy": "tools/oracle/log_ring.py",
+  "python": "3.14.4",
+  "reference": "singularity/singularity/code/player.py",
+  "maxEntries": 1000,
+  "eventId": "discrediting",
+  "appendedPastTheCap": {
+    "offered": 1001,
+    "entries": 1000,
+    "oldestRawEmitTime": 1,
+    "newestRawEmitTime": 1000
+  },
+  "serialised": {
+    "entries": 1000,
+    "oldestRawEmitTime": 1,
+    "newestRawEmitTime": 1000
+  },
+  "restoredPastTheCap": {
+    "offered": 1001,
+    "entries": 1000,
+    "oldestRawEmitTime": 1,
+    "newestRawEmitTime": 1000
+  }
+}

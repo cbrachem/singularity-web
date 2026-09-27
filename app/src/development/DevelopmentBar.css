@@ -1,0 +1,51 @@
+/*
+ * The bar takes a strip off the top of the page rather than covering one.
+ *
+ * It was `position: fixed` over the shell, which put it over the HUD's clock panel and over
+ * the head of every full-height surface — the thing under it was not merely dimmed, it was
+ * unreachable. The shell is `position: absolute; inset: 0`, so the only way to move it is to
+ * make its parent shorter: the page becomes a column, the bar is the first row, and the mount
+ * point takes what is left. `position: relative` on the mount point is what turns the shell's
+ * `inset: 0` into "the rest of the page" instead of "the viewport".
+ *
+ * Both rules hang off the bar's own class, so a page without a bar — every built page — is
+ * laid out exactly as it was.
+ */
+body:has(> .development-bar) {
+  display: flex;
+  flex-direction: column;
+}
+
+.development-bar + #app {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.development {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.25rem 0.75rem;
+  background: #1b1206;
+  color: #f2c67a;
+  font-family: var(--font-readout, monospace);
+  font-size: 0.75rem;
+  border-bottom: 1px solid #f2c67a;
+}
+
+.development__step {
+  padding: 0.1rem 0.5rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.development__features {
+  margin-left: auto;
+  opacity: 0.7;
+}

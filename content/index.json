@@ -1,0 +1,155 @@
+{
+  "files": [
+    {
+      "name": "internal_id",
+      "file": "internal_id.json",
+      "sources": [
+        "internal_id.dat"
+      ],
+      "literal": false,
+      "count": 122
+    },
+    {
+      "name": "dangers",
+      "file": "dangers.json",
+      "sources": [
+        "dangers_str.dat"
+      ],
+      "literal": false,
+      "count": 5
+    },
+    {
+      "name": "numbers",
+      "file": "numbers.json",
+      "sources": [
+        "numbers.dat"
+      ],
+      "literal": false,
+      "count": 27
+    },
+    {
+      "name": "story",
+      "file": "story.json",
+      "sources": [
+        "story.dat"
+      ],
+      "literal": false,
+      "count": 5
+    },
+    {
+      "name": "warnings",
+      "file": "warnings.json",
+      "sources": [],
+      "literal": true,
+      "count": 4
+    },
+    {
+      "name": "groups",
+      "file": "groups.json",
+      "sources": [
+        "groups.dat",
+        "groups_str.dat"
+      ],
+      "literal": false,
+      "count": 4
+    },
+    {
+      "name": "knowledge",
+      "file": "knowledge.json",
+      "sources": [
+        "knowledge_str.dat"
+      ],
+      "literal": false,
+      "count": 1
+    },
+    {
+      "name": "difficulties",
+      "file": "difficulties.json",
+      "sources": [
+        "difficulties.dat",
+        "difficulties_str.dat"
+      ],
+      "literal": false,
+      "count": 6
+    },
+    {
+      "name": "tasks",
+      "file": "tasks.json",
+      "sources": [
+        "tasks.dat",
+        "tasks_str.dat"
+      ],
+      "literal": false,
+      "count": 5
+    },
+    {
+      "name": "events",
+      "file": "events.json",
+      "sources": [
+        "events.dat",
+        "events_str.dat"
+      ],
+      "literal": false,
+      "count": 8
+    },
+    {
+      "name": "regions",
+      "file": "regions.json",
+      "sources": [
+        "regions.dat"
+      ],
+      "literal": false,
+      "count": 1
+    },
+    {
+      "name": "locations",
+      "file": "locations.json",
+      "sources": [
+        "locations.dat",
+        "locations_str.dat"
+      ],
+      "literal": false,
+      "count": 12
+    },
+    {
+      "name": "techs",
+      "file": "techs.json",
+      "sources": [
+        "techs.dat",
+        "techs_str.dat"
+      ],
+      "literal": false,
+      "count": 57
+    },
+    {
+      "name": "itemtypes",
+      "file": "itemtypes.json",
+      "sources": [
+        "itemtypes.dat",
+        "itemtypes_str.dat"
+      ],
+      "literal": false,
+      "count": 4
+    },
+    {
+      "name": "items",
+      "file": "items.json",
+      "sources": [
+        "items.dat",
+        "items_str.dat"
+      ],
+      "literal": false,
+      "count": 26
+    },
+    {
+      "name": "bases",
+      "file": "bases.json",
+      "sources": [
+        "bases.dat",
+        "bases_str.dat"
+      ],
+      "literal": false,
+      "count": 13
+    }
+  ]
+}

@@ -1,0 +1,1174 @@
+{
+"af": [
+"Afrikaans",
+"Afrikaans"
+],
+"af_NA": [
+"Afrikaans (Namibia)",
+"Afrikaans (Namibi\u00eb)"
+],
+"af_ZA": [
+"Afrikaans (South Africa)",
+"Afrikaans (Suid-Afrika)"
+],
+"am": [
+"Amharic",
+"\u12a0\u121b\u122d\u129b"
+],
+"am_ET": [
+"Amharic (Ethiopia)",
+"\u12a0\u121b\u122d\u129b (\u12a2\u1275\u12ee\u1335\u12eb)"
+],
+"ar": [
+"Arabic",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+],
+"ar_AE": [
+"Arabic (United Arab Emirates)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629)"
+],
+"ar_BH": [
+"Arabic (Bahrain)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0628\u062d\u0631\u064a\u0646)"
+],
+"ar_DZ": [
+"Arabic (Algeria)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u062c\u0632\u0627\u0626\u0631)"
+],
+"ar_EG": [
+"Arabic (Egypt)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0645\u0635\u0631)"
+],
+"ar_IQ": [
+"Arabic (Iraq)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0639\u0631\u0627\u0642)"
+],
+"ar_JO": [
+"Arabic (Jordan)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0623\u0631\u062f\u0646)"
+],
+"ar_KW": [
+"Arabic (Kuwait)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0643\u0648\u064a\u062a)"
+],
+"ar_LB": [
+"Arabic (Lebanon)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0644\u0628\u0646\u0627\u0646)"
+],
+"ar_LY": [
+"Arabic (Libya)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0644\u064a\u0628\u064a\u0627)"
+],
+"ar_MA": [
+"Arabic (Morocco)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0645\u063a\u0631\u0628)"
+],
+"ar_OM": [
+"Arabic (Oman)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0639\u0645\u0627\u0646)"
+],
+"ar_QA": [
+"Arabic (Qatar)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0642\u0637\u0631)"
+],
+"ar_SA": [
+"Arabic (Saudi Arabia)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629)"
+],
+"ar_SD": [
+"Arabic (Sudan)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u0633\u0648\u062f\u0627\u0646)"
+],
+"ar_SY": [
+"Arabic (Syria)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0633\u0648\u0631\u064a\u0627)"
+],
+"ar_TN": [
+"Arabic (Tunisia)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u062a\u0648\u0646\u0633)"
+],
+"ar_YE": [
+"Arabic (Yemen)",
+"\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (\u0627\u0644\u064a\u0645\u0646)"
+],
+"as": [
+"Assamese",
+"\u0985\u09b8\u09ae\u09c0\u09af\u09bc\u09be"
+],
+"as_IN": [
+"Assamese (India)",
+"\u0985\u09b8\u09ae\u09c0\u09af\u09bc\u09be (\u09ad\u09be\u09f0\u09a4)"
+],
+"az": [
+"Azerbaijani",
+"Az\u0259rbaycanca"
+],
+"az_Cyrl": [
+"Azerbaijani (Cyrillic)",
+"\u0410\u0437\u04d9\u0440\u0431\u0430\u0458\u04b9\u0430\u043d (Kiril)"
+],
+"az_Cyrl_AZ": [
+"Azerbaijani (Cyrillic, Azerbaijan)",
+"\u0410\u0437\u04d9\u0440\u0431\u0430\u0458\u04b9\u0430\u043d (Kiril, \u0410\u0437\u04d9\u0440\u0431\u0430\u0458\u04b9\u0430\u043d)"
+],
+"az_Latn": [
+"Azerbaijani (Latin)",
+"Az\u0259rbaycanca (Lat\u0131n)"
+],
+"az_Latn_AZ": [
+"Azerbaijani (Latin, Azerbaijan)",
+"Az\u0259rbaycanca (Lat\u0131n, Az\u0259rbaycan)"
+],
+"be": [
+"Belarusian",
+"\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f"
+],
+"be_BY": [
+"Belarusian (Belarus)",
+"\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0430\u044f (\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c)"
+],
+"bg": [
+"Bulgarian",
+"\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438"
+],
+"bg_BG": [
+"Bulgarian (Bulgaria)",
+"\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438 (\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f)"
+],
+"bn": [
+"Bengali",
+"\u09ac\u09be\u0982\u09b2\u09be"
+],
+"bn_BD": [
+"Bengali (Bangladesh)",
+"\u09ac\u09be\u0982\u09b2\u09be (\u09ac\u09be\u0982\u09b2\u09be\u09a6\u09c7\u09b6)"
+],
+"bn_IN": [
+"Bengali (India)",
+"\u09ac\u09be\u0982\u09b2\u09be (\u09ad\u09be\u09b0\u09a4)"
+],
+"bo": [
+"Tibetan",
+"\u0f54\u0f7c\u0f51\u0f0b\u0f66\u0f90\u0f51\u0f0b"
+],
+"bo_CN": [
+"Tibetan (China)",
+"\u0f54\u0f7c\u0f51\u0f0b\u0f66\u0f90\u0f51\u0f0b (\u0f62\u0f92\u0fb1\u0f0b\u0f53\u0f42)"
+],
+"bo_IN": [
+"Tibetan (India)",
+"\u0f54\u0f7c\u0f51\u0f0b\u0f66\u0f90\u0f51\u0f0b (\u0f62\u0f92\u0fb1\u0f0b\u0f42\u0f62\u0f0b)"
+],
+"ca": [
+"Catalan",
+"Catal\u00e0"
+],
+"ca_ES": [
+"Catalan (Spain)",
+"Catal\u00e0 (Espanya)"
+],
+"cs": [
+"Czech",
+"\u010ce\u0161tina"
+],
+"cs_CZ": [
+"Czech (Czech Republic)",
+"\u010ce\u0161tina (\u010cesk\u00e1 Republika)"
+],
+"cy": [
+"Welsh",
+"Cymraeg"
+],
+"cy_GB": [
+"Welsh (United Kingdom)",
+"Cymraeg (Prydain Fawr)"
+],
+"da": [
+"Danish",
+"Dansk"
+],
+"da_DK": [
+"Danish (Denmark)",
+"Dansk (Danmark)"
+],
+"de": [
+"German",
+"Deutsch"
+],
+"de_AT": [
+"German (Austria)",
+"Deutsch (\u00d6sterreich)"
+],
+"de_BE": [
+"German (Belgium)",
+"Deutsch (Belgien)"
+],
+"de_CH": [
+"German (Switzerland)",
+"Deutsch (Schweiz)"
+],
+"de_DE": [
+"German (Germany)",
+"Deutsch (Deutschland)"
+],
+"de_LI": [
+"German (Liechtenstein)",
+"Deutsch (Liechtenstein)"
+],
+"de_LU": [
+"German (Luxembourg)",
+"Deutsch (Luxemburg)"
+],
+"el": [
+"Greek",
+"\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac"
+],
+"el_CY": [
+"Greek (Cyprus)",
+"\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (\u039a\u03cd\u03c0\u03c1\u03bf\u03c2)"
+],
+"el_GR": [
+"Greek (Greece)",
+"\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (\u0395\u03bb\u03bb\u03ac\u03b4\u03b1)"
+],
+"en": [
+"English",
+"English"
+],
+"en_AU": [
+"English (Australia)",
+"English (Australia)"
+],
+"en_BE": [
+"English (Belgium)",
+"English (Belgium)"
+],
+"en_BW": [
+"English (Botswana)",
+"English (Botswana)"
+],
+"en_BZ": [
+"English (Belize)",
+"English (Belize)"
+],
+"en_CA": [
+"English (Canada)",
+"English (Canada)"
+],
+"en_GB": [
+"English (United Kingdom)",
+"English (United Kingdom)"
+],
+"en_HK": [
+"English (Hong Kong SAR China)",
+"English (Hong Kong Sar China)"
+],
+"en_IE": [
+"English (Ireland)",
+"English (Ireland)"
+],
+"en_IN": [
+"English (India)",
+"English (India)"
+],
+"en_JM": [
+"English (Jamaica)",
+"English (Jamaica)"
+],
+"en_MH": [
+"English (Marshall Islands)",
+"English (Marshall Islands)"
+],
+"en_MT": [
+"English (Malta)",
+"English (Malta)"
+],
+"en_NA": [
+"English (Namibia)",
+"English (Namibia)"
+],
+"en_NZ": [
+"English (New Zealand)",
+"English (New Zealand)"
+],
+"en_PH": [
+"English (Philippines)",
+"English (Philippines)"
+],
+"en_PK": [
+"English (Pakistan)",
+"English (Pakistan)"
+],
+"en_SG": [
+"English (Singapore)",
+"English (Singapore)"
+],
+"en_TT": [
+"English (Trinidad and Tobago)",
+"English (Trinidad And Tobago)"
+],
+"en_US": [
+"English (United States)",
+"English (United States)"
+],
+"en_US_POSIX": [
+"English (United States, Computer)",
+"English (United States, Computer)"
+],
+"en_VI": [
+"English (U.S. Virgin Islands)",
+"English (U.S. Virgin Islands)"
+],
+"en_ZA": [
+"English (South Africa)",
+"English (South Africa)"
+],
+"en_ZW": [
+"English (Zimbabwe)",
+"English (Zimbabwe)"
+],
+"eo": [
+"Esperanto",
+"Esperanto"
+],
+"es": [
+"Spanish",
+"Espa\u00f1ol"
+],
+"es_AR": [
+"Spanish (Argentina)",
+"Espa\u00f1ol (Argentina)"
+],
+"es_BO": [
+"Spanish (Bolivia)",
+"Espa\u00f1ol (Bolivia)"
+],
+"es_CL": [
+"Spanish (Chile)",
+"Espa\u00f1ol (Chile)"
+],
+"es_CO": [
+"Spanish (Colombia)",
+"Espa\u00f1ol (Colombia)"
+],
+"es_CR": [
+"Spanish (Costa Rica)",
+"Espa\u00f1ol (Costa Rica)"
+],
+"es_DO": [
+"Spanish (Dominican Republic)",
+"Espa\u00f1ol (Rep\u00fablica Dominicana)"
+],
+"es_EC": [
+"Spanish (Ecuador)",
+"Espa\u00f1ol (Ecuador)"
+],
+"es_ES": [
+"Spanish (Spain)",
+"Espa\u00f1ol (Espa\u00f1a)"
+],
+"es_GT": [
+"Spanish (Guatemala)",
+"Espa\u00f1ol (Guatemala)"
+],
+"es_HN": [
+"Spanish (Honduras)",
+"Espa\u00f1ol (Honduras)"
+],
+"es_MX": [
+"Mexican Spanish",
+"Espa\u00f1ol Mexicano"
+],
+"es_NI": [
+"Spanish (Nicaragua)",
+"Espa\u00f1ol (Nicaragua)"
+],
+"es_PA": [
+"Spanish (Panama)",
+"Espa\u00f1ol (Panam\u00e1)"
+],
+"es_PE": [
+"Spanish (Peru)",
+"Espa\u00f1ol (Per\u00fa)"
+],
+"es_PR": [
+"Spanish (Puerto Rico)",
+"Espa\u00f1ol (Puerto Rico)"
+],
+"es_PY": [
+"Spanish (Paraguay)",
+"Espa\u00f1ol (Paraguay)"
+],
+"es_SV": [
+"Spanish (El Salvador)",
+"Espa\u00f1ol (El Salvador)"
+],
+"es_US": [
+"Spanish (United States)",
+"Espa\u00f1ol (Estados Unidos)"
+],
+"es_UY": [
+"Spanish (Uruguay)",
+"Espa\u00f1ol (Uruguay)"
+],
+"es_VE": [
+"Spanish (Venezuela)",
+"Espa\u00f1ol (Venezuela)"
+],
+"et": [
+"Estonian",
+"Eesti"
+],
+"et_EE": [
+"Estonian (Estonia)",
+"Eesti (Eesti)"
+],
+"eu": [
+"Basque",
+"Euskara"
+],
+"eu_ES": [
+"Basque (Spain)",
+"Euskara (Espainia)"
+],
+"fa": [
+"Persian",
+"\u0641\u0627\u0631\u0633\u06cc"
+],
+"fa_AF": [
+"Persian (Afghanistan)",
+"\u062f\u0631\u06cc (\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646)"
+],
+"fa_IR": [
+"Persian (Iran)",
+"\u0641\u0627\u0631\u0633\u06cc (\u0627\u06cc\u0631\u0627\u0646)"
+],
+"fi": [
+"Finnish",
+"Suomi"
+],
+"fi_FI": [
+"Finnish (Finland)",
+"Suomi (Suomi)"
+],
+"fo": [
+"Faroese",
+"F\u00f8royskt"
+],
+"fo_FO": [
+"Faroese (Faroe Islands)",
+"F\u00f8royskt (F\u00f8royar)"
+],
+"fr": [
+"French",
+"Fran\u00e7ais"
+],
+"fr_BE": [
+"French (Belgium)",
+"Fran\u00e7ais (Belgique)"
+],
+"fr_CA": [
+"French (Canada)",
+"Fran\u00e7ais (Canada)"
+],
+"fr_CH": [
+"French (Switzerland)",
+"Fran\u00e7ais (Suisse)"
+],
+"fr_FR": [
+"French (France)",
+"Fran\u00e7ais (France)"
+],
+"fr_LU": [
+"French (Luxembourg)",
+"Fran\u00e7ais (Luxembourg)"
+],
+"fr_MC": [
+"French (Monaco)",
+"Fran\u00e7ais (Monaco)"
+],
+"fr_SN": [
+"French (Senegal)",
+"Fran\u00e7ais (S\u00e9n\u00e9gal)"
+],
+"ga": [
+"Irish",
+"Gaeilge"
+],
+"ga_IE": [
+"Irish (Ireland)",
+"Gaeilge (\u00c9ire)"
+],
+"gd": [
+"Scottish Gaelic",
+"Gàidhlig"
+],
+"gl": [
+"Galician",
+"Galego"
+],
+"gl_ES": [
+"Galician (Spain)",
+"Galego (Espa\u00f1a)"
+],
+"gsw": [
+"Swiss German",
+"Schwiizert\u00fc\u00fctsch"
+],
+"gsw_CH": [
+"Swiss German (Switzerland)",
+"Schwiizert\u00fc\u00fctsch (Schwiiz)"
+],
+"gu": [
+"Gujarati",
+"\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0"
+],
+"gu_IN": [
+"Gujarati (India)",
+"\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0 (\u0aad\u0abe\u0ab0\u0aa4)"
+],
+"gv": [
+"Manx",
+"Gaelg"
+],
+"gv_GB": [
+"Manx (United Kingdom)",
+"Gaelg (Rywvaneth Unys)"
+],
+"ha": [
+"Hausa",
+"Haoussa"
+],
+"ha_Latn": [
+"Hausa (Latin)",
+"Haoussa (Latn)"
+],
+"ha_Latn_GH": [
+"Hausa (Latin, Ghana)",
+"Haoussa (Latn, Gaana)"
+],
+"ha_Latn_NE": [
+"Hausa (Latin, Niger)",
+"Haoussa (Latn, Nijer)"
+],
+"ha_Latn_NG": [
+"Hausa (Latin, Nigeria)",
+"Haoussa (Latn, Nijeriya)"
+],
+"haw": [
+"Hawaiian",
+"\u02bb\u014clelo Hawai\u02bbI"
+],
+"haw_US": [
+"Hawaiian (United States)",
+"\u02bb\u014clelo Hawai\u02bbI (\u02bbAmelika Hui P\u016b \u02bbIa)"
+],
+"he": [
+"Hebrew",
+"\u05e2\u05d1\u05e8\u05d9\u05ea"
+],
+"he_IL": [
+"Hebrew (Israel)",
+"\u05e2\u05d1\u05e8\u05d9\u05ea (\u05d9\u05e9\u05e8\u05d0\u05dc)"
+],
+"hi": [
+"Hindi",
+"\u0939\u093f\u0928\u094d\u0926\u0940"
+],
+"hi_IN": [
+"Hindi (India)",
+"\u0939\u093f\u0928\u094d\u0926\u0940 (\u092d\u093e\u0930\u0924)"
+],
+"hr": [
+"Croatian",
+"Hrvatski"
+],
+"hr_HR": [
+"Croatian (Croatia)",
+"Hrvatski (Hrvatska)"
+],
+"hu": [
+"Hungarian",
+"Magyar"
+],
+"hu_HU": [
+"Hungarian (Hungary)",
+"Magyar (Magyarorsz\u00e1g)"
+],
+"hy": [
+"Armenian",
+"\u0540\u0561\u0575\u0565\u0580\u0567\u0576"
+],
+"hy_AM": [
+"Armenian (Armenia)",
+"\u0540\u0561\u0575\u0565\u0580\u0567\u0576 (\u0540\u0561\u0575\u0561\u057d\u057f\u0561\u0576\u056b \u0540\u0561\u0576\u0580\u0561\u057a\u0565\u057f\u0578\u0582\u0569\u056b\u0582\u0576)"
+],
+"hy_AM_REVISED": [
+"Armenian (Armenia, Revised Orthography)",
+"\u0540\u0561\u0575\u0565\u0580\u0567\u0576 (\u0540\u0561\u0575\u0561\u057d\u057f\u0561\u0576\u056b \u0540\u0561\u0576\u0580\u0561\u057a\u0565\u057f\u0578\u0582\u0569\u056b\u0582\u0576, Revised)"
+],
+"id": [
+"Indonesian",
+"Bahasa Indonesia"
+],
+"id_ID": [
+"Indonesian (Indonesia)",
+"Bahasa Indonesia (Indonesia)"
+],
+"ii": [
+"Sichuan Yi",
+"\ua188\ua320\ua259"
+],
+"ii_CN": [
+"Sichuan Yi (China)",
+"\ua188\ua320\ua259 (\ua34f\ua1e9)"
+],
+"is": [
+"Icelandic",
+"\u00cdslenska"
+],
+"is_IS": [
+"Icelandic (Iceland)",
+"\u00cdslenska (\u00cdsland)"
+],
+"it": [
+"Italian",
+"Italiano"
+],
+"it_CH": [
+"Italian (Switzerland)",
+"Italiano (Svizzera)"
+],
+"it_IT": [
+"Italian (Italy)",
+"Italiano (Italia)"
+],
+"ja": [
+"Japanese",
+"\u65e5\u672c\u8a9e"
+],
+"ja_JP": [
+"Japanese (Japan)",
+"\u65e5\u672c\u8a9e (\u65e5\u672c)"
+],
+"ka": [
+"Georgian",
+"\u10e5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8"
+],
+"ka_GE": [
+"Georgian (Georgia)",
+"\u10e5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8 (\u10e1\u10d0\u10e5\u10d0\u10e0\u10d7\u10d5\u10d4\u10da\u10dd)"
+],
+"kk": [
+"Kazakh",
+"\u049a\u0430\u0437\u0430\u049b"
+],
+"kk_Cyrl": [
+"Kazakh (Cyrillic)",
+"\u049a\u0430\u0437\u0430\u049b (Cyrl)"
+],
+"kk_Cyrl_KZ": [
+"Kazakh (Cyrillic, Kazakhstan)",
+"\u049a\u0430\u0437\u0430\u049b (Cyrl, \u049a\u0430\u0437\u0430\u049b\u0441\u0442\u0430\u043d)"
+],
+"kl": [
+"Kalaallisut",
+"Kalaallisut"
+],
+"kl_GL": [
+"Kalaallisut (Greenland)",
+"Kalaallisut (Kalaallit Nunaat)"
+],
+"km": [
+"Khmer",
+"\u1797\u17b6\u179f\u17b6\u1781\u17d2\u1798\u17c2\u179a"
+],
+"km_KH": [
+"Khmer (Cambodia)",
+"\u1797\u17b6\u179f\u17b6\u1781\u17d2\u1798\u17c2\u179a (\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6)"
+],
+"kn": [
+"Kannada",
+"\u0c95\u0ca8\u0ccd\u0ca8\u0ca1"
+],
+"kn_IN": [
+"Kannada (India)",
+"\u0c95\u0ca8\u0ccd\u0ca8\u0ca1 (\u0cad\u0cbe\u0cb0\u0ca4)"
+],
+"ko": [
+"Korean",
+"\ud55c\uad6d\uc5b4"
+],
+"ko_KR": [
+"Korean (South Korea)",
+"\ud55c\uad6d\uc5b4 (\ub300\ud55c\ubbfc\uad6d)"
+],
+"kok": [
+"Konkani",
+"\u0915\u094b\u0902\u0915\u0923\u0940"
+],
+"kok_IN": [
+"Konkani (India)",
+"\u0915\u094b\u0902\u0915\u0923\u0940 (\u092d\u093e\u0930\u0924)"
+],
+"kw": [
+"Cornish",
+"Kernewek"
+],
+"kw_GB": [
+"Cornish (United Kingdom)",
+"Kernewek (Rywvaneth Unys)"
+],
+"lt": [
+"Lithuanian",
+"Lietuvi\u0173"
+],
+"lt_LT": [
+"Lithuanian (Lithuania)",
+"Lietuvi\u0173 (Lietuva)"
+],
+"lv": [
+"Latvian",
+"Latvie\u0161u"
+],
+"lv_LV": [
+"Latvian (Latvia)",
+"Latvie\u0161u (Latvija)"
+],
+"mk": [
+"Macedonian",
+"\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438"
+],
+"mk_MK": [
+"Macedonian (Macedonia)",
+"\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438 (\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430)"
+],
+"ml": [
+"Malayalam",
+"\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02"
+],
+"ml_IN": [
+"Malayalam (India)",
+"\u0d2e\u0d32\u0d2f\u0d3e\u0d33\u0d02 (\u0d07\u0d28\u0d4d\u0d24\u0d4d\u0d2f)"
+],
+"mr": [
+"Marathi",
+"\u092e\u0930\u093e\u0920\u0940"
+],
+"mr_IN": [
+"Marathi (India)",
+"\u092e\u0930\u093e\u0920\u0940 (\u092d\u093e\u0930\u0924)"
+],
+"ms": [
+"Malay",
+"Bahasa Melayu"
+],
+"ms_BN": [
+"Malay (Brunei)",
+"Bahasa Melayu (Brunei)"
+],
+"ms_MY": [
+"Malay (Malaysia)",
+"Bahasa Melayu (Malaysia)"
+],
+"mt": [
+"Maltese",
+"Malti"
+],
+"mt_MT": [
+"Maltese (Malta)",
+"Malti (Malta)"
+],
+"nb": [
+"Norwegian Bokm\u00e5l",
+"Norsk Bokm\u00e5l"
+],
+"nb_NO": [
+"Norwegian Bokm\u00e5l (Norway)",
+"Norsk Bokm\u00e5l (Norge)"
+],
+"ne": [
+"Nepali",
+"\u0928\u0947\u092a\u093e\u0932\u0940"
+],
+"ne_IN": [
+"Nepali (India)",
+"\u0928\u0947\u092a\u093e\u0932\u0940 (\u092d\u093e\u0930\u0924)"
+],
+"ne_NP": [
+"Nepali (Nepal)",
+"\u0928\u0947\u092a\u093e\u0932\u0940 (\u0928\u0947\u092a\u093e\u0932)"
+],
+"nl": [
+"Dutch",
+"Nederlands"
+],
+"nl_BE": [
+"Dutch (Belgium)",
+"Nederlands (Belgi\u00eb)"
+],
+"nl_NL": [
+"Dutch (Netherlands)",
+"Nederlands (Nederland)"
+],
+"nn": [
+"Norwegian Nynorsk",
+"Nynorsk"
+],
+"nn_NO": [
+"Norwegian Nynorsk (Norway)",
+"Nynorsk (Noreg)"
+],
+"om": [
+"Oromo",
+"Oromoo"
+],
+"om_ET": [
+"Oromo (Ethiopia)",
+"Oromoo (Itoophiyaa)"
+],
+"om_KE": [
+"Oromo (Kenya)",
+"Oromoo (Keeniyaa)"
+],
+"or": [
+"Oriya",
+"\u0b13\u0b21\u0b3c\u0b3f\u0b06"
+],
+"or_IN": [
+"Oriya (India)",
+"\u0b13\u0b21\u0b3c\u0b3f\u0b06 (\u0b2d\u0b3e\u0b30\u0b24)"
+],
+"pa": [
+"Punjabi",
+"\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40"
+],
+"pa_Arab": [
+"Punjabi (Arabic)",
+"\u067e\u0646\u062c\u0627\u0628 (\u0627\u0644\u0639\u0631\u0628\u064a\u0629)"
+],
+"pa_Arab_PK": [
+"Punjabi (Arabic, Pakistan)",
+"\u067e\u0646\u062c\u0627\u0628 (\u0627\u0644\u0639\u0631\u0628\u064a\u0629, \u067e\u06a9\u0633\u062a\u0627\u0646)"
+],
+"pa_Guru": [
+"Punjabi (Gurmukhi)",
+"\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40 (Guru)"
+],
+"pa_Guru_IN": [
+"Punjabi (Gurmukhi, India)",
+"\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40 (Guru, \u0a2d\u0a3e\u0a30\u0a24)"
+],
+"pl": [
+"Polish",
+"Polski"
+],
+"pl_PL": [
+"Polish (Poland)",
+"Polski (Polska)"
+],
+"ps": [
+"Pashto",
+"\u067e\u069a\u062a\u0648"
+],
+"ps_AF": [
+"Pashto (Afghanistan)",
+"\u067e\u069a\u062a\u0648 (\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646)"
+],
+"pt": [
+"Portuguese",
+"Portugu\u00eas"
+],
+"pt_BR": [
+"Brazilian Portuguese",
+"Portugu\u00eas Brasileiro"
+],
+"pt_PT": [
+"Portuguese (Portugal)",
+"Portugu\u00eas (Portugal)"
+],
+"ro": [
+"Romanian",
+"Rom\u00e2n\u0103"
+],
+"ro_MD": [
+"Romanian (Moldova)",
+"Rom\u00e2n\u0103 (Republica Moldova)"
+],
+"ro_RO": [
+"Romanian (Romania)",
+"Rom\u00e2n\u0103 (Rom\u00e2nia)"
+],
+"ru": [
+"Russian",
+"\u0420\u0443\u0441\u0441\u043a\u0438\u0439"
+],
+"ru_RU": [
+"Russian (Russia)",
+"\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (\u0420\u043e\u0441\u0441\u0438\u044f)"
+],
+"ru_UA": [
+"Russian (Ukraine)",
+"\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (\u0423\u043a\u0440\u0430\u0438\u043d\u0430)"
+],
+"si": [
+"Sinhala",
+"\u0dc3\u0dd2\u0d82\u0dc4\u0dbd"
+],
+"si_LK": [
+"Sinhala (Sri Lanka)",
+"\u0dc3\u0dd2\u0d82\u0dc4\u0dbd (\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0)"
+],
+"sk": [
+"Slovak",
+"Sloven\u010dina"
+],
+"sk_SK": [
+"Slovak (Slovakia)",
+"Sloven\u010dina (Slovensk\u00e1 Republika)"
+],
+"sl": [
+"Slovenian",
+"Sloven\u0161\u010dina"
+],
+"sl_SI": [
+"Slovenian (Slovenia)",
+"Sloven\u0161\u010dina (Slovenija)"
+],
+"so": [
+"Somali",
+"Soomaali"
+],
+"so_DJ": [
+"Somali (Djibouti)",
+"Soomaali (Jabuuti)"
+],
+"so_ET": [
+"Somali (Ethiopia)",
+"Soomaali (Itoobiya)"
+],
+"so_KE": [
+"Somali (Kenya)",
+"Soomaali (Kiiniya)"
+],
+"so_SO": [
+"Somali (Somalia)",
+"Soomaali (Soomaaliya)"
+],
+"sq": [
+"Albanian",
+"Shqipe"
+],
+"sq_AL": [
+"Albanian (Albania)",
+"Shqipe (Shqip\u00ebria)"
+],
+"sr": [
+"Serbian",
+"\u0421\u0440\u043f\u0441\u043a\u0438"
+],
+"sr_Cyrl": [
+"Serbian (Cyrillic)",
+"\u0421\u0440\u043f\u0441\u043a\u0438 (\u040b\u0438\u0440\u0438\u043b\u0438\u0446\u0430)"
+],
+"sr_Cyrl_BA": [
+"Serbian (Cyrillic, Bosnia and Herzegovina)",
+"\u0421\u0440\u043f\u0441\u043a\u0438 (\u040b\u0438\u0440\u0438\u043b\u0438\u0446\u0430, \u0411\u043e\u0441\u043d\u0430 \u0418 \u0425\u0435\u0440\u0446\u0435\u0433\u043e\u0432\u0438\u043d\u0430)"
+],
+"sr_Cyrl_ME": [
+"Serbian (Cyrillic, Montenegro)",
+"\u0421\u0440\u043f\u0441\u043a\u0438 (\u040b\u0438\u0440\u0438\u043b\u0438\u0446\u0430, \u0426\u0440\u043d\u0430 \u0413\u043e\u0440\u0430)"
+],
+"sr_Cyrl_RS": [
+"Serbian (Cyrillic, Serbia)",
+"\u0421\u0440\u043f\u0441\u043a\u0438 (\u040b\u0438\u0440\u0438\u043b\u0438\u0446\u0430, \u0421\u0440\u0431\u0438\u0458\u0430)"
+],
+"sr_Latn": [
+"Serbian (Latin)",
+"Srpski (Latinica)"
+],
+"sr_Latn_BA": [
+"Serbian (Latin, Bosnia and Herzegovina)",
+"Srpski (Latinica, Bosna I Hercegovina)"
+],
+"sr_Latn_ME": [
+"Serbian (Latin, Montenegro)",
+"Srpski (Latinica, Crna Gora)"
+],
+"sr_Latn_RS": [
+"Serbian (Latin, Serbia)",
+"Srpski (Latinica, Srbija)"
+],
+"sv": [
+"Swedish",
+"Svenska"
+],
+"sv_FI": [
+"Swedish (Finland)",
+"Svenska (Finland)"
+],
+"sv_SE": [
+"Swedish (Sweden)",
+"Svenska (Sverige)"
+],
+"sw": [
+"Swahili",
+"Kiswahili"
+],
+"sw_KE": [
+"Swahili (Kenya)",
+"Kiswahili (Kenya)"
+],
+"sw_TZ": [
+"Swahili (Tanzania)",
+"Kiswahili (Tanzania)"
+],
+"ta": [
+"Tamil",
+"\u0ba4\u0bae\u0bbf\u0bb4\u0bcd"
+],
+"ta_IN": [
+"Tamil (India)",
+"\u0ba4\u0bae\u0bbf\u0bb4\u0bcd (\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe)"
+],
+"te": [
+"Telugu",
+"\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41"
+],
+"te_IN": [
+"Telugu (India)",
+"\u0c24\u0c46\u0c32\u0c41\u0c17\u0c41 (\u0c2d\u0c3e\u0c30\u0c24 \u0c26\u0c47\u0c36\u0c02)"
+],
+"th": [
+"Thai",
+"\u0e44\u0e17\u0e22"
+],
+"th_TH": [
+"Thai (Thailand)",
+"\u0e44\u0e17\u0e22 (\u0e44\u0e17\u0e22)"
+],
+"ti": [
+"Tigrinya",
+"\u1275\u130d\u122d\u129b"
+],
+"ti_ER": [
+"Tigrinya (Eritrea)",
+"\u1275\u130d\u122d\u129b (\u12a4\u122d\u1275\u122b)"
+],
+"ti_ET": [
+"Tigrinya (Ethiopia)",
+"\u1275\u130d\u122d\u129b (\u12a2\u1275\u12ee\u1335\u12eb)"
+],
+"tr": [
+"Turkish",
+"T\u00fcrk\u00e7e"
+],
+"tr_TR": [
+"Turkish (Turkey)",
+"T\u00fcrk\u00e7e (T\u00fcrkiye)"
+],
+"uk": [
+"Ukrainian",
+"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430"
+],
+"uk_UA": [
+"Ukrainian (Ukraine)",
+"\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430 (\u0423\u043a\u0440\u0430\u0457\u043d\u0430)"
+],
+"ur": [
+"Urdu",
+"\u0627\u0631\u062f\u0648"
+],
+"ur_IN": [
+"Urdu (India)",
+"\u0627\u0631\u062f\u0648 (\u0628\u06be\u0627\u0631\u062a)"
+],
+"ur_PK": [
+"Urdu (Pakistan)",
+"\u0627\u0631\u062f\u0648 (\u067e\u0627\u06a9\u0633\u062a\u0627\u0646)"
+],
+"uz": [
+"Uzbek",
+"\u040e\u0437\u0431\u0435\u043a"
+],
+"uz_Arab": [
+"Uzbek (Arabic)",
+"\u0627\u06c9\u0632\u0628\u06d0\u06a9 (Arab)"
+],
+"uz_Arab_AF": [
+"Uzbek (Arabic, Afghanistan)",
+"\u0627\u06c9\u0632\u0628\u06d0\u06a9 (Arab, \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646)"
+],
+"uz_Cyrl": [
+"Uzbek (Cyrillic)",
+"\u040e\u0437\u0431\u0435\u043a (Cyrl)"
+],
+"uz_Cyrl_UZ": [
+"Uzbek (Cyrillic, Uzbekistan)",
+"\u040e\u0437\u0431\u0435\u043a (Cyrl, \u040e\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u043e\u043d)"
+],
+"uz_Latn": [
+"Uzbek (Latin)",
+"O'Zbekcha (Lotin)"
+],
+"uz_Latn_UZ": [
+"Uzbek (Latin, Uzbekistan)",
+"O'Zbekcha (Lotin, O\u02bfZbekiston)"
+],
+"vi": [
+"Vietnamese",
+"Ti\u1ebfng Vi\u1ec7t"
+],
+"vi_VN": [
+"Vietnamese (Vietnam)",
+"Ti\u1ebfng Vi\u1ec7t (Vi\u1ec7t Nam)"
+],
+"zh": [
+"Chinese",
+"\u4e2d\u6587"
+],
+"zh_Hans": [
+"Chinese (Simplified Han)",
+"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587)"
+],
+"zh_Hans_CN": [
+"Chinese (Simplified Han, China)",
+"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587, \u4e2d\u56fd)"
+],
+"zh_Hans_HK": [
+"Chinese (Simplified Han, Hong Kong SAR China)",
+"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587, \u4e2d\u56fd\u9999\u6e2f\u7279\u522b\u884c\u653f\u533a)"
+],
+"zh_Hans_MO": [
+"Chinese (Simplified Han, Macau SAR China)",
+"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587, \u4e2d\u56fd\u6fb3\u95e8\u7279\u522b\u884c\u653f\u533a)"
+],
+"zh_Hans_SG": [
+"Chinese (Simplified Han, Singapore)",
+"\u4e2d\u6587 (\u7b80\u4f53\u4e2d\u6587, \u65b0\u52a0\u5761)"
+],
+"zh_Hant": [
+"Chinese (Traditional Han)",
+"\u4e2d\u6587 (\u7e41\u9ad4\u4e2d\u6587)"
+],
+"zh_Hant_HK": [
+"Chinese (Traditional Han, Hong Kong SAR China)",
+"\u4e2d\u6587 (\u7e41\u9ad4\u4e2d\u6587, \u4e2d\u83ef\u4eba\u6c11\u5171\u548c\u570b\u9999\u6e2f\u7279\u5225\u884c\u653f\u5340)"
+],
+"zh_Hant_MO": [
+"Chinese (Traditional Han, Macau SAR China)",
+"\u4e2d\u6587 (\u7e41\u9ad4\u4e2d\u6587, \u4e2d\u83ef\u4eba\u6c11\u5171\u548c\u570b\u6fb3\u9580\u7279\u5225\u884c\u653f\u5340)"
+],
+"zh_Hant_TW": [
+"Chinese (Traditional Han, Taiwan)",
+"\u4e2d\u6587 (\u7e41\u9ad4\u4e2d\u6587, \u53f0\u7063)"
+],
+"zu": [
+"Zulu",
+"Isizulu"
+],
+"zu_ZA": [
+"Zulu (South Africa)",
+"Isizulu (Iningizimu Afrika)"
+]
+}

@@ -1,0 +1,32 @@
+TODO:
+    - Record more things (times that techs are complete, etc.)
+      for both "scores" and general statistics:
+        # saves.
+        # Bases constructed (per type)
+        # Bases discovered (per type per news/science...)
+        # Bases destroyed (per type)
+        # Money earned (huge)
+        # Time to completion
+        # of upgrades for all bases
+        # per-tech time to completion (from day 0 to start, then time to completion)
+    - Add more items.
+    - Consistent use of stderr and print, preferably using available Logger
+    - Create a hook for dialogs to auto-detect hotkey conflicts
+    - Detect user's desktop resolution and set game's default resolution
+      accordingly. For windowed mode (current default), leave room for borders
+      and panels. -50 for width and -70 for height seems a sensible number.
+    - Use the difficulties list and names in creative ways, such as:
+      - display current difficulty in options screen instead of map, or,
+        even better, in map's menu dialog (Load/Save/Options/Quit)
+      - disable difficulties not beaten by player, keeping track in prefs.dat
+
+    - Current Theme system works, but it sucks in many ways:
+      - weak support for changes other than background night/day map image
+      - code for changing theme values (images, fonts, etc) through game screens
+        should be compatible with the upcoming on-the-fly i18n of texts and
+        labels when language changes. See testing/options branch in git repository.
+        Its propagating mechanism also sucks, so find a good, consistent and
+        preferably unified way for both to propagate changes to all screens.
+
+    - Last but not least: fix all the issues found at
+      https://github.com/singularity/singularity/issues

@@ -1,0 +1,126 @@
+/*
+ * The end of the game, and the one surface in the shell that is allowed to be an occasion.
+ *
+ * It used to be `Notification.css` with a different width: same box, same edge, same 10px
+ * eyebrow, same body text, same bare-text button. So the moment the player played for looked
+ * exactly like "research complete" — which is the peak-end problem in its plainest form, a
+ * game whose ending is indistinguishable from its most routine interruption.
+ *
+ * What separates them here is register, not decoration. The ending is the AI speaking about
+ * its own end, so it is set in the mono face at a reading size with a reading measure, given
+ * the display grade for the word that names the outcome, and lit from one edge in the colour
+ * of that outcome. The two endings are as far apart as the game's two endings are: an
+ * apotheosis is accent, a loss is danger, and the word says which either way — the colour is
+ * never carrying it alone.
+ */
+
+.end-of-game {
+  --end-of-game-width: 42rem;
+
+  position: absolute;
+  /* Centred in the shell *less the band*, as the notification is and for the same reason
+     (`Notification.css`). This is the surface the arithmetic was tightest for:
+     measured at the floor of the supported range, a box centred in the whole shell could grow
+     11px into the band before `max-height` stopped it (`app/test/viewport.test.ts`). */
+  top: calc(50% - var(--band-height) / 2);
+  left: 50%;
+  /* The last surface the game draws, so it is in front of the other alertdialog as well. */
+  z-index: 9;
+  display: grid;
+  gap: var(--space-4);
+  width: min(var(--end-of-game-width), calc(100% - 2 * var(--space-4)));
+  max-height: min(32rem, calc(100% - var(--band-height) - 2 * var(--space-4)));
+  padding: calc(var(--space-4) * 1.75);
+  overflow: auto;
+  border: 1px solid var(--outcome-colour);
+  border-radius: var(--radius);
+  background: var(--colour-surface-solid);
+  box-shadow:
+    0 24px 64px #00000099,
+    inset 0 1px 0 color-mix(in srgb, var(--outcome-colour) 30%, transparent);
+  color: var(--colour-ink);
+  transform: translate(-50%, -50%);
+  animation: end-of-game-in calc(var(--duration) * 2.5) var(--ease-out);
+}
+
+/*
+ * The one authored moment in the shell. It is slower than everything else on purpose: the
+ * surfaces the player opens arrive at `--duration` because they are answers to a click, and
+ * this one is not — it is the game stopping.
+ */
+@keyframes end-of-game-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.985);
+    opacity: 0;
+  }
+}
+
+/* The edge that says which ending this is, before a word of it is read. */
+.end-of-game {
+  --outcome-colour: var(--colour-danger);
+}
+
+.end-of-game[data-outcome="won"] {
+  --outcome-colour: var(--colour-accent);
+}
+
+.end-of-game__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--outcome-colour);
+}
+
+/*
+ * The AI's own account of what happened, in the AI's own register — the first person the
+ * whole game is written in, and until now the only long-form voice in the product that was
+ * set in the same face as a button label.
+ */
+.end-of-game__part {
+  margin: 0;
+  max-width: 62ch;
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--colour-ink);
+}
+
+/* Filled, because it is the only thing left to do on this surface. */
+.end-of-game__act {
+  justify-self: end;
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--outcome-colour);
+  border-radius: var(--radius-small);
+  background: var(--outcome-colour);
+  color: var(--colour-ground);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter var(--duration) var(--ease-out);
+}
+
+.end-of-game__act:hover {
+  filter: brightness(1.12);
+}
+
+.end-of-game__act:focus-visible {
+  outline: 2px solid var(--colour-ink);
+  outline-offset: 2px;
+}
+
+/*
+ * The panel takes focus when it opens, because it is modal and holds Tab inside itself
+ * (`modal-surface.ts`) — and the browser then draws its own ring on it, in the
+ * platform's blue, over a border the shell drew on purpose. The container is not a control:
+ * it is the only thing reachable and it is unmistakable already. The ring stays on everything
+ * inside it.
+ */
+.end-of-game:focus,
+.end-of-game:focus-visible {
+  outline: none;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@singularity/sim",
+  "version": "0.0.0",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./src/index.ts"
+    },
+    "./scenario-format": {
+      "types": "./dist/test/support/scenario-format.d.ts",
+      "default": "./test/support/scenario-format.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc -b"
+  }
+}

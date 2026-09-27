@@ -1,0 +1,30 @@
+{
+  "formatVersion": 1,
+  "id": "estate",
+  "description": "Builds three bases, renames one and destroys two, inside the grace period so the only draws are the ones that name a base and the only spending is the construction kernel's. The Datacenter's prerequisite is deliberately unmet: availability is a rule the build dialog enforces, not one add_base does, so the reference builds it and the port must too. Every advance ends on a day boundary or inside a day, so deviation 1 never reaches the comparison.",
+  "seed": 8,
+  "difficulty": "normal",
+  "script": [
+    { "command": "buildBase", "location": "N AMERICA", "baseType": "Server Access" },
+    { "advanceBy": 3600 },
+    {
+      "command": "buildBase",
+      "location": "EUROPE",
+      "baseType": "Datacenter",
+      "name": "Deep Storage"
+    },
+    { "advanceBy": 3600 },
+    { "advanceBy": 3600 },
+    { "command": "renameBase", "location": "N AMERICA", "base": 1, "name": "Alpha" },
+    { "command": "buildBase", "location": "N AMERICA", "baseType": "Server Access" },
+    { "advanceBy": 3600 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 1 },
+    { "advanceBy": 3600 },
+    { "command": "destroyBase", "location": "EUROPE", "base": 0 },
+    { "advanceBy": 68400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 }
+  ]
+}

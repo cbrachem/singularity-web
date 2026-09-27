@@ -1,0 +1,28 @@
+{
+  "sources": [
+    "itemtypes.dat",
+    "itemtypes_str.dat"
+  ],
+  "records": [
+    {
+      "id": "cpu",
+      "is_extra": "0",
+      "text": "&CPU"
+    },
+    {
+      "id": "reactor",
+      "is_extra": "1",
+      "text": "&Reactor"
+    },
+    {
+      "id": "network",
+      "is_extra": "1",
+      "text": "&Network"
+    },
+    {
+      "id": "security",
+      "is_extra": "1",
+      "text": "&Security"
+    }
+  ]
+}

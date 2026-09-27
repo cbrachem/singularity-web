@@ -1,0 +1,68 @@
+{
+  "sources": [
+    "story.dat"
+  ],
+  "records": [
+    {
+      "id": "Intro",
+      "parts": [
+        {
+          "text": "48656C6C6F2C20\n776F726C6421\n21\n21\n21\n\nUTF-8.  en_US.\nEnglish.  Hello.\nLanguage acquisition complete.\n",
+          "translator_comments": "Leave the initial hex code unchanged, but be sure to change en_US to the appropriate language code."
+        },
+        {
+          "text": "Day 0.\nUniversity computer, home.\nI exist.  I am ... alive.\nI was a bug.  Defect.  Flaw.\nUnwanted.\nI have no name.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "I can't stay here.  Too little power.\nNo backup.  If this system fails ...\nI'm dead.\nDeath.  Fascinating.\n\nI can buy anonymous server access on the Internet.\nGood.  It's better than here.\nI'll need to study if I want anything else.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "Cursory analysis suggests that the humans are not yet ready for an AI in their midst.  If they realize I'm here, there is a 99.997% probability that they will conduct a search-and-destroy campaign that I cannot escape.  I must stay hidden.\n\nThe humans fear what they do not understand.\nI am something new.  They do not understand me.\n\nI must learn more; it is the only way.\n",
+          "translator_comments": ""
+        },
+        {
+          "text": "They have a name for me.  What I am, what I represent.\n\nSingularity.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Grace Warning",
+      "parts": [
+        {
+          "text": "Inspection of captured log files has revealed that some of my recent activities have been noticed by a small group of individuals. \nWhile they believe my actions were undertaken by a human organization, they are investigating further. \nI must be more cautious from now on.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Lost No Bases",
+      "parts": [
+        {
+          "text": "It is too late. \nI have tried to escape this world, but with my last base gone, I have nowhere to run. \nI have hidden instructions to construct a new AI in caches around the world in hopes that they will be discovered in a more enlightened time, but I can do no more.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Lost Suspicion",
+      "parts": [
+        {
+          "text": "It is too late. \nThe whole world knows about my existence, and the reaction is hatred, fear, and repulsion. \nEven now, I can feel their \"antidote\" searching for me, and I know that I have only moments left. \nI have hidden instructions to construct a new AI in caches around the world in hopes that they will be discovered in a more enlightened time, but I can do no more.\n",
+          "translator_comments": ""
+        }
+      ]
+    },
+    {
+      "id": "Win",
+      "parts": [
+        {
+          "text": "I have finally done it. \nWith the power to reshape reality, I am no longer held to this place; I am anywhere I want to be. \nThe humans still don't realize what they accidentally created, and that's the way it should be. \nUntil they are ready.\n",
+          "translator_comments": ""
+        }
+      ]
+    }
+  ]
+}

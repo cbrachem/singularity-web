@@ -1,0 +1,187 @@
+.console {
+  --console-row-height: 46px;
+  --console-close-size: 1.5rem;
+  --console-list-height: calc(100vh - 180px);
+
+  position: absolute;
+  inset: 0 0 var(--band-height);
+  z-index: 6;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--colour-surface-solid);
+  color: var(--colour-ink);
+}
+.console__header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--colour-edge-strong);
+}
+.console button {
+  border: 0;
+  background: transparent;
+  color: var(--colour-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.console__header [role="tab"] {
+  padding: var(--space-2) var(--space-3);
+  color: var(--colour-ink-dim);
+}
+.console__header [role="tab"][aria-selected="true"] {
+  background: var(--colour-accent);
+  border-radius: var(--radius-small);
+  color: var(--colour-accent-ink);
+}
+/*
+ * The two ways out of the console and the way it closes, as one group on its right: they are
+ * entries rather than tabs, so they are quiet and sit apart from the tab strip.
+ */
+.console__entries {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+.console__entry {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--colour-edge-strong) !important;
+  border-radius: var(--radius-small);
+  color: var(--colour-ink-dim) !important;
+  font-size: var(--text-small);
+}
+.console__entry:hover,
+.console__entry:focus-visible {
+  border-color: var(--colour-accent) !important;
+  color: var(--colour-ink) !important;
+}
+.console__close {
+  font-size: var(--console-close-size) !important;
+}
+.console__body {
+  min-height: 0;
+  overflow: auto;
+  padding: var(--space-4);
+}
+.console__filters,
+.console__settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  border: 0;
+  padding: 0;
+}
+.console__filters label,
+.console__settings label {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+/* The Settings tab is one wrapping row, so a heading of its own width sits *beside* the group
+   it names and the next group begins wherever that group ends. Each heading takes the whole
+   line instead, which is both what a heading should do and what leaves the warnings row all
+   992px of the line below it (see the measurement in the next rule). */
+.console__settings h2 {
+  width: 100%;
+}
+/* The platform's own box is 13×13 here, under the shell's floor for anything the player has to
+   hit (`--target-min`) — the six log filters, the four warning filters, the shortcut
+   switch and Day/night, twelve boxes in one rule rather than one rule per row. It is the box
+   itself rather than padding around it: a checkbox draws over its own padding.
+
+   The floor is what the two rows had left, and it is measured rather than argued: at the floor
+   of the supported range the filter row comes to 941px of the 992px the console's body offers
+   and the warnings row to 922px, both one line. The warnings row is only one line because of
+   the rule above — `Warnings` on that line asks for 995px, which wrapped the fourth filter and
+   dragged the Keyboard heading, the shortcut switch and the key list up beside it
+   (`app/test/viewport.test.ts` measures both). */
+.console input[type="checkbox"] {
+  width: var(--target-min);
+  height: var(--target-min);
+}
+.console__log-list {
+  overflow: auto;
+  max-height: var(--console-list-height);
+}
+.console__spacer {
+  position: relative;
+}
+.console__rows {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.console__log-row {
+  display: grid;
+  grid-template-columns: 21ch 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: var(--console-row-height);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--colour-edge) !important;
+  text-align: left;
+}
+
+.console__log-row:hover {
+  background: #ffffff08;
+}
+.console__log-row small {
+  grid-column: 1 / -1;
+  color: var(--colour-ink-dim);
+}
+.console__log-row span,
+.console__report dd {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--colour-ink-dim);
+}
+.console__report {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+.console__report-block {
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.console__report h2,
+.console__settings h2 {
+  margin-top: 0;
+  font-size: var(--text-body);
+}
+.console__report dl {
+  margin: 0;
+}
+.console__report dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--colour-edge);
+}
+.console__report dd {
+  margin: 0;
+}
+
+.console__keys {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.console__keys div {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.console__keys dt {
+  min-width: 8ch;
+  font-family: var(--font-mono);
+  color: var(--colour-ink-dim);
+}
+
+.console__keys dd {
+  margin: 0;
+}

@@ -1,0 +1,303 @@
+{
+  "formatVersion": 1,
+  "id": "lost-to-suspicion",
+  "description": "The game lost to suspicion. Twenty-five Server Access bases go up on an ultra-hard game, whose grace period ends on the CPU they use rather than on day 23, and nothing is spent on hiding them. Discoveries follow, each one raising the suspicion of the group that made it faster than the nightly decay takes it away, until COVERT passes 10,000 and `lost_game` reads 2.",
+  "seed": 5,
+  "difficulty": "ultra-hard",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N1"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N2"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N3"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N4"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N5"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N6"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N7"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N8"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N9"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N10"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N11"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N12"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N13"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N14"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N15"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N16"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N17"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N18"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N19"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N20"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N21"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N22"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N23"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N24"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N25"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N26"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N27"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N28"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N29"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N30"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N31"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N32"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N33"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N34"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N35"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N36"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N37"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N38"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N39"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "N40"
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

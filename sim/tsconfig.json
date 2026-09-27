@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    // No "DOM": the Simulation runs headless, so a browser
+    // global does not even have a type here. The lint rule in test/boundary.test.ts covers
+    // what @types/node happens to declare anyway.
+    "lib": ["ES2022"],
+    "types": ["node"],
+    // src/content/documents.ts assigns the committed Converter output to the port's
+    // hand-written types, which is the CI check that the two still agree.
+    // It is a compile-time read only — no validator ships.
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "outDir": "dist"
+  },
+  "include": ["src", "test", "vitest.config.ts"]
+}

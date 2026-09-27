@@ -1,0 +1,202 @@
+/**
+ * The reserved band's own tokens and geometry. The shared ones are in
+ * `./tokens.css`; `--band-height` is there rather than here because the map and the HUD
+ * inset by it and cannot be allowed to disagree with the band about the number.
+ *
+ * # The four widths below are a budget, not a taste
+ *
+ * The supported range is 1024x600 and up, and its lower edge is *this*
+ * readout's: below it the eight values stop fitting side by side. So the widths that make up
+ * the row are literal numbers rather than references into the spacing scale, and
+ * `app/test/threat-band.test.tsx` adds them up against 1024. A wider cell or a ninth value is
+ * a change to the supported range and the sum is what says so.
+ */
+
+.band {
+  --threat-pad-x: 16px;
+  --threat-gap: 12px;
+  --threat-set-label-width: 96px;
+  --threat-group-width: 76px;
+  --threat-set-pad: 10px;
+
+  /*
+   * Fixed, and sized for `Critical` rather than for `34.72%`: the widest string any
+   * `display_discover` level can produce is the level's own word, so nothing moves when
+   * Socioanalytics lands. `min-width` would be the bug — it grows.
+   */
+  --threat-value-width: 8ch;
+
+  /*
+   * The ladder was 5px wide and 11px tall, which is smaller than the difference it encodes.
+   * It is the carrier that survives when colour does not — and at that size the
+   * step from three filled to four is two pixels of height on a five-pixel bar, which is not
+   * a difference anyone reads at a glance from a metre away. It is the redundant carrier, so
+   * it has to be legible on its own or it is not one.
+   *
+   * Wider rather than taller, because the band's height is the one thing here that is not
+   * this readout's to spend: `--band-height` is reserved off the map permanently,
+   * and a cell that grew downwards would have to take those pixels from the globe.
+   */
+  --threat-step-width: 7px;
+  --threat-ladder-height: 14px;
+
+  /* The danger ramp `--danger-0`..`--danger-3` is shared, on `:root` in tokens.css: the
+     inspector's detection table reads it too. */
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--threat-gap);
+  height: var(--band-height);
+  padding: 0 var(--threat-pad-x);
+  border-top: 1px solid var(--colour-edge-strong);
+  background: var(--colour-surface-solid);
+}
+
+/*
+ * Both measures at once and no tab, so the two sets go to the two ends of the band and the
+ * slack falls between them.
+ *
+ * # Why a set is a surface
+ *
+ * The two sets print the same four names, in the same order, in the same colours, with the
+ * same four words for their values. Everything that distinguishes them was one small dim
+ * caption at the left end of each — so the band showed eight cells and asked the player to
+ * remember which four were suspicion and which four were the rate they are being found at.
+ * That is the one thing this readout exists to answer, and it was the one thing it made the
+ * player hold in their head.
+ *
+ * So a set is drawn as a thing: its own plate, its own edge, its own name inside it rather
+ * than beside it. Six hundred pixels of slack between two identical rows is not grouping;
+ * two plates are.
+ */
+.band__set {
+  display: flex;
+  align-items: center;
+  gap: var(--threat-gap);
+  padding: 3px var(--threat-set-pad);
+  border: 1px solid var(--colour-edge);
+  border-radius: var(--radius-small);
+  background: #ffffff08;
+}
+
+.band__set + .band__set {
+  margin-left: auto;
+}
+
+/*
+ * The name of the set, which is the label that disambiguates the whole row — and which was
+ * the smallest, dimmest text in it. It is ink rather than dim ink and a grade up, because it
+ * is read *before* the values rather than after them.
+ */
+.band__caps {
+  width: var(--threat-set-label-width);
+  margin: 0;
+  flex: none;
+  font-size: var(--text-small);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--colour-ink);
+}
+
+.band__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: var(--threat-group-width);
+  flex: none;
+}
+
+.band__name {
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--tracking-label);
+  color: var(--colour-ink-dim);
+}
+
+.band__value {
+  width: var(--threat-value-width);
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  color: var(--level-colour);
+}
+
+/*
+ * Four steps of rising height, one per danger level, filled to the group's. Deliberately not
+ * equal cells: those are the vocabulary of a fill level and get read as a proportion, and
+ * the proportion contradicts the number beside them.
+ */
+.band__ladder {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: var(--threat-ladder-height);
+}
+
+.band__step {
+  width: var(--threat-step-width);
+  border-radius: 1px;
+  background: #ffffff26;
+}
+
+.band__step:nth-child(1) {
+  height: 5px;
+}
+
+.band__step:nth-child(2) {
+  height: 8px;
+}
+
+.band__step:nth-child(3) {
+  height: 11px;
+}
+
+.band__step:nth-child(4) {
+  height: var(--threat-ladder-height);
+}
+
+.band__step[data-filled="true"] {
+  background: var(--level-colour);
+}
+
+.band__cell[data-level="0"] {
+  --level-colour: var(--danger-0);
+}
+
+.band__cell[data-level="1"] {
+  --level-colour: var(--danger-1);
+}
+
+.band__cell[data-level="2"] {
+  --level-colour: var(--danger-2);
+}
+
+.band__cell[data-level="3"] {
+  --level-colour: var(--danger-3);
+}
+
+/*
+ * The grace period. The band is reserved from the first frame and says in words why it is
+ * empty, rather than arriving with the first value and resizing the map underneath the
+ * player at the worst moment.
+ */
+.band__grace {
+  display: flex;
+  align-items: baseline;
+  gap: var(--threat-gap);
+  margin: 0;
+}
+
+.band__sentence {
+  font-size: var(--text-small);
+  color: var(--colour-ink-dim);
+}

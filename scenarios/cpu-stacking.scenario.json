@@ -1,0 +1,19 @@
+{
+  "formatVersion": 1,
+  "id": "cpu-stacking",
+  "description": "Buys CPUs into a base that already holds CPUs of the same spec, and buys more than one at a time. Storage Unit is size 8; four and four more fill it exactly, which is the case upstream allows and a recorder that subtracts the installed count twice rejects.",
+  "seed": 3,
+  "difficulty": "normal",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Storage Unit",
+      "name": "Depot"
+    },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "PC", "count": 4 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "PC", "count": 4 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 }
+  ]
+}

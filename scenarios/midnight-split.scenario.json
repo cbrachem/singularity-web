@@ -1,0 +1,36 @@
+{
+  "formatVersion": 1,
+  "id": "midnight-split",
+  "description": "Two day boundaries with the ticks around them split exactly at midnight, and four more days after them. The reference cannot be driven across a midnight in one step: give_time backs up to 00:00:00 and discards the remainder (player.py:277), which is deviation 1 of the register. So the only way to compare the port's midnight-splitting loop against the reference is to drive the reference with the halves the port splits into. Steps 3, 4 and 5 are those halves; step 3 is where the day-3 autosave falls, and the days after it are what make the autosave rhythm that follows from it visible.",
+  "seed": 1,
+  "difficulty": "normal",
+  "script": [
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 82800
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 1800
+    },
+    {
+      "advanceBy": 84600
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

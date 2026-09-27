@@ -1,0 +1,133 @@
+[general]
+name = Default
+
+[fonts]
+normal = DejaVuSans.ttf
+special = acknowtt.ttf
+
+[colors]
+# General color alias
+white           = #ffffffff
+black           = #000000ff
+red             = #ff0000ff
+green           = #00ff00ff
+blue            = #0000ffff
+yellow          = #ffff00ff
+orange          = #ff8000ff
+gray            = #808080ff
+dark_red        = #800000ff
+dark_green      = #008000ff
+dark_blue       = #000080ff
+darker_blue1    = #000050ff
+darker_blue     = #000032ff
+light_red       = #ff3232ff
+light_green     = #32ff32ff
+light_blue      = #3232ffff
+clear           = #00000000
+
+# Screen colors
+main_menu_background     = black
+about_dialog_background  = darker_blue
+map_background           = black
+options_background       = darker_blue
+singularity_title        = dark_red
+hidden_state_menu        = dark_blue
+
+# The simple menu dialog (e.g. difficult or the in game menu)
+simple_menu_background     = dark_blue
+simple_menu_border         = white
+
+# Pane colors
+pane_background          = dark_blue
+pane_background_empty    = black
+research_pane_background = pane_background
+knowledge_pane_background = pane_background
+
+# Dialog colors
+text_dialog_background   = dark_blue
+text_entry_background    = darker_blue1
+text_dialog_border       = white
+
+# Widget colors
+widget_background          = blue
+widget_border              = white
+
+# Text colors
+text_background            = dark_blue
+text_background_unselected = dark_blue
+text_background_selected   = light_blue
+text_border                = white
+text                       = white
+text_disabled              = gray
+
+# Progress colors
+progress_background_unselected = dark_blue
+progress_background_selected   = light_blue
+progress_background_progress   = blue
+progress_border                = white
+
+# Slider colors dark_blue light_blue white
+slider_background = dark_blue
+slider_background_slider = light_blue
+slider_border = white
+
+# Scrollbar colors
+scrollbar_background = dark_blue
+scrollbar_background_slider = light_blue
+scrollbar_border = white
+scrollbar_arrow_background_selected = dark_blue
+scrollbar_arrow_background_unselected = light_blue
+
+# Danger colors
+danger_level_0      = #0000ffff
+danger_level_1      = #5500AAff
+danger_level_2      = #AA0055ff
+danger_level_3      = #ff0000ff
+
+# CPU display colors
+cpu_normal      = white
+cpu_warning     = red
+
+# Base display colors
+base_situation_one_active_base = red
+base_situation_idle_incomplete_bases = yellow
+base_situation_many_bases = orange
+base_situation_normal = white
+
+# Save colors
+save_name       = white
+save_time       = gray
+save_difficulty = white
+save_valid      = green
+save_invalid    = red
+
+# Base state colors
+base_state_offline         = red
+base_state_active          = green
+base_state_sleep           = yellow
+base_state_overclocked     = orange
+base_state_suicide         = red
+base_state_stasis          = gray
+base_state_entering_stasis = gray
+base_state_leaving_stasis  = gray
+
+### Location colors
+
+# Color hints to users about how risky a location is based on previous
+# discoveries (ordered from lowest to highest risk).
+#
+# Note when testing: These hints are only presented after discovery of
+# techs that give insight to detection stats (both discoveries needed
+# for testing all colors).
+location_name_normal             = text
+location_name_prev_discover      = yellow
+location_name_last_discover      = orange
+location_name_last_prev_discover = red
+
+###  Internal/Special purpose colors ###
+
+# This chooses the color to highlight widgets redrawn in debug mode
+# e.g. singularity --debug.  This should be visibly different from the
+# common border colors of the theme as the redraw lines are usually
+# (but not always) placed on the widget borders.
+debug_mode_highlight_redrawn_widget = red

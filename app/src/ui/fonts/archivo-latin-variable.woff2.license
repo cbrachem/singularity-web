@@ -1,0 +1,9 @@
+Archivo, 100 900 (variable), latin subset — archivo-latin-variable.woff2
+
+Source:     Google Fonts, https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2
+Upstream:   https://github.com/Omnibus-Type/Archivo
+Licence:    SIL Open Font License 1.1 — see LICENSE.OFL-1.1.txt beside this file
+Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)
+
+Fetched and verified by tools/assets/fetch_fonts.py. This is the subset Google Fonts
+serves for the `latin` unicode-range; no glyphs were added, removed or reshaped.

@@ -1,0 +1,182 @@
+/**
+ * The design tokens, and the page-level rules that depend on the shell being the whole
+ * window. Every component stylesheet is plain CSS reading these custom properties and
+ * defining its own beside them.
+ *
+ * The names say what a value is *for* rather than what it looks like — `--surface-raised`
+ * and not `--grey-800` — because that is the half a component can be written against
+ * without knowing the palette.
+ */
+
+@import "./fonts/fonts.css";
+
+:root {
+  /* Ground and surfaces. The map is the ground; everything else sits over it. */
+  --colour-ground: #0a0d14;
+  --colour-surface: #0d121ccc;
+  --colour-surface-solid: #121722;
+  --colour-edge: #ffffff14;
+  --colour-edge-strong: #263144;
+  --colour-scrim: #0a0d14b3;
+
+  /* Ink. Three weights, because a HUD is a label, a value, and a value gone quiet. */
+  --colour-ink: #dbe3f0;
+  --colour-ink-dim: #8593ab;
+  --colour-ink-faint: #5d6b83;
+
+  /* Dark enough that accent-ink on it measures 5.0:1 (WCAG needs 4.5). */
+  --colour-accent: #4f5fee;
+  --colour-accent-ink: #ffffff;
+
+  /*
+   * Two colours that are neither ink nor accent, because they are not decoration: a refusal
+   * the player has to read, and an action that cannot be taken back. They are shared rather
+   * than each surface's own, because "this destroys something" has to look the same wherever
+   * it is said.
+   */
+  --colour-warn: #ffb454;
+  --colour-danger: #ff5f6d;
+
+  /*
+   * The danger ramp, one colour per level the reference defines. Shared rather than the
+   * threat band's own: the band and the inspector's detection table both
+   * say danger levels, and two ramps would drift. Level 0 is plain ink — the calm case
+   * looks like every other value — and the three above it rise in lightness and chroma as
+   * well as hue. Colour never carries alone.
+   */
+  --danger-0: var(--colour-ink);
+  --danger-1: #e6c45f;
+  --danger-2: #f0894e;
+  --danger-3: #ff5f6d;
+
+  /* The map's own palette. The night is painted as black pixels at the layer's own
+     opacity, so it needs no colour of its own (./map/NightLayer.tsx). */
+  --colour-ocean: #080b12;
+  --colour-land: #3d4d84;
+  --colour-graticule: #6b7cff;
+
+  /* Type. Two families, both self-hosted subsets (./fonts/fonts.css). */
+  --font-sans: "Archivo", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /*
+   * The scale is short on purpose — a HUD with five type sizes reads as five importances —
+   * but it was short at both ends: 10, 12 and 14 within four pixels of each other, with the
+   * largest thing on the map screen at 17. Nothing was emphasised because nothing could be.
+   *
+   * `--text-display` is the one grade above the readout, and it is spent on the two figures
+   * that are permanently live: the clock and the pools. The rest of the scale moved up to
+   * clear 11px, which is the floor below which a label stops being read and starts being
+   * skipped — `--text-label` was under it and carried nine of the eleven labels in the shell.
+   */
+  --text-display: 1.375rem;
+  --text-readout: 1.0625rem;
+  --text-body: 0.875rem;
+  --text-small: 0.8125rem;
+  --text-label: 0.6875rem;
+  --tracking-label: 0.08em;
+
+  /*
+   * How long the game takes to say something. One duration and one curve, so a surface that
+   * arrives and a pin that answers a hover are recognisably the same hand. Zero under
+   * `prefers-reduced-motion`, at the bottom of this file, rather than per component.
+   */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration: 0.22s;
+
+  /* Measures. One scale, so a gap is chosen rather than typed. */
+  --space-1: 0.25rem;
+  --space-2: 0.375rem;
+  --space-3: 0.625rem;
+  --space-4: 1rem;
+  --radius: 0.75rem;
+  --radius-small: 0.4375rem;
+
+  /*
+   * The floor for anything the player has to hit — WCAG 2.5.8's 24 CSS pixels, in px because
+   * that is the unit the criterion is written in and a target that shrinks with a smaller root
+   * font is not a target that meets it. Shared, so the next small control cannot pick its own
+   * floor.
+   */
+  --target-min: 24px;
+
+  /*
+   * The band the threat readout reserves along the bottom edge — roughly 60px of
+   * map height, permanently, whether or not anything is open. It is shared rather than the
+   * band's own because the map and the HUD inset by it, and a surface that disagreed with
+   * the band about the number would enter it. `app/test/threat-band.test.tsx` holds every
+   * surface that shares the shell with the band to this token, whatever the number is.
+   */
+  --band-height: 62px;
+
+  /* The inspector's fixed width, so the stage can inset by it. */
+  --inspector-width: 400px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--colour-ground);
+  color: var(--colour-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+
+  /*
+   * The parts nobody drew still carry the design. `accent-color` inherits, so this one
+   * declaration is every checkbox in the shell — the console's six log filters and the
+   * inspector's base selection were shipping the platform's blue against an accent that is
+   * not it. `caret-color` is the same move for text entry.
+   */
+  accent-color: var(--colour-accent);
+  caret-color: var(--colour-accent);
+  scrollbar-color: var(--colour-edge-strong) transparent;
+  scrollbar-width: thin;
+}
+
+::selection {
+  background: var(--colour-accent);
+  color: var(--colour-accent-ink);
+}
+
+/*
+ * The focus ring on *every* focusable, as one rule for the whole shell rather than a
+ * block per component. Nine components repeated the same two declarations and each of them
+ * named the controls it happened to think of, so the tenth control was always the one wearing
+ * the platform's grey — the base table's tick box, and then the console's own checkboxes.
+ * Element specificity, so a component that draws a different ring, or takes it
+ * off a container it focuses programmatically, still wins.
+ */
+:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+
+/*
+ * One reduced-motion rule for the whole shell, so no component carries its own. The surfaces
+ * still arrive and the pins still answer — they just arrive already there.
+ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration: 0s;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

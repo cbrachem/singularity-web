@@ -1,0 +1,5 @@
+# bun's own configuration. The suite runs under Vitest, so the one thing this
+# file does is meet `bun test` — bun's runner, one word away from `bun run test` — before it
+# collects anything, and tell whoever typed it which command runs the suite.
+[test]
+preload = ["./bun-test-guard.ts"]

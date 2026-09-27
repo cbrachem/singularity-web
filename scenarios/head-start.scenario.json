@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "id": "head-start",
+  "description": "A game the difficulty starts with techs already finished. `very-easy` grants Socioanalytics and Advanced Socioanalytics, and both are finished at creation with their consequences applied in that order, which is the only way a Scenario can reach display_discover: researching either of them costs thousands of CPU-days. It stays inside the grace period, which very-easy never leaves on CPU, so nothing rolls and the two days are about the state creation left behind.",
+  "seed": 4,
+  "difficulty": "very-easy",
+  "script": [
+    { "advanceBy": 3600 },
+    { "command": "allocateCpu", "task": "Intrusion", "cpu": 1 },
+    { "advanceBy": 82800 },
+    { "advanceBy": 86400 }
+  ]
+}

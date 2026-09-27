@@ -1,0 +1,300 @@
+{
+  "formatVersion": 1,
+  "id": "past-grace",
+  "description": "An empty game run past the end of the grace period, to day 70: the tick that loses grace, the detection and event rolls that start with it, two events that fire and one that expires at midnight. Mixed tick partitions, no commands.",
+  "seed": 43,
+  "difficulty": "normal",
+  "script": [
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 43200
+    },
+    {
+      "advanceBy": 43200
+    },
+    {
+      "advanceBy": 21600
+    },
+    {
+      "advanceBy": 21600
+    },
+    {
+      "advanceBy": 21600
+    },
+    {
+      "advanceBy": 21600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

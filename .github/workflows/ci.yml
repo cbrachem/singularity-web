@@ -1,0 +1,144 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+
+      # The trace harness drives the pinned reference, which is Python. Without
+      # it the oracle-backed tests skip, so CI installs it and marks it required — see the
+      # Tests step.
+      - uses: actions/setup-python@v7
+        id: reference-python
+        with:
+          python-version: "3.13"
+
+      # Named rather than ambient: the Tests step runs this exact interpreter, so this is
+      # the one that has to carry the requirements. Bare `pip` is whatever PATH resolves,
+      # which is the same interpreter only by accident of setup-python's ordering.
+      - name: Install
+        run: |
+          bun install --frozen-lockfile
+          "${{ steps.reference-python.outputs.python-path }}" -m pip install -r tools/requirements.txt
+
+      # playwright-core pins the browser but does not download it. The browser tests
+      # launch headless, so the headless shell is the only binary they need.
+      - name: Install browser
+        run: bunx playwright-core install --with-deps --only-shell chromium
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Lint and format
+        run: |
+          bun run lint
+          bun run format:check
+
+      # Generated assets are committed. Each check names its asset, and each generator reports
+      # the stale path, so a CI failure identifies the drift without a local reproduction.
+      - name: Land path asset drift
+        run: ${{ steps.reference-python.outputs.python-path }} tools/assets/build_land_path.py --check
+
+      - name: Font subset asset drift
+        run: ${{ steps.reference-python.outputs.python-path }} tools/assets/fetch_fonts.py --check
+
+      # The whole suite, in one step: every project, every gate that is a test. The `check:`
+      # scripts in package.json are local filters over this same run, so naming them here as
+      # well would only run the slowest half of CI twice — Vitest already reports which file
+      # failed. What still gets its own step is what this step cannot reach: the asset
+      # generators above, and the three checks below that read a build.
+      #
+      # SINGULARITY_ORACLE_REQUIRED turns a missing reference environment from a skip into
+      # a failure, so the oracle-backed tests cannot quietly stop running here.
+      - name: Tests
+        run: bun run test
+        env:
+          SINGULARITY_PYTHON: ${{ steps.reference-python.outputs.python-path }}
+          SINGULARITY_ORACLE_REQUIRED: "1"
+
+      # The licences surface is generated from NOTICE while the bundle is built, so
+      # the build itself refuses a NOTICE that has drifted from the repository it describes.
+      # Named separately here so the drift is reported on its own rather than as a build error.
+      - name: Licences
+        run: bun run check:licences
+
+      # The licences page names this address as the place of the corresponding source.
+      - name: Build
+        run: bun run build
+        env:
+          SINGULARITY_SOURCE_URL: ${{ github.server_url }}/${{ github.repository }}
+
+      # Scenario boot and the frozen clock are development affordances and must not
+      # reach the shipped bundle — a build assertion, not a convention. It searches what the
+      # step above produced, so it runs after it and nowhere else.
+      - name: Development-only code
+        run: bun run check:development-only
+
+      # 1 MB compressed for the initial transfer, checked as a byte count.
+      - name: Transfer budget
+        run: bun run check:transfer
+
+      - name: Upload site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: app/dist
+
+  # Publishes the bundle the gates above built and checked. Needs Settings → Pages →
+  # Source: GitHub Actions.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [gates, content]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  # The Content converter is deterministic and its output is committed, so
+  # re-running it against the pinned reference and finding a diff is the check that catches
+  # the conversion drifting from a reference that is otherwise intact.
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Install
+        run: pip install -r tools/requirements.txt
+
+      - name: Convert
+        run: python tools/convert/convert_content.py
+
+      - name: Content matches the reference simulation's own loaders
+        run: python tools/convert/verify.py
+
+      - name: Re-running the converter leaves no diff
+        run: |
+          if [ -n "$(git status --porcelain -- content/)" ]; then
+            git --no-pager diff -- content/
+            git status --porcelain -- content/
+            echo "::error::content/ changed when the converter was re-run"
+            exit 1
+          fi

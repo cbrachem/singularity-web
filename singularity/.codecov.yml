@@ -1,0 +1,13 @@
+ignore:
+  - "**/*.dat"
+  - "**/*.pot"
+  - "**/*.po"
+  - "singularity/data/**/*"
+  - "singularity/music/**/*"
+  - "singularity/sounds/**/*"
+  - "docs/**/*"
+  - "singularity/i18n/lang_*/**/*"
+  - "**/README*"
+  - "**/*.txt"
+  - "**/Changelog"
+  - ".github/**/*"

@@ -1,0 +1,55 @@
+/**
+ * The shell is the window. Nothing replaces it, and below the supported range the page
+ * scrolls the same shell rather than changing its form.
+ *
+ * The map is the only thing in normal flow; the HUD floats over it and passes pointer events
+ * through everywhere it is not actually a control, so the globe underneath stays clickable
+ * edge to edge.
+ *
+ * The supported range — 1024x600 CSS pixels and up, with the shell freezing below it and the
+ * page scrolling by the shortfall — is the two minimums below. Nothing here has
+ * a second form for them to switch to: the stage is a container query and the globe is a
+ * `min()` of two constraints, so the shell is already fluid across the whole range.
+ */
+
+.shell {
+  position: absolute;
+  inset: 0;
+  min-width: 1024px;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/*
+ * What the inspector insets. The map and the HUD were the whole list, and the research sheet
+ * was not on it — so the sheet ran the full width under an open inspector and was drawn over
+ * by it, cutting the inspector off mid-row with nothing to say there was more panel. Two
+ * surfaces that neither claim modality nor cover the shell (`surfaces.ts`) have to be able to
+ * be read at the same time, because the shell lets the player open both.
+ */
+.shell--inspecting .map,
+.shell--inspecting .hud,
+.shell--inspecting .research-sheet {
+  right: var(--inspector-width);
+}
+
+/*
+ * The grouping the shell marks `inert` while a modal surface is up. It draws
+ * nothing and takes no space: `display: contents` leaves every surface inside it laid out
+ * against the shell exactly as it was, including the ones positioned against it.
+ */
+.shell-behind {
+  display: contents;
+}
+
+/*
+ * The visible half of modality: while a modal surface is up, the map and the surfaces over it
+ * are unavailable, and a scrim is what says so to whoever is not using a screen reader. It
+ * stops at the reserved band, like every other surface.
+ */
+.shell-scrim {
+  position: absolute;
+  inset: 0 0 var(--band-height);
+  z-index: 7;
+  background: var(--colour-scrim);
+}

@@ -1,0 +1,10 @@
+# Dependencies for driving the vendored reference simulation headlessly.
+# pygame is deliberately absent — tools/oracle/pygame_stub.py stands in for it.
+# Shared by everything under tools/.
+numpy
+polib
+
+# The formatter and linter for everything here, run by `bun run check:python`. Pinned where
+# the others are not: a linter that changes its rules on its own release schedule turns an
+# unrelated day into a red gate. See tools/ruff.toml.
+ruff==0.16.4

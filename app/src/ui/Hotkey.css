@@ -1,0 +1,37 @@
+/*
+ * The key mark: quiet enough that a control still reads as its label, present enough that the
+ * shortcut is found without being looked for. It is the one thing in the shell drawn at the
+ * label grade that is not a label, so it takes the mono face — it is a key, and keys are what
+ * that face is for here alongside figures.
+ *
+ * It is drawn in `currentColor` at a fixed opacity rather than in an ink token, because it
+ * appears on all three button roles: on a panel it comes out as ink gone quiet, and on the
+ * filled primary it comes out as the accent's own ink. A token would have needed the same
+ * mark declared once per role, and would have been invisible on the one that matters most.
+ */
+
+.hotkey {
+  --hotkey-size: 1.125rem;
+
+  display: inline-grid;
+  place-items: center;
+  min-width: var(--hotkey-size);
+  height: var(--hotkey-size);
+  margin-inline-start: var(--space-2);
+  padding: 0 3px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.5;
+  transition: opacity var(--duration) var(--ease-out);
+}
+
+/* On the control the player is about to use, the key comes up with it. */
+:hover > .hotkey,
+:focus-visible > .hotkey {
+  opacity: 1;
+}

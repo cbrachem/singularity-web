@@ -1,0 +1,70 @@
+{
+  "manifestVersion": 1,
+  "reference": "99729e859b400e8271445458995a1dc4951ee321",
+  "scenarios": {
+    "apotheosis": {
+      "digest": "sha256:13953514a97a98f78c061f743739cee3b45f15cbf16aa029622fd2767b3e260a",
+      "steps": 287
+    },
+    "command-vocabulary": {
+      "digest": "sha256:c825e674ab604597a3e57110caea007f75ebfa3933f7605818ccfd8a25728b96",
+      "steps": 40
+    },
+    "cpu-stacking": {
+      "digest": "sha256:44ce149206696aeb43a9e25ba21ef7330fa1867181b4eeeea55d6a3d353c10a6",
+      "steps": 5
+    },
+    "estate": {
+      "digest": "sha256:af27a79e9d8e4f8d26f038b9dac380416555367e64c870a03d9ff102aee556e5",
+      "steps": 16
+    },
+    "grace-full": {
+      "digest": "sha256:2720c17f7e42a2ef204c106e4c1eb110d192b278ebe6649ae171799ff284836a",
+      "steps": 54
+    },
+    "grace-quiet": {
+      "digest": "sha256:46d20f55eec2d2fe2e7a480edd41578bd5d20153fbcd4ac899d33b5294823699",
+      "steps": 28
+    },
+    "growing-stack": {
+      "digest": "sha256:80eac20d6d11ef1de9d3e3a57add4bf32d9f767da7ea36740e5c558ff5e526b5",
+      "steps": 26
+    },
+    "head-start": {
+      "digest": "sha256:6655c9ca9fd38a80a3b2ea85401ff6ada90ae5b3f0b5ace304b3013e09ce58b4",
+      "steps": 4
+    },
+    "hunted": {
+      "digest": "sha256:7cfa939f287a90f14d215b3516b0f8c039ecf353a9b9cf705b7d6282073a8d8a",
+      "steps": 146
+    },
+    "items": {
+      "digest": "sha256:0f1669bae41680601cb5c2b7a608233323dba7d2820845a62e5b94620410395d",
+      "steps": 39
+    },
+    "long-play": {
+      "digest": "sha256:623ae117b7cb24e10b7f6587fc2c8cc5e21ff398deb787106ce2a6d7687b1073",
+      "steps": 2259
+    },
+    "lost-every-base": {
+      "digest": "sha256:92eb0eb2468a98d575087382183d7e2bac9d41f98af9af46fea8df96f4b20443",
+      "steps": 13
+    },
+    "lost-to-suspicion": {
+      "digest": "sha256:fb16a0efc729d535baff1383e389406d71ceb0b5984d624884698b336628b886",
+      "steps": 58
+    },
+    "midnight-split": {
+      "digest": "sha256:088e7d9944e4e93880eb1a5d0e58bfc2f10688bc412d46634df2773144a3ce2b",
+      "steps": 9
+    },
+    "past-grace": {
+      "digest": "sha256:50112a0de3378f2285c2dfc04da85ee789e507995c60e7917225b55333bf0873",
+      "steps": 97
+    },
+    "research": {
+      "digest": "sha256:7678547d35401183837c6c8d28daf30e85a410f40b72490289bb3321d4dfca36",
+      "steps": 40
+    }
+  }
+}

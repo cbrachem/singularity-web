@@ -1,0 +1,56 @@
+[N AMERICA]
+position_list = 25 | 29
+region = URBAN
+
+[S AMERICA]
+position_list = 33 | 61
+region = URBAN
+
+[EUROPE]
+position_list = 55 | 20
+region = URBAN
+
+[ASIA]
+position_list = 77 | 29
+region = URBAN
+
+[AFRICA]
+position_list = 55 | 46
+region = URBAN
+
+[AUSTRALIA]
+position_list = 85 | 64
+region = URBAN
+
+[ANTARCTIC]
+position_list = 50 | 91
+safety=1
+modifier_list = stealth:6/5 | thrift:5/6
+pre_list = Advanced Database Manipulation
+
+[OCEAN]
+position_list = 55 | 76
+safety = 1
+modifier_list = cpu:6/5
+pre = Autonomous Vehicles
+
+[MOON]
+position_list = absolute | 14 | 13
+safety = 2
+modifier_list = stealth:1.5 | thrift:.5 | speed:.5
+pre = Lunar Rocketry
+
+[ORBIT]
+position_list = absolute | 50 | 13
+pre = impossible
+
+[FAR REACHES]
+position_list = absolute | 41 | 13
+safety = 3
+modifier_list = stealth:2 | thrift:.1 | speed:.1
+pre = Fusion Rocketry
+
+[TRANSDIMENSIONAL]
+position_list = absolute | 80 | 13
+safety = 4
+pre = Space-Time Manipulation

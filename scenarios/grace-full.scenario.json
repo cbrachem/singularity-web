@@ -1,0 +1,171 @@
+{
+  "formatVersion": 1,
+  "id": "grace-full",
+  "description": "An empty game across the whole grace period, to its last day: mixed tick partitions, no commands, and no RNG draw after the three the game's creation makes.",
+  "seed": 1,
+  "difficulty": "normal",
+  "script": [
+    {
+      "advanceBy": 1
+    },
+    {
+      "advanceBy": 2
+    },
+    {
+      "advanceBy": 240
+    },
+    {
+      "advanceBy": 14157
+    },
+    {
+      "advanceBy": 14400
+    },
+    {
+      "advanceBy": 14400
+    },
+    {
+      "advanceBy": 14400
+    },
+    {
+      "advanceBy": 14400
+    },
+    {
+      "advanceBy": 14400
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 3600
+    },
+    {
+      "advanceBy": 43200
+    },
+    {
+      "advanceBy": 43200
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

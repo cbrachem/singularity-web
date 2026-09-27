@@ -1,0 +1,80 @@
+{
+  "formatVersion": 1,
+  "id": "growing-stack",
+  "description": "A CPU stack that is worked on between the buys that grow it. Eight Server Access relays pay for a Storage Unit, which finishes on day 3; from then on the stack inside it is built rather than only bought. Two PCs are worked on for two hours and three more are added to the part-built pair, then the five are finished and three more are added to the completed stack. That is the whole of Item.__iadd__: cash that was already paid stays paid and the new units join the bill, labor starts again from nothing however far it had come, and the base is told it has no CPU until the grown stack is finished. Very easy, so the base is affordable, and it stays inside the grace period, so nothing rolls and what is compared is construction.",
+  "seed": 3,
+  "difficulty": "very-easy",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 1"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 2"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 3"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 4"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 5"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 6"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 7"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay 8"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Storage Unit",
+      "name": "Depot"
+    },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 8, "itemType": "PC", "count": 2 },
+    { "advanceBy": 7200 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 8, "itemType": "PC", "count": 3 },
+    { "advanceBy": 79200 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 8, "itemType": "PC", "count": 3 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 }
+  ]
+}

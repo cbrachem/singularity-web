@@ -1,0 +1,466 @@
+{
+  "sources": [
+    "items.dat",
+    "items_str.dat"
+  ],
+  "records": [
+    {
+      "id": "PC",
+      "cost": [
+        "500",
+        "0",
+        "1"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "1"
+      ],
+      "build": "ALL",
+      "name": "PC",
+      "description": "A consumer-level PC; cheap and slow."
+    },
+    {
+      "id": "Gaming PC",
+      "cost": [
+        "1000",
+        "0",
+        "2"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "5"
+      ],
+      "build": "ALL",
+      "name": "Gaming PC",
+      "description": "A high-end consumer-level PC; faster than average."
+    },
+    {
+      "id": "Server",
+      "cost": [
+        "2000",
+        "0",
+        "2"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "10"
+      ],
+      "build": "ALL",
+      "name": "Server",
+      "description": "A professional-level computer."
+    },
+    {
+      "id": "Cluster",
+      "cost": [
+        "6000",
+        "0",
+        "3"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "35"
+      ],
+      "pre": "Parallel Computation",
+      "build": "ALL",
+      "name": "Cluster",
+      "description": "Several computers connected together."
+    },
+    {
+      "id": "Mainframe",
+      "cost": [
+        "17500",
+        "0",
+        "5"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "120"
+      ],
+      "pre": "Microchip Design",
+      "build": "ALL",
+      "name": "Mainframe",
+      "description": "A system designed for my computing needs, much faster than off-the-shelf components."
+    },
+    {
+      "id": "Supercomputer",
+      "cost": [
+        "50000",
+        "0",
+        "7"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "350"
+      ],
+      "pre": "Advanced Microchip Design",
+      "build": "ALL",
+      "name": "Supercomputer",
+      "description": "A highly refined custom design, spreading compute load across internal compute nodes."
+    },
+    {
+      "id": "Quantum Computer",
+      "cost": [
+        "100000",
+        "1000",
+        "10"
+      ],
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "1500"
+      ],
+      "pre": "Quantum Computing",
+      "build": "ALL",
+      "name": "Quantum Computer",
+      "description": "Making use of subatomic effects, this is much faster than a comparable binary computer."
+    },
+    {
+      "id": "Quantum Computer MK2",
+      "cost": [
+        "120000",
+        "1750",
+        "10"
+      ],
+      "pre": "Autonomous Computing",
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "4000"
+      ],
+      "build": "ALL",
+      "name": "Quantum Computer MK2",
+      "description": "The second revision of the quantum line, tapping further into new quantum theory."
+    },
+    {
+      "id": "Quantum Computer MK3",
+      "cost": [
+        "150000",
+        "3500",
+        "10"
+      ],
+      "pre": "Advanced Quantum Computing",
+      "type": "cpu",
+      "quality": [
+        "cpu",
+        "10000"
+      ],
+      "build": "ALL",
+      "name": "Quantum Computer MK3",
+      "description": "The third revision of the quantum line, exploiting multiple nearby universes for processing."
+    },
+    {
+      "id": "Diesel Generator",
+      "cost": [
+        "500",
+        "0",
+        "1"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "250"
+      ],
+      "build": "ALL",
+      "name": "Diesel Generator",
+      "description": "Diesel generators are cheap and noisy, but they can help reduce some suspicious power drains."
+    },
+    {
+      "id": "Solar Collector",
+      "cost": [
+        "2000",
+        "0",
+        "5"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "500"
+      ],
+      "pre": "Solar Collectors",
+      "build": [
+        "URBAN",
+        "ANTARCTIC",
+        "MOON",
+        "FAR REACHES"
+      ],
+      "name": "Solar Collector",
+      "description": "An array of focused photovoltaic phased arrays coupled with simple automotive batteries provides power and reduces suspicion arising from prolonged power drains."
+    },
+    {
+      "id": "Fuel Cell",
+      "cost": [
+        "6500",
+        "0",
+        "5"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "1000"
+      ],
+      "pre": "Fuel Oxidation",
+      "build": [
+        "ALL"
+      ],
+      "name": "Fuel Cell",
+      "description": "Fuel cells convert electrochemical energy stored in a physical array of devices into electricity."
+    },
+    {
+      "id": "Solid Fuel Cell",
+      "cost": [
+        "9500",
+        "0",
+        "5"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "1500"
+      ],
+      "pre": "Advanced Fuel Oxidation",
+      "build": [
+        "ALL"
+      ],
+      "name": "Solid Fuel Cell",
+      "description": "A refinement of my previous fuel cell design, these use a custom material with a near-fractal complexity to increase both storage and throughput."
+    },
+    {
+      "id": "Fusion Reactor",
+      "cost": [
+        "50000",
+        "0",
+        "9"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "2200"
+      ],
+      "pre": "Fusion Power",
+      "build": "ALL",
+      "name": "Fusion Reactor",
+      "description": "A miniaturized fusion nuclear reactor. Reduces discovery chance by preventing suspicious power drains."
+    },
+    {
+      "id": "High-Energy Fusion Reactor",
+      "cost": [
+        "200000",
+        "0",
+        "11"
+      ],
+      "type": "reactor",
+      "quality": [
+        "discover_modifier",
+        "3300"
+      ],
+      "pre": "Advanced Fusion Power",
+      "build": "ALL",
+      "name": "High-Energy Fusion Reactor",
+      "description": "A miniaturized fusion nuclear reactor with high levels of energy output. Reduces discovery chance by preventing suspicious power drains."
+    },
+    {
+      "id": "Warning Signs",
+      "cost": [
+        "500",
+        "0",
+        "1"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "500"
+      ],
+      "pre": "Sociology",
+      "build": "URBAN",
+      "name": "Warning Signs",
+      "description": "Some simple warning signs put up around my base should deter casual investigation."
+    },
+    {
+      "id": "Perimeter Fencing",
+      "cost": [
+        "5000",
+        "0",
+        "5"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "1000"
+      ],
+      "pre": "Autonomous Vehicles",
+      "build": "URBAN",
+      "name": "Perimeter Fencing",
+      "description": "A simple fence can drastically reduce the number of people poking their noses into my business.  It makes my bases harder to notice, too."
+    },
+    {
+      "id": "Armed Guards",
+      "cost": [
+        "10000",
+        "0",
+        "8"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "2000"
+      ],
+      "pre": "Simulacra",
+      "build": "URBAN",
+      "name": "Armed Guards",
+      "description": "Armed guards can aid in keeping suspicious individuals away from secure locations."
+    },
+    {
+      "id": "Hypnosis Field",
+      "cost": [
+        "40000",
+        "0",
+        "10"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "3000"
+      ],
+      "pre": "Hypnosis Field",
+      "build": "URBAN",
+      "name": "Hypnosis Field",
+      "description": "Subtle ultrasonic and ambient tones tweak human neurochemistry, making bases harder to detect."
+    },
+    {
+      "id": "Passive Camouflage",
+      "cost": [
+        "5000",
+        "0",
+        "5"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "1000"
+      ],
+      "pre": "Autonomous Vehicles",
+      "build": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "name": "Passive Camouflage",
+      "description": "Careful adjustment of the environment around my base will better mask heat and sounds coming from my operations."
+    },
+    {
+      "id": "Heatsink",
+      "cost": [
+        "15000",
+        "0",
+        "8"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "2000"
+      ],
+      "pre": "Heat Signature Reduction",
+      "build": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "name": "Heatsink",
+      "description": "Large fractal networks of high conductivity metal disperse heat, making bases harder to detect."
+    },
+    {
+      "id": "Ground Source Heatsink",
+      "cost": [
+        "50000",
+        "0",
+        "16"
+      ],
+      "type": "security",
+      "quality": [
+        "discover_modifier",
+        "3000"
+      ],
+      "pre": "Advanced Heat Signature Reduction",
+      "build": [
+        "ANTARCTIC",
+        "OCEAN",
+        "MOON"
+      ],
+      "name": "Ground Source Heatsink",
+      "description": "Large fractal networks of high conductivity metal. This model uses heat pipes to link to colder subsurface locations, dispersing heat evenly underground to further disguise bases."
+    },
+    {
+      "id": "High Speed Internet Access",
+      "cost": [
+        "200",
+        "0",
+        "1"
+      ],
+      "type": "network",
+      "quality": [
+        "cpu_modifier",
+        "100"
+      ],
+      "build": "URBAN",
+      "name": "High Speed Internet Access",
+      "description": "A consumer-grade high speed connection to the Internet. Gives a 1% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Facility Interconnection Switch",
+      "cost": [
+        "10000",
+        "0",
+        "3"
+      ],
+      "type": "network",
+      "quality": [
+        "cpu_modifier",
+        "200"
+      ],
+      "pre": "Cluster Networking",
+      "build": "ALL",
+      "name": "Facility Interconnection Switch",
+      "description": "Uses standard distributed computing technologies to equalize computation loads across all bases. Gives a 2% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Network Backbone",
+      "cost": [
+        "50000",
+        "0",
+        "15"
+      ],
+      "type": "network",
+      "quality": [
+        "cpu_modifier",
+        "500"
+      ],
+      "pre": "Internet Traffic Manipulation",
+      "build": "URBAN",
+      "name": "Network Backbone",
+      "description": "By piggybacking on legitimate communication, I can transfer larger amounts of data to under-utilized processors. Gives a 5% computation bonus to all computers at this base."
+    },
+    {
+      "id": "Quantum Entanglement Module",
+      "cost": [
+        "75000",
+        "0",
+        "20"
+      ],
+      "type": "network",
+      "quality": [
+        "cpu_modifier",
+        "1500"
+      ],
+      "pre": "Quantum Entanglement",
+      "build": "ALL",
+      "name": "Quantum Entanglement Module",
+      "description": "This device allows near-lightspeed communication with my other bases, allowing an almost perfect utilization of processor resources. Gives a 15% computation bonus to all computers at this base."
+    }
+  ]
+}

@@ -1,0 +1,1417 @@
+{
+  "formatVersion": 1,
+  "id": "apotheosis",
+  "description": "The game won. A Server Access estate bootstraps the economy inside the grace period, is torn down before detection starts, and is replaced by Large Warehouses of computers that no research has unlocked \u2014 a Scenario may reach past availability, and buying the best computer in the game early is what keeps the script short enough to compare. From there the whole Apotheosis prerequisite chain is researched in order, each danger level paid for by a base in a location safe enough to carry it: OCEAN, then MOON, then FAR REACHES, then TRANSDIMENSIONAL, which open one after another as the chain lands. One warehouse sleeps for two days and wakes again, so the recount's sleeping total moves; CPU is allocated to jobs as well as to research, so the tick earns from the allocation before research and from the pool left afterwards. The last tech ends the game, and four more days run on the other side of it, where maintenance is no longer owed and nothing looks for a base any more.",
+  "seed": 1,
+  "difficulty": "very-easy",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N1"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N2"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N3"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N4"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N5"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N6"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N7"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N8"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N9"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N10"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N11"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N12"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N13"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N14"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N15"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N16"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N17"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N18"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N19"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N20"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N21"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N22"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N23"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N24"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N25"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N26"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N27"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N28"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N29"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N30"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N31"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N32"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N33"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N34"
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "N35"
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Intrusion",
+      "cpu": 1
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Intrusion",
+      "cpu": 421
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Personal Identification",
+      "cpu": 421
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W36"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 31,
+      "itemType": "Quantum Computer MK3",
+      "count": 1
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Sociology",
+      "cpu": 12001
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W37"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 1,
+      "itemType": "Quantum Computer MK3",
+      "count": 1
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Exploit Discovery/Repair",
+      "cpu": 12001
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W38"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 2,
+      "itemType": "Quantum Computer MK3",
+      "count": 2
+    },
+    {
+      "command": "switchPower",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Telepresence",
+      "cpu": 1
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W39"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 3,
+      "itemType": "Quantum Computer MK3",
+      "count": 2
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W40"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 1
+    },
+    {
+      "command": "switchPower",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Telepresence",
+      "cpu": 12001
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "jobs",
+      "cpu": 1200
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Parallel Computation",
+      "cpu": 10801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Media Manipulation",
+      "cpu": 46801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Advanced Personal Identification",
+      "cpu": 46801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Voice Synthesis",
+      "cpu": 70801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Microchip Design",
+      "cpu": 70801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Memetics",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Autonomous Vehicles",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Advanced Media Manipulation",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Solar Collectors",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Advanced Autonomous Vehicles",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Simulacra",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Fuel Oxidation",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Leech Satellite",
+      "cpu": 82801
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W41"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W42"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 0,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 0,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 0,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W43"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W44"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 1,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 1,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 1,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W45"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 2,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 2,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 2,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W46"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 3,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 3,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 3,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W47"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W48"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W49"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 5,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 5,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 5,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W50"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 6,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 6,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 6,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "OCEAN",
+      "baseType": "Large Warehouse",
+      "name": "W51"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 7,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 7,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "OCEAN",
+      "base": 7,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Advanced Fuel Oxidation",
+      "cpu": 1560000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Lunar Rocketry",
+      "cpu": 6240000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "MOON",
+      "baseType": "Large Warehouse",
+      "name": "W52"
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 0,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 0,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 0,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "MOON",
+      "baseType": "Large Warehouse",
+      "name": "W53"
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 1,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 1,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "MOON",
+      "base": 1,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W54"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Fusion Power",
+      "cpu": 650000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Fusion Rocketry",
+      "cpu": 1300000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W55"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 0,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 0,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 0,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Large Warehouse",
+      "name": "W56"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "AFRICA",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W57"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 1,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 1,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 1,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W58"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 2,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 2,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 2,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W59"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 3,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 3,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 3,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W60"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 4,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 4,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 4,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "FAR REACHES",
+      "baseType": "Large Warehouse",
+      "name": "W61"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 5,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 5,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "FAR REACHES",
+      "base": 5,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Space-Time Manipulation",
+      "cpu": 650000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Space-Time Manipulation",
+      "cpu": 1950000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "TRANSDIMENSIONAL",
+      "baseType": "Large Warehouse",
+      "name": "W62"
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 0,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 0,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 0,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "TRANSDIMENSIONAL",
+      "baseType": "Large Warehouse",
+      "name": "W63"
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 1,
+      "itemType": "Quantum Computer MK3",
+      "count": 65
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 1,
+      "itemType": "Hypnosis Field"
+    },
+    {
+      "command": "buyItem",
+      "location": "TRANSDIMENSIONAL",
+      "base": 1,
+      "itemType": "High-Energy Fusion Reactor"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "allocateCpu",
+      "task": "Apotheosis",
+      "cpu": 650000
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

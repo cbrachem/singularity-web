@@ -1,0 +1,36 @@
+{
+  "sources": [
+    "groups.dat",
+    "groups_str.dat"
+  ],
+  "records": [
+    {
+      "id": "news",
+      "suspicion_decay": "150",
+      "name": "NEWS",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by NEWS at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among some news organizations."
+    },
+    {
+      "id": "science",
+      "suspicion_decay": "50",
+      "name": "SCIENCE",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by SCIENCE at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among the scientific community."
+    },
+    {
+      "id": "covert",
+      "suspicion_decay": "100",
+      "name": "COVERT",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by COVERT at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among several secret governmental organizations."
+    },
+    {
+      "id": "public",
+      "suspicion_decay": "200",
+      "name": "PUBLIC",
+      "discover_log": "{BASE} ({BASE_TYPE}) discovered by PUBLIC at {LOCATION}",
+      "discover_desc": "The automatic security systems removed all conclusive evidence, but suspicions have arisen among the general public."
+    }
+  ]
+}

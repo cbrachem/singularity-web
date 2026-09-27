@@ -1,0 +1,25 @@
+{
+  "name": "@singularity/app",
+  "version": "0.0.0",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check:transfer": "bun run scripts/check-transfer.ts",
+    "check:development-only": "bun run scripts/check-development-only.ts",
+    "check:licences": "bun run scripts/check-licences.ts"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.3.1",
+    "@singularity/sim": "workspace:*",
+    "preact": "^10.27.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "@testing-library/preact": "^3.2.4",
+    "happy-dom": "^18.0.1"
+  }
+}

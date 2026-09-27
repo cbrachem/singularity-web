@@ -1,0 +1,250 @@
+/**
+ * The HUD floats; the map underneath stays clickable everywhere the HUD is not actually a
+ * panel. Hence `pointer-events` off on the layer and on again on each panel — a full-screen
+ * overlay that swallowed clicks would take the globe away without taking it off the screen.
+ */
+
+.hud {
+  /*
+   * The width of a money cell, and there are four of them: each pool and the flow under it.
+   * `-999,999.99` is the widest string `toMoney` can produce — eleven characters, longer than
+   * the abbreviated `-999.99qu` and longer than the pi the top of the scale prints
+   * (`readouts.ts`, swept in `readouts.test.ts`). One name because it is one reason; it is
+   * resolved against each cell's own face, which is why the two grades share the declaration
+   * and not a pixel count.
+   */
+  --hud-money-width: 11ch;
+
+  position: absolute;
+  inset: 0 0 var(--band-height) 0;
+  pointer-events: none;
+}
+
+.hud__panel {
+  position: absolute;
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--colour-edge);
+  border-radius: var(--radius);
+  background: var(--colour-surface);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px #00000077;
+  pointer-events: auto;
+}
+
+/*
+ * The clock panel is a column: the three readouts across, and the speed control **under**
+ * them rather than beside them. It is the same move the daily flow makes below, taken for the
+ * same reason and settled the same way — by measuring the two panels at 1024 rather than
+ * arguing about them (`app/test/viewport.test.ts`).
+ *
+ * Beside, the panel measured 598px and the resources panel 438px. With the two anchored to
+ * opposite edges of a 1024 stage and 16px of margin each, that is 1068px asked of 1024: the
+ * resources panel was drawn 44px over the clock panel — 74px on the widest difficulty name —
+ * covering the Speed readout and half the speed control, at the exact floor of the supported
+ * range. Under, the two clear each other — by the same amount on either difficulty, with both
+ * pools already at the widest figure they can print and both settings at the widest string
+ * theirs can, which is what the money width and the two settings' widths below buy.
+ *
+ * It was 6px of clearance until the resources panel made the same move with its two doors,
+ * and is 195px now.
+ */
+.hud__clock {
+  top: var(--space-4);
+  left: var(--space-4);
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-2);
+}
+
+/* The three readouts, across. */
+.hud__row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+/*
+ * A column too, and for the reason the clock panel is one: the two doors sit **under** the
+ * readouts rather than beside them. Beside, each door is width in the panel that grows
+ * leftward towards the clock at 1024, and the gap between the two panels is 6px — so the first
+ * door named for what it opens rather than for one third of it, `Research/Tasks`, cost 40px
+ * the gap did not have and drew the panel 34px over the clock. Under, a door costs
+ * the panel no width at all: the readout row is wider than both doors together.
+ */
+.hud__resources {
+  top: var(--space-4);
+  right: var(--space-4);
+  flex-direction: column;
+  align-items: end;
+  gap: var(--space-2);
+}
+
+/*
+ * Each pool carries its flow under it, so in reading order the panel prints `50`, `/ day`,
+ * `11`, `spare` — and `/ day` lands *between* the two figures, where the eye pairs it with
+ * the second rather than the first. The two pools were `--space-4` apart, which is the same
+ * gap that separates a value from anything else in the panel, so nothing said where one cell
+ * ended. A hairline does, and it costs one pixel of the width the panel is measured against.
+ */
+.hud__resources .hud__readout + .hud__readout {
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--colour-edge);
+}
+
+.hud__readout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hud__label {
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * Fixed cells, sized for the widest string the value can produce rather than for the one on
+ * the screen. With tabular figures that is what keeps the panel still while the numbers move
+ * — the same measure the threat readout spends, applied to the values this rule
+ * carries: the difficulty, the clock, the speed and the two pools.
+ *
+ * No width here, because there is no width all five share. Each of the three in the clock
+ * panel is sized for the widest string its own value can produce, below; the two pools take
+ * the money width, which is one width for both and is declared where the pools are. There was
+ * a `min-width: 7ch` floor on this rule and it fitted none of them — it was two thirds of what
+ * a pool prints and it was under both settings, so the only cells it
+ * governed were cells it was too narrow for.
+ */
+.hud__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-readout);
+  font-variant-numeric: tabular-nums;
+  color: var(--colour-ink);
+}
+
+/*
+ * The pools, at the same width as the flow under each of them and for the same reason: both
+ * print a `toMoney` string, and the cell is sized for the widest of those rather than for the
+ * balance the game happens to hold. The face is monospaced, so `11ch` is exactly that
+ * string's own width — the floor cannot put the cell past the width its content already
+ * forces, it only stops the cell from being narrower on the way there.
+ *
+ * It costs 52px of the gap between the two panels at 1024, permanently rather than only when
+ * the balance is at its longest. That gap is measured with the panels at this width
+ * (`app/test/viewport.test.ts`); paying it always is the point, because a cell that widens as
+ * the cash figure grows a digit is the panel moving under the player. The clock panel's own
+ * three cells pay the same way, below.
+ */
+.hud__resources .hud__value {
+  min-width: var(--hud-money-width);
+}
+
+/*
+ * The one grade above the rest of the shell, and it is spent on exactly three values: the
+ * clock, and the two pools. They are what the player is watching — every other figure here
+ * is read once and then remembered — and until this existed the HUD had no answer to "what
+ * should I be looking at", because everything in it was within four pixels of everything
+ * else.
+ *
+ * The cells stay `ch`-sized against the same widest string, so the grade costs width and
+ * nothing else moves. What it costs is measured rather than assumed: `app/test/viewport.test.ts`
+ * puts the two panels at 1024 and requires the gap between them to survive both pools
+ * printing their longest figure at once.
+ */
+.hud__value--display {
+  font-size: var(--text-display);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/*
+ * The other direction, and the reason the display grade fits at all. Difficulty and Speed are
+ * *settings* — read once, then remembered — and they were carrying the same grade as the two
+ * pools. Down here they give back the width the clock and the pools take, which is measured:
+ * `app/test/viewport.test.ts` puts both panels on a 1024 stage and requires the gap between
+ * them to survive both pools printing their longest figure at once.
+ */
+.hud__value--setting {
+  font-size: var(--text-body);
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * The clock panel's three cells, each at the width of the longest string its own value can
+ * reach: `DAY 0000, 00:00:00`, `ULTRA HARD` (tied with `IMPOSSIBLE`, the widest names the
+ * Content holds) and `432,000x`. The face is monospaced, so each `ch` count is exactly that
+ * string's own width — 234px, 80px and 64px at the two grades these cells carry.
+ *
+ * They were one floor of `7ch` and the two settings were over it: the difficulty cell rendered
+ * 80px against a 56px declaration, so the panel's right edge moved with the difficulty and,
+ * on the Speed, with the setting the player changes while watching. A cell that
+ * grows past its own declaration is the declaration doing nothing.
+ *
+ * Their own widths rather than one shared one, because the gap between the two panels cannot
+ * pay for a shared one: `11ch` on all three was measured at 40px of it, and `10ch` — the
+ * widest of these — would still spend 24px on characters the Speed can never print. Sized
+ * each, the settings cost 16px at `NORMAL` and 8px at `ULTRA HARD`, and the gap comes to the
+ * same figure either way, which is the point: it no longer depends on what the values say.
+ * The figure itself is one number in one place — the pinned assertion in
+ * `app/test/viewport.test.ts`, at 1024x600, and the clock panel's own note above.
+ */
+.hud__value--clock {
+  min-width: 18ch;
+}
+
+.hud__value--difficulty {
+  min-width: 10ch;
+}
+
+.hud__value--speed {
+  min-width: 8ch;
+}
+
+/*
+ * The daily flow, under the pool it is a fact about rather than beside it — two more cells
+ * across would push the two floating panels into each other at 1024 wide. Dimmer
+ * and a size down, because a rate read at the same weight as a balance competes with it.
+ */
+.hud__flow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  color: var(--colour-ink-dim);
+}
+
+/*
+ * The flow's own cell, at the money width like the pool above it. What the declaration
+ * changes is the cell's *minimum*, never its maximum — which is why it keeps the panel still
+ * without moving the edge the "under, not beside" decision was taken to protect.
+ */
+.hud__flow-value {
+  min-width: var(--hud-money-width);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.hud__flow-unit {
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.hud__research {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--colour-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.hud__research:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}

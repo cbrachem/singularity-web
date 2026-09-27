@@ -1,0 +1,61 @@
+{
+  "formatVersion": 1,
+  "id": "lost-every-base",
+  "description": "The game lost for want of a base. A Server Access base is built beside the one the game starts with, put to sleep, and the starting base destroyed \u2014 which leaves no available CPU at all and the game still running, because sleeping CPU counts towards being alive. It wakes, sleeps again, and is destroyed, and only then does `lost_game` read 1.",
+  "seed": 3,
+  "difficulty": "normal",
+  "script": [
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "buildBase",
+      "location": "AFRICA",
+      "baseType": "Server Access",
+      "name": "Annex"
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "switchPower",
+      "location": "AFRICA",
+      "base": 1
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "switchPower",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "advanceBy": 86400
+    },
+    {
+      "command": "switchPower",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "command": "destroyBase",
+      "location": "AFRICA",
+      "base": 0
+    },
+    {
+      "advanceBy": 86400
+    }
+  ]
+}

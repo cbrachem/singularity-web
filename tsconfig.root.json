@@ -1,0 +1,25 @@
+{
+  // The third project of the solution: the TypeScript that belongs to the repository rather
+  // than to either package — the configs at the root, and the tooling under `tools/`.
+  // Neither `sim/` nor `app/` can hold it, because both set `rootDir` inside
+  // their own package and a path climbing out of one is a TS6059.
+  //
+  // `tools/` comes with the root files rather than getting a project of its own: it is the
+  // same hole, it is the larger half of it, and one more project at the root buys nothing
+  // that a second `include` entry does not.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    // No "DOM": nothing here runs in a browser. `tools/` is a CLI seam and the root configs
+    // are read by Vite, Vitest and bun.
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "rootDir": ".",
+    // Declaration output only, and out of the way of both packages. Nothing consumes it —
+    // the project exists to be typechecked, not to be imported.
+    "outDir": ".tsbuild"
+  },
+  "include": ["*.ts", "tools"],
+  // `tools/parity/` reads the boundary rules out of `sim/test/support/`, so the sources of
+  // that project have to be in reach.
+  "references": [{ "path": "./sim" }]
+}

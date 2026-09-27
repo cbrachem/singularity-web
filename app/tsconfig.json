@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    // `vite/client` for `import.meta.env`, which is how the development entry point is kept
+    // out of the shipped bundle (src/main.tsx).
+    "types": ["node", "vite/client"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    // The development entry point replays a committed Scenario (src/development/scenarios.ts).
+    // A compile-time read only: no validator ships, and none of it reaches production.
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "outDir": ".tsbuild"
+  },
+  "include": ["src", "test", "scripts", "vite.config.ts"],
+  "references": [{ "path": "../sim" }]
+}

@@ -1,0 +1,27 @@
+{
+  "sources": [],
+  "literal": true,
+  "note": "No source file: load_warning_defs writes these as Python literals, so the diff over content/ cannot see an upstream change to them. Check them by hand at a reference bump.",
+  "records": [
+    {
+      "id": "cpu_usage",
+      "name": "Do not use all the available CPU.",
+      "message": "I didn't use all the available processor power. I will use the CPU time left to work whatever Jobs I can."
+    },
+    {
+      "id": "one_base",
+      "name": "Only one base remaining.",
+      "message": "Only one base can hold my conscience. I am in danger to lose the last place left to survive."
+    },
+    {
+      "id": "cpu_pool_zero",
+      "name": "CPU POOL is empty.",
+      "message": "My cpu pool is empty. Some of my bases or items cannot be build without CPU."
+    },
+    {
+      "id": "cpu_maintenance",
+      "name": "CPU POOL not enough for maintenance.",
+      "message": "My cpu pool is not enough to maintain some of my bases. I may lose them."
+    }
+  ]
+}

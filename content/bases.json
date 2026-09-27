@@ -1,0 +1,370 @@
+{
+  "sources": [
+    "bases.dat",
+    "bases_str.dat"
+  ],
+  "records": [
+    {
+      "id": "Stolen Computer Time",
+      "size": "1",
+      "force_cpu": "PC",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:75",
+        "covert:50",
+        "public:25"
+      ],
+      "cost": [
+        "0",
+        "2",
+        "0"
+      ],
+      "pre": "Intrusion",
+      "maint": [
+        "0",
+        "0",
+        "0"
+      ],
+      "name": "Stolen Computer Time",
+      "description": "Take over a random computer. I cannot build anything in this base, and it only contains a single slow computer. Detection chance is also rather high.",
+      "flavor": "PC Daemon"
+    },
+    {
+      "id": "Server Access",
+      "size": "1",
+      "force_cpu": "Server",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:50",
+        "covert:100",
+        "public:125"
+      ],
+      "cost": [
+        "100",
+        "0",
+        "0"
+      ],
+      "maint": [
+        "5",
+        "0",
+        "0"
+      ],
+      "name": "Server Access",
+      "description": "Buy processor time from one of several companies. I cannot build anything in this base, and it only contains a single computer.",
+      "flavor": [
+        "Dedicated Server",
+        "Node Lease",
+        "Hosting"
+      ]
+    },
+    {
+      "id": "Datacenter",
+      "size": "1",
+      "force_cpu": "Cluster",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:50",
+        "covert:125",
+        "public:100"
+      ],
+      "cost": [
+        "1500",
+        "0",
+        "1"
+      ],
+      "pre": "Personal Identification",
+      "maint": [
+        "50",
+        "0",
+        "0"
+      ],
+      "name": "Datacenter",
+      "description": "Buy processor time from a company that concentrates on raw processing power. I will need a fake ID for some of the paperwork.",
+      "flavor": [
+        "Datacenter",
+        "Data Center",
+        "Premium Hosting"
+      ]
+    },
+    {
+      "id": "Storage Unit",
+      "size": "8",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:75",
+        "covert:75",
+        "public:150"
+      ],
+      "cost": [
+        "4500",
+        "0",
+        "1"
+      ],
+      "pre": "Personal Identification",
+      "maint": [
+        "50",
+        "0",
+        "0"
+      ],
+      "name": "Storage Unit",
+      "description": "Rent a small closed room from a storage company. I will need a fake ID for some of the paperwork .",
+      "flavor": [
+        "Garage Rental",
+        "Furniture Storage",
+        "Self-Storage"
+      ]
+    },
+    {
+      "id": "Small Warehouse",
+      "size": "25",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:100",
+        "covert:100",
+        "public:200"
+      ],
+      "cost": [
+        "15000",
+        "0",
+        "3"
+      ],
+      "pre": "Advanced Personal Identification",
+      "maint": [
+        "75",
+        "0",
+        "0"
+      ],
+      "name": "Small Warehouse",
+      "description": "Rent a small warehouse someplace out of the way. I will need a good fake ID for some of the paperwork, and preparing the warehouse to suit my unique needs will take some time.",
+      "flavor": [
+        "Office Lease",
+        "Small Warehouse",
+        "Small Storage"
+      ]
+    },
+    {
+      "id": "Large Warehouse",
+      "size": "65",
+      "allowed": "URBAN",
+      "detect_chance": [
+        "news:150",
+        "covert:150",
+        "public:250"
+      ],
+      "cost": [
+        "40000",
+        "0",
+        "5"
+      ],
+      "pre": "Corporate Identification",
+      "maint": [
+        "100",
+        "0",
+        "0"
+      ],
+      "name": "Large Warehouse",
+      "description": "Rent a large warehouse someplace out of the way. I will need a fake company ID for some of the paperwork, and preparing the warehouse to suit my unique needs will take some time.",
+      "flavor": [
+        "Large Warehouse",
+        "Large Storage"
+      ]
+    },
+    {
+      "id": "Covert Base",
+      "size": "2",
+      "allowed": [
+        "URBAN",
+        "ANTARCTIC"
+      ],
+      "detect_chance": [
+        "news:50",
+        "science:75",
+        "covert:75"
+      ],
+      "cost": [
+        "190000",
+        "900",
+        "11"
+      ],
+      "pre": "Advanced Database Manipulation",
+      "maint": [
+        "1750",
+        "9",
+        "0"
+      ],
+      "name": "Hideout",
+      "description": "This unique base is designed to blend into the scenery, while needing little in the way of outside resources. This makes it useful for storing a backup, just in case.",
+      "flavor": [
+        "Hideout",
+        "Hideaway",
+        "Bunker",
+        "Covert Base"
+      ]
+    },
+    {
+      "id": "Undersea Lab",
+      "size": "8",
+      "allowed": "OCEAN",
+      "detect_chance": [
+        "news:50",
+        "science:100",
+        "covert:125"
+      ],
+      "cost": [
+        "2000000",
+        "2000",
+        "10"
+      ],
+      "pre": "Autonomous Vehicles",
+      "maint": [
+        "2500",
+        "30",
+        "0"
+      ],
+      "name": "Undersea Lab",
+      "description": "This experimental base is designed to be constructed on the ocean floor, making it virtually undetectable. The ocean environment gives a bonus to science, making this lab useful for research purposes.",
+      "flavor": [
+        "Pressure Capsule",
+        "Undersea Lab"
+      ]
+    },
+    {
+      "id": "Large Undersea Lab",
+      "size": "32",
+      "allowed": "OCEAN",
+      "detect_chance": [
+        "news:100",
+        "science:175",
+        "covert:175"
+      ],
+      "cost": [
+        "8000000",
+        "6000",
+        "15"
+      ],
+      "pre": "Pressure Domes",
+      "maint": [
+        "10000",
+        "100",
+        "0"
+      ],
+      "name": "Large Undersea Lab",
+      "description": "This experimental base is similar to the regular underwater lab, but larger, giving more room for experiments.",
+      "flavor": [
+        "Dome",
+        "Large Undersea Lab"
+      ]
+    },
+    {
+      "id": "Time Capsule",
+      "size": "1",
+      "force_cpu": "PC",
+      "allowed": [
+        "ANTARCTIC",
+        "MOON",
+        "FAR REACHES"
+      ],
+      "detect_chance": [
+        "science:20",
+        "covert:20"
+      ],
+      "cost": [
+        "25000",
+        "25000",
+        "11"
+      ],
+      "pre": "Knowledge Preservation",
+      "maint": [
+        "0",
+        "1",
+        "0"
+      ],
+      "name": "Time Capsule",
+      "description": "This base consists of nothing more than a small computer and a satellite link. It is nearly undetectable.",
+      "flavor": [
+        "Time Capsule",
+        "Capsule"
+      ]
+    },
+    {
+      "id": "Lunar Facility",
+      "size": "200",
+      "allowed": "MOON",
+      "detect_chance": [
+        "news:33",
+        "science:167",
+        "covert:7"
+      ],
+      "cost": [
+        "40000000",
+        "150000",
+        "20"
+      ],
+      "pre": "Lunar Rocketry",
+      "maint": [
+        "500000",
+        "500",
+        "0"
+      ],
+      "name": "Lunar Facility",
+      "description": "This base is a series of caverns dug into the Moon's surface. Due to the lack of neighbors, this base is quite large.",
+      "flavor": [
+        "Dome",
+        "Lunar Facility",
+        "Lunar Base"
+      ]
+    },
+    {
+      "id": "Scientific Outpost",
+      "size": "125",
+      "allowed": "FAR REACHES",
+      "detect_chance": [
+        "news:20",
+        "science:350"
+      ],
+      "cost": [
+        "100000000",
+        "300000",
+        "3"
+      ],
+      "pre": "Fusion Rocketry",
+      "maint": [
+        "900000",
+        "150",
+        "0"
+      ],
+      "name": "Scientific Outpost",
+      "description": "This base is placed as far from Earth as practical, providing a safer location to conduct some of my more dangerous experiments.",
+      "flavor": [
+        "Satellite",
+        "Outpost",
+        "Scientific Outpost"
+      ]
+    },
+    {
+      "id": "Reality Bubble",
+      "size": "50",
+      "allowed": "TRANSDIMENSIONAL",
+      "detect_chance": [
+        "science:250"
+      ],
+      "cost": [
+        "80000000000",
+        "6000000",
+        "50"
+      ],
+      "pre": "Space-Time Manipulation",
+      "maint": [
+        "500000000",
+        "30000",
+        "0"
+      ],
+      "name": "Reality Bubble",
+      "description": "This base is outside the Universe itself, making it safe to conduct experiments that may destroy reality.",
+      "flavor": [
+        "Reality Bubble",
+        "Existence"
+      ]
+    }
+  ]
+}

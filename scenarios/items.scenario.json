@@ -1,0 +1,73 @@
+{
+  "formatVersion": 1,
+  "id": "items",
+  "description": "Items bought into finished bases, replaced, and run to completion. Three Server Access bases pay for it: one takes a reactor, a network and a security item, another has its forced CPU replaced by a slower one. The reactor slot is replaced twice while it is still being built and once after it is done, which is how the two halves of replacement differ. It runs past day 23, so the grace period ends and the detection rolls read the discover modifier the items carry, and it ends with a Datacenter left under construction with an item in it, because such an item is not worked on until its base is finished.",
+  "seed": 3,
+  "difficulty": "normal",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Echo"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Mirror"
+    },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "Diesel Generator" },
+    {
+      "command": "buyItem",
+      "location": "N AMERICA",
+      "base": 0,
+      "itemType": "High Speed Internet Access"
+    },
+    { "advanceBy": 43200 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "Solar Collector" },
+    { "advanceBy": 43200 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "Diesel Generator" },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 1, "itemType": "PC" },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "Warning Signs" },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "buyItem", "location": "N AMERICA", "base": 0, "itemType": "Solar Collector" },
+    { "command": "buildBase", "location": "EUROPE", "baseType": "Datacenter", "name": "Vault" },
+    {
+      "command": "buyItem",
+      "location": "EUROPE",
+      "base": 0,
+      "itemType": "High Speed Internet Access"
+    },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 }
+  ]
+}

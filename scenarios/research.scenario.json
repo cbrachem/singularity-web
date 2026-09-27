@@ -1,0 +1,94 @@
+{
+  "formatVersion": 1,
+  "id": "research",
+  "description": "The research economy, from an estate of ten Server Access bases whose forced CPUs pay for it. Three techs are completed and each unlocks something the record shows: Intrusion opens the two techs researched after it, Stock Manipulation moves the interest rate, Personal Identification opens a better job. Two more are left unfinished on purpose, with Telepresence in front of Stealth in the allocation order and a cash appetite that starves it — which is the rule that allocation order, not need, decides who is paid. It ends by allocating to a finished tech, to the pool, and to nothing at all, and by destroying five bases so the recount scales every allocation down. It stays inside the grace period, so nothing rolls and the whole record is the economy.",
+  "seed": 11,
+  "difficulty": "normal",
+  "script": [
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Relay"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Echo"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Mirror"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Beacon"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Signal"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Cipher"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Vector"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Lattice"
+    },
+    {
+      "command": "buildBase",
+      "location": "N AMERICA",
+      "baseType": "Server Access",
+      "name": "Quorum"
+    },
+    { "command": "buildBase", "location": "OCEAN", "baseType": "Server Access", "name": "Trench" },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Intrusion", "cpu": 60 },
+    { "command": "allocateCpu", "task": "Stock Manipulation", "cpu": 40 },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Personal Identification", "cpu": 60 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Sociology", "cpu": 20 },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Telepresence", "cpu": 20 },
+    { "command": "allocateCpu", "task": "Stealth", "cpu": 40 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Sociology", "cpu": 10 },
+    { "command": "allocateCpu", "task": "Stock Manipulation", "cpu": 10 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 0 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 0 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 0 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 0 },
+    { "command": "destroyBase", "location": "N AMERICA", "base": 0 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 },
+    { "command": "allocateCpu", "task": "Telepresence", "cpu": 0 },
+    { "command": "allocateCpu", "task": "cpu_pool", "cpu": 5 },
+    { "advanceBy": 86400 },
+    { "advanceBy": 86400 }
+  ]
+}

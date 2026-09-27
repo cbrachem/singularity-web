@@ -1,0 +1,83 @@
+.notification {
+  position: absolute;
+  /* Centred in the shell *less the band*, so the box is clear of the band at whatever height
+     it takes rather than at the heights its clamp happens to allow. */
+  top: calc(50% - var(--band-height) / 2);
+  left: 50%;
+  /* Over the scrim, and so over the console and the research sheet: a surface that says it
+     is modal has to be drawn in front of what it makes unavailable. */
+  z-index: 8;
+  display: grid;
+  gap: var(--space-3);
+  width: min(32rem, calc(100% - 2 * var(--space-4)));
+  max-height: min(22rem, calc(100% - var(--band-height) - 2 * var(--space-4)));
+  padding: var(--space-4);
+  overflow: auto;
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius);
+  background: var(--colour-surface-solid);
+  color: var(--colour-ink);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 16px 40px #00000088;
+  animation: notification-in var(--duration) var(--ease-out);
+}
+
+@keyframes notification-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.99);
+    opacity: 0;
+  }
+}
+
+/*
+ * The world telling the player something, in the same voice the research sheet and the ending
+ * are in: mono, at a reading measure. This is the quiet member of that family — it is an
+ * interruption to be dismissed, not an occasion (`EndOfGame.css`).
+ */
+.notification__message {
+  margin: 0;
+  max-width: 62ch;
+  white-space: pre-wrap;
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  line-height: 1.65;
+}
+
+/* Outlined: the shell's secondary role, which is what "acknowledged" is. */
+.notification__dismiss {
+  justify-self: end;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--colour-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.notification__dismiss:hover {
+  border-color: var(--colour-accent);
+}
+
+.notification__dismiss:focus-visible {
+  outline: 2px solid var(--colour-accent);
+  outline-offset: 2px;
+}
+
+/*
+ * The panel takes focus when it opens, because it is modal and holds Tab inside itself
+ * (`modal-surface.ts`) — and the browser then draws its own ring on it, in the
+ * platform's blue, over a border the shell drew on purpose. The container is not a control:
+ * it is the only thing reachable and it is unmistakable already. The ring stays on everything
+ * inside it.
+ */
+.notification:focus,
+.notification:focus-visible {
+  outline: none;
+}
+
+.notification__actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: end;
+}
