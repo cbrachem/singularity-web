@@ -4,12 +4,13 @@
  */
 
 .map {
-  --pin-size: 2.125rem;
-  --pin-empty-size: 1.125rem;
+  --pin-size: 1.75rem;
+  --pin-growth: 1.5rem;
+  --pin-empty-size: 0.875rem;
   --pin-hit: 2.75rem;
   --notification-ring: color-mix(in srgb, var(--colour-accent) 27%, transparent);
   --notification-pin-scale: 1.3;
-  --graticule-opacity: 0.18;
+  --graticule-opacity: 0.08;
   --night-opacity: 0.55;
 
   position: absolute;
@@ -46,7 +47,7 @@
   position: relative;
   width: min(100cqw, calc(100cqh * 2));
   aspect-ratio: 2 / 1;
-  background: radial-gradient(120% 90% at 30% 10%, #101a2e 0%, var(--colour-ocean) 70%);
+  background: var(--colour-ocean);
 }
 
 /*
@@ -60,7 +61,15 @@
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.map__dot {
   fill: var(--colour-land);
+}
+
+.map__sea-dot {
+  fill: var(--colour-land);
+  opacity: 0.12;
 }
 
 /* The graticule is CSS and not geometry: 30 degrees of longitude, 30 of latitude. */
@@ -120,22 +129,75 @@
   transform: translate(-50%, -50%);
 }
 
+/*
+ * The mark: square, grown by the square root of the location's CPU share (`--mark-weight`,
+ * `WorldMap.tsx`), and coloured by the highest detection level there (`data-risk`). A glow
+ * that grows with the share is what shows the spread at a glance.
+ */
+.map__pin {
+  --mark-colour: var(--colour-accent);
+  --mark-weight: 0;
+}
+
+.map__pin[data-risk="1"] {
+  --mark-colour: var(--danger-1);
+}
+
+.map__pin[data-risk="2"] {
+  --mark-colour: var(--danger-2);
+}
+
+.map__pin[data-risk="3"] {
+  --mark-colour: var(--danger-3);
+}
+
 .map__pin-mark {
   position: relative;
   display: grid;
   place-items: center;
-  width: var(--pin-size);
-  height: var(--pin-size);
-  border-radius: 50%;
-  border: 1px solid var(--colour-accent);
-  background: #0a0d14cc;
-  box-shadow: 0 0 0 1px #0a0d1466;
+  width: calc(var(--pin-size) + var(--pin-growth) * var(--mark-weight));
+  height: calc(var(--pin-size) + var(--pin-growth) * var(--mark-weight));
+  border: 1px solid var(--mark-colour);
+  border-radius: var(--radius-small);
+  background: color-mix(
+    in srgb,
+    var(--mark-colour) calc(12% + 40% * var(--mark-weight)),
+    var(--colour-ground)
+  );
+  box-shadow: 0 0 calc(6px + 30px * var(--mark-weight)) calc(5px * var(--mark-weight))
+    color-mix(in srgb, var(--mark-colour) 45%, transparent);
   font-variant-numeric: tabular-nums;
   font-size: var(--text-small);
-  color: var(--colour-accent);
+  color: var(--colour-ink);
   transition:
     transform var(--duration) var(--ease-out),
     background var(--duration) var(--ease-out);
+}
+
+/* A base under construction: a square progress outline around the mark, clockwise from the top. */
+.map__pin[data-building="true"] .map__pin-mark::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  padding: 2px;
+  border-radius: var(--radius-small);
+  background: conic-gradient(
+    var(--colour-ink) calc(var(--mark-ring) * 360deg),
+    color-mix(in srgb, var(--colour-ink) 15%, transparent) 0
+  );
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+}
+
+/* Read by screen readers as the pin's description; the mark shows the same values. */
+.map__pin-description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /*
@@ -146,8 +208,9 @@
 .map__pin[data-bases="0"] .map__pin-mark {
   width: var(--pin-empty-size);
   height: var(--pin-empty-size);
-  border-color: #aebbd4;
-  background: #0a0d14cc;
+  border-color: var(--colour-ink-dim);
+  background: var(--colour-ground);
+  box-shadow: none;
 }
 
 .map__pin[data-notification="true"] .map__pin-mark {
@@ -163,7 +226,7 @@
 .map__pin:hover .map__pin-mark,
 .map__pin:focus-visible .map__pin-mark {
   transform: scale(1.14);
-  background: var(--colour-accent);
+  background: var(--mark-colour);
   color: var(--colour-accent-ink);
 }
 
@@ -175,7 +238,7 @@
   margin-top: var(--space-1);
   padding: 1px var(--space-2);
   border-radius: 3px;
-  background: #0a0d14cc;
+  background: color-mix(in srgb, var(--colour-ground) 80%, transparent);
   font-size: var(--text-label);
   letter-spacing: 0.06em;
   color: var(--colour-ink-dim);
@@ -207,11 +270,86 @@
   gap: var(--space-1);
   padding: var(--space-1) var(--space-3);
   border: 1px solid var(--colour-edge);
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   background: var(--colour-surface);
   color: var(--colour-ink-dim);
   font: inherit;
   font-size: var(--text-small);
   letter-spacing: 0.04em;
   cursor: pointer;
+}
+
+/* The key: a small square in the map's bottom-left corner, and its panel above it. */
+.map__key {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  z-index: 4;
+}
+
+.map__key-button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: var(--colour-ground);
+  color: var(--colour-ink-dim);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  cursor: pointer;
+}
+
+.map__key-button:hover,
+.map__key-button:focus-visible {
+  border-color: var(--colour-accent);
+  color: var(--colour-accent);
+}
+
+/* In the top layer, placed above the button by `MapKey` in `WorldMap.tsx`. */
+.map__key-panel {
+  position: fixed;
+  inset: auto auto auto auto;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--colour-edge-strong);
+  border-radius: var(--radius-small);
+  background: var(--colour-surface-solid);
+  color: var(--colour-ink);
+  font-size: var(--text-small);
+}
+
+.map__key-panel:popover-open {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.map__key-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.map__key-item::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-small);
+}
+
+.map__key-item--share::before {
+  background: var(--colour-accent);
+  box-shadow: 0 0 8px 2px color-mix(in srgb, var(--colour-accent) 55%, transparent);
+}
+
+.map__key-item--ring::before {
+  border: 2px solid var(--colour-ink);
+  border-right-color: transparent;
+}
+
+.map__key-item--risk::before {
+  background: var(--danger-1);
 }

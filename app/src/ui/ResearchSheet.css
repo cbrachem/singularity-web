@@ -216,7 +216,7 @@
   margin-top: -6px;
   appearance: none;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-small);
   background: var(--colour-accent);
 }
 
@@ -224,7 +224,7 @@
   width: 14px;
   height: 14px;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-small);
   background: var(--colour-accent);
 }
 
@@ -241,7 +241,7 @@
 /* A row with CPU on it is a row that is doing something, and it says so without colour alone. */
 .research-sheet__row[data-allocated="true"],
 .research-sheet__sink[data-allocated="true"] {
-  background: #6b7cff0f;
+  background: color-mix(in srgb, var(--colour-accent) 6%, transparent);
   box-shadow: inset 2px 0 0 var(--colour-accent);
 }
 

@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef, useState } from "preact/hooks";
 import { formatGameTime, gameClock } from "../game-time.ts";
 import type { LicenceDocument } from "../licences/document.ts";
 import { Licences } from "../licences/Licences.tsx";
-import { LAND_PATH } from "../map/land.ts";
+import { LAND_DOTS_PATH } from "../map/dots.ts";
 import { plainLabel } from "../readouts.ts";
 import "../tokens.css";
 import "./StartScreen.css";
@@ -133,12 +133,12 @@ export function StartScreen(props: StartScreenProps): JSX.Element {
     <main class="start">
       {/*
         The map the player is about to be dropped onto, dimmed, with night drifting across it.
-        Decoration only: the land is the map's own path, and the night band is a gradient, not
+        Decoration only: the land is the map's own dot matrix, and the night band is a gradient, not
         the terminator (`../map/NightLayer.tsx`).
       */}
       <div class="start__backdrop" aria-hidden="true">
-        <svg class="start__land" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
-          <path d={LAND_PATH} />
+        <svg class="start__land" viewBox="0 0 200 100" preserveAspectRatio="none" focusable="false">
+          <path d={LAND_DOTS_PATH} />
         </svg>
         <div class="start__night" />
       </div>

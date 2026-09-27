@@ -243,6 +243,19 @@ describe("the day/night terminator", () => {
   });
 });
 
+// Size and colour say nothing to a screen reader, so each pin carries its mark in words, and
+// the key to the marks is one named button in the map's corner.
+describe("the location marks", () => {
+  it("describe each pin in words, and offer a key", () => {
+    mount();
+    const europe = screen.getByRole("button", { name: "EUROPE" });
+    const described = europe.getAttribute("aria-describedby") ?? "";
+
+    expect(document.getElementById(described)?.textContent).toBe("No bases");
+    expect(screen.getByRole("button", { name: "Map key" })).toBeTruthy();
+  });
+});
+
 describe("the HUD", () => {
   it("shows the clock, the speed and the resource pools", () => {
     const session = createSession({ seed: 7, difficulty: "normal" });

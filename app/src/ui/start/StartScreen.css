@@ -19,7 +19,12 @@
   padding-left: var(--start-inset);
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 70% 40%, #101a2e 0%, var(--colour-ocean) 70%), var(--colour-ground);
+    radial-gradient(
+      120% 90% at 70% 40%,
+      color-mix(in srgb, var(--colour-accent) 7%, var(--colour-ocean)) 0%,
+      var(--colour-ocean) 70%
+    ),
+    var(--colour-ground);
 }
 
 /* The licences view replaces the title screen whole, centred as it always was. */
@@ -53,9 +58,9 @@
   background: linear-gradient(
     90deg,
     transparent 0 20%,
-    #05070cdd 32% 52%,
+    color-mix(in srgb, var(--colour-ground) 87%, transparent) 32% 52%,
     transparent 64% 70%,
-    #05070cdd 82% 100%
+    color-mix(in srgb, var(--colour-ground) 87%, transparent) 82% 100%
   );
   animation: start-night 90s linear infinite;
 }

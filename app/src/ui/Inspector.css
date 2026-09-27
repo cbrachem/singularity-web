@@ -534,7 +534,7 @@
   margin-top: -6px;
   appearance: none;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-small);
   background: var(--colour-accent);
 }
 
@@ -542,7 +542,7 @@
   width: 14px;
   height: 14px;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--radius-small);
   background: var(--colour-accent);
 }
 /*

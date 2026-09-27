@@ -4,7 +4,13 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
-import { LAND_PATH, LAND_RING_COUNT } from "../src/ui/map/land.ts";
+import {
+  LAND_DOTS,
+  LAND_DOT_COLUMNS,
+  LAND_DOT_ROWS,
+  LAND_PATH,
+  LAND_RING_COUNT,
+} from "../src/ui/map/land.ts";
 
 /**
  * The committed assets and what says where they came from.
@@ -79,6 +85,19 @@ describe("the land path", () => {
         }
       });
     }
+  });
+
+  // The dot matrix decides each cell whole, so a dot is land or sea and never half of each.
+  it("carries a dot matrix of whole cells, land where the land is", () => {
+    const land = (column: number, row: number): boolean =>
+      ((BigInt(`0x${LAND_DOTS[row]}`) >> BigInt(LAND_DOT_COLUMNS - 1 - column)) & 1n) === 1n;
+
+    expect(LAND_DOTS).toHaveLength(LAND_DOT_ROWS);
+    for (const row of LAND_DOTS)
+      expect(row).toMatch(new RegExp(`^[0-9a-f]{${LAND_DOT_COLUMNS / 4}}$`));
+    // 20 degrees east on the equator is the Congo basin; 150 west is the open Pacific.
+    expect(land(88, 40)).toBe(true);
+    expect(land(13, 40)).toBe(false);
   });
 
   it("is one closed ring per island, and as many of them as it claims", () => {

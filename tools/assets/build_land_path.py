@@ -51,6 +51,11 @@ TOLERANCE = 0.3
 # at 624px, where 0.1 grid units is 0.6px).
 PRECISION = 1
 
+# The dot matrix the map draws the land as: one dot per cell, land when its centre is. 160 by
+# 80 is the same 2:1 as the globe, so the cells are square.
+DOT_COLUMNS = 160
+DOT_ROWS = 80
+
 REPOSITORY = Path(__file__).resolve().parents[2]
 OUTPUT = REPOSITORY / "app" / "src" / "ui" / "map" / "land.ts"
 
@@ -255,7 +260,32 @@ def path_data(rings: list[list[tuple[float, float]]]) -> str:
     return "".join(parts)
 
 
-def module_source(path: str, rings: int) -> str:
+def inside(x: float, y: float, rings: list[list[tuple[float, float]]]) -> bool:
+    """Even-odd over every ring, so a lake cut into a ring is water."""
+    crossings = 0
+    for ring in rings:
+        for (x1, y1), (x2, y2) in zip(ring, ring[1:] + ring[:1], strict=True):
+            if (y1 > y) != (y2 > y) and x < x1 + (y - y1) * (x2 - x1) / (y2 - y1):
+                crossings += 1
+    return crossings % 2 == 1
+
+
+def land_dots(rings: list[list[tuple[float, float]]]) -> list[str]:
+    """One hex string per row of the dot matrix, leftmost column in the highest bit."""
+    rows = []
+    for row in range(DOT_ROWS):
+        y = (row + 0.5) * 100 / DOT_ROWS
+        near = [ring for ring in rings if min(p[1] for p in ring) <= y <= max(p[1] for p in ring)]
+        bits = 0
+        for column in range(DOT_COLUMNS):
+            x = (column + 0.5) * 100 / DOT_COLUMNS
+            bits = (bits << 1) | inside(x, y, near)
+        rows.append(f"{bits:0{DOT_COLUMNS // 4}x}")
+    return rows
+
+
+def module_source(path: str, rings: int, dots: list[str]) -> str:
+    dot_rows = "\n".join(f'  "{row}",' for row in dots)
     return f'''/**
  * The world map's land, as one SVG path in the 0-100 equirectangular grid.
  *
@@ -278,6 +308,19 @@ export const LAND_RING_COUNT = {rings};
 
 export const LAND_PATH =
   "{path}";
+
+/**
+ * The same land as a {DOT_COLUMNS} by {DOT_ROWS} dot matrix: a cell is land when its centre lies
+ * inside the path, so every dot is wholly land or wholly sea. One hex string per row, top
+ * row first, the leftmost column in the highest bit.
+ */
+export const LAND_DOT_COLUMNS = {DOT_COLUMNS};
+
+export const LAND_DOT_ROWS = {DOT_ROWS};
+
+export const LAND_DOTS: readonly string[] = [
+{dot_rows}
+];
 '''
 
 
@@ -296,7 +339,7 @@ def main() -> int:
     arguments = parser.parse_args()
 
     rings = land_rings(fetch_topology(arguments.source))
-    source = module_source(path_data(rings), len(rings))
+    source = module_source(path_data(rings), len(rings), land_dots(rings))
 
     if arguments.check:
         if not OUTPUT.exists():

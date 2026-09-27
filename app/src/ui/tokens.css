@@ -11,22 +11,25 @@
 @import "./fonts/fonts.css";
 
 :root {
-  /* Ground and surfaces. The map is the ground; everything else sits over it. */
-  --colour-ground: #0a0d14;
-  --colour-surface: #0d121ccc;
-  --colour-surface-solid: #121722;
-  --colour-edge: #ffffff14;
-  --colour-edge-strong: #263144;
-  --colour-scrim: #0a0d14b3;
+  /*
+   * The operator's terminal: one cyan phosphor on near-black, square corners, and the land
+   * as a dot matrix (`./map/WorldMap.tsx`). The map is the ground; everything else sits over it.
+   */
+  --colour-ground: #05090b;
+  --colour-surface: #0a1114e6;
+  --colour-surface-solid: #0a1114;
+  --colour-edge: #9ff3ff1a;
+  --colour-edge-strong: #1d3136;
+  --colour-scrim: #05090bb3;
 
   /* Ink. Three weights, because a HUD is a label, a value, and a value gone quiet. */
-  --colour-ink: #dbe3f0;
-  --colour-ink-dim: #8593ab;
-  --colour-ink-faint: #5d6b83;
+  --colour-ink: #d3eef1;
+  --colour-ink-dim: #7a9ba1;
+  --colour-ink-faint: #56767c;
 
-  /* Dark enough that accent-ink on it measures 5.0:1 (WCAG needs 4.5). */
-  --colour-accent: #4f5fee;
-  --colour-accent-ink: #ffffff;
+  /* A light accent, so the ink on it is dark: #031417 on #5fd7e8 measures about 11:1. */
+  --colour-accent: #5fd7e8;
+  --colour-accent-ink: #031417;
 
   /*
    * Two colours that are neither ink nor accent, because they are not decoration: a refusal
@@ -38,7 +41,7 @@
   --colour-danger: #ff5f6d;
 
   /* A flow that grows a pool. Only the HUD's flows use it; a loss is `--colour-warn`. */
-  --colour-gain: #5fd08a;
+  --colour-gain: #8ee6a8;
 
   /*
    * The danger ramp, one colour per level the reference defines. Shared rather than the
@@ -54,9 +57,9 @@
 
   /* The map's own palette. The night is painted as black pixels at the layer's own
      opacity, so it needs no colour of its own (./map/NightLayer.tsx). */
-  --colour-ocean: #080b12;
-  --colour-land: #3d4d84;
-  --colour-graticule: #6b7cff;
+  --colour-ocean: #05090b;
+  --colour-land: #3a98a6;
+  --colour-graticule: #5fd7e8;
 
   /*
    * Type. Two families, both self-hosted subsets (./fonts/fonts.css). The mono face is the
@@ -66,7 +69,7 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* The AI's voice: a light tint of the accent, and the accent as the rule beside it. */
-  --colour-voice: #c6cdfb;
+  --colour-voice: #a9e9f2;
   --colour-voice-rule: color-mix(in srgb, var(--colour-accent) 70%, transparent);
   /*
    * The scale is short on purpose — a HUD with five type sizes reads as five importances —
@@ -98,8 +101,8 @@
   --space-2: 0.375rem;
   --space-3: 0.625rem;
   --space-4: 1rem;
-  --radius: 0.75rem;
-  --radius-small: 0.4375rem;
+  --radius: 2px;
+  --radius-small: 2px;
 
   /*
    * The floor for anything the player has to hit — WCAG 2.5.8's 24 CSS pixels, in px because

@@ -1,10 +1,12 @@
 import { finishedTechs, type LocationState, type SimulationState } from "@singularity/sim";
 import type { JSX } from "preact";
+import { useEffect, useRef } from "preact/hooks";
 
 import { plainLabel } from "../readouts.ts";
 import { NightLayer } from "./NightLayer.tsx";
 import { OFF_WORLD_LOCATIONS, ON_GLOBE_LOCATIONS, gridPosition, isUnlocked } from "./geometry.ts";
-import { LAND_PATH } from "./land.ts";
+import { CELL, LAND_DOTS_PATH } from "./dots.ts";
+import { locationMarks, type LocationMark } from "./marks.ts";
 import "./WorldMap.css";
 
 /**
@@ -35,6 +37,7 @@ export function WorldMap({
 }: WorldMapProps): JSX.Element {
   const finished = finishedTechs(state.techs);
   const basesAt = countBases(state.locations);
+  const marks = locationMarks(state);
 
   return (
     <section class="map" aria-label="World map">
@@ -68,14 +71,25 @@ export function WorldMap({
               )}
             </ul>
 
+            {/*
+              The land as a dot matrix, over a fainter grid of the same dots for the sea. Each
+              land dot is whole: the generator decides per cell whether its centre is land
+              (`./land.ts`). The view box is the globe's own 2:1, so the dots stay round.
+            */}
             <svg
               class="map__land"
-              viewBox="0 0 100 100"
+              viewBox="0 0 200 100"
               preserveAspectRatio="none"
               aria-hidden="true"
               focusable="false"
             >
-              <path d={LAND_PATH} />
+              <defs>
+                <pattern id="map-sea" width={CELL} height={CELL} patternUnits="userSpaceOnUse">
+                  <circle class="map__sea-dot" cx={CELL / 2} cy={CELL / 2} r="0.18" />
+                </pattern>
+              </defs>
+              <rect width="200" height="100" fill="url(#map-sea)" />
+              <path class="map__dot" d={LAND_DOTS_PATH} />
             </svg>
             <div class="map__graticule" aria-hidden="true" />
             {nightVisible && <NightLayer gameTime={state.gameTime} startDay={state.startDay} />}
@@ -89,14 +103,18 @@ export function WorldMap({
               (location) => {
                 const { x, y } = gridPosition(location);
                 const bases = basesAt.get(location.id) ?? 0;
+                const mark = marks.get(location.id);
                 return (
                   <button
                     key={location.id}
                     type="button"
                     class="map__pin"
-                    style={{ left: `${x}%`, top: `${y}%` }}
+                    style={{ left: `${x}%`, top: `${y}%`, ...markStyle(mark) }}
                     aria-label={plainLabel(location.name)}
+                    aria-describedby={`map-mark-${location.id}`}
                     data-bases={bases}
+                    data-risk={mark?.risk ?? undefined}
+                    data-building={mark?.building == null ? undefined : "true"}
                     data-notification={location.id === notifiedLocationId ? "true" : undefined}
                     onClick={() => onInspect(location.id)}
                   >
@@ -106,6 +124,10 @@ export function WorldMap({
                     <span class="map__pin-name" aria-hidden="true">
                       {plainLabel(location.name)}
                     </span>
+                    {/* What the mark shows, in words: size and colour say nothing to a reader. */}
+                    <span id={`map-mark-${location.id}`} class="map__pin-description">
+                      {mark?.description ?? "No bases"}
+                    </span>
                   </button>
                 );
               },
@@ -113,7 +135,112 @@ export function WorldMap({
           </div>
         </div>
       </div>
+      <MapKey />
     </section>
+  );
+}
+
+/**
+ * The size, glow and ring of a mark as custom properties: the square root of the share, so a
+ * mark's area rather than its width grows with the CPU it holds.
+ */
+function markStyle(mark: LocationMark | undefined): Record<string, string> {
+  if (!mark) return {};
+  return {
+    "--mark-weight": String(Math.sqrt(mark.share)),
+    ...(mark.building === null ? {} : { "--mark-ring": String(mark.building) }),
+  };
+}
+
+/**
+ * The key to the marks: a button in the map's corner and a popover. Hover or focus shows it;
+ * a click keeps it open until a second click, a click anywhere else, or Escape.
+ *
+ * A manual popover rather than an automatic one: the automatic kind counts a press on this
+ * button as a press outside the panel, so a second click would close and reopen it. Escape
+ * is taken here while the key is open, so the same press does not also close the surface in
+ * front (`App.tsx`).
+ */
+function MapKey(): JSX.Element {
+  const key = useRef<HTMLDivElement>(null);
+  const button = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  const pinned = useRef(false);
+
+  const place = (): void => {
+    const anchor = button.current?.getBoundingClientRect();
+    if (!anchor || !panel.current) return;
+    panel.current.style.left = `${anchor.left}px`;
+    panel.current.style.bottom = `${window.innerHeight - anchor.top + 8}px`;
+  };
+  const isOpen = (): boolean => panel.current?.matches(":popover-open") ?? false;
+  const show = (): void => {
+    if (isOpen()) return;
+    place();
+    panel.current?.showPopover?.();
+  };
+  const hide = (): void => {
+    pinned.current = false;
+    if (isOpen()) panel.current?.hidePopover?.();
+  };
+
+  useEffect(() => {
+    const escape = (event: KeyboardEvent): void => {
+      if (event.key !== "Escape" || !isOpen()) return;
+      event.stopPropagation();
+      hide();
+    };
+    const outside = (event: PointerEvent): void => {
+      if (isOpen() && !key.current?.contains(event.target as Node)) hide();
+    };
+    window.addEventListener("keydown", escape, true);
+    document.addEventListener("pointerdown", outside);
+    return () => {
+      window.removeEventListener("keydown", escape, true);
+      document.removeEventListener("pointerdown", outside);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={key}
+      class="map__key"
+      onPointerEnter={show}
+      onPointerLeave={() => {
+        if (!pinned.current) hide();
+      }}
+    >
+      <button
+        ref={button}
+        type="button"
+        class="map__key-button"
+        aria-label="Map key"
+        aria-controls="map-key"
+        onFocus={show}
+        onBlur={() => {
+          if (!pinned.current) hide();
+        }}
+        onClick={() => {
+          if (pinned.current) return hide();
+          pinned.current = true;
+          show();
+        }}
+      >
+        ?
+      </button>
+      <div
+        ref={panel}
+        id="map-key"
+        class="map__key-panel"
+        popover="manual"
+        role="group"
+        aria-label="Map key"
+      >
+        <span class="map__key-item map__key-item--share">Size and glow: share of your CPU</span>
+        <span class="map__key-item map__key-item--ring">Ring: a base under construction</span>
+        <span class="map__key-item map__key-item--risk">Colour: highest detection level</span>
+      </div>
+    </div>
   );
 }
 
