@@ -119,12 +119,12 @@ describe("switching a base's power state", () => {
     const base = basesAt(published.value, START)[0] as BaseState;
     const state = screen.getByRole("status", { name: "Power state" });
     expect(state.getAttribute("aria-live")).toBe("polite");
-    expect(state.textContent).toBe("active");
+    expect(state.textContent).toBe("Active");
 
     click(SWITCH);
 
-    expect(state.textContent).toBe("sleep");
-    expect(screen.getByRole("region", { name: base.name }).textContent).toContain("sleep");
+    expect(state.textContent).toBe("Sleep");
+    expect(screen.getByRole("region", { name: base.name }).textContent).toContain("Sleep");
   });
 
   /*
@@ -147,7 +147,7 @@ describe("switching a base's power state", () => {
     expect(commands.filter((command) => command.command === "switchPower")).toEqual([]);
     expect(powerState(published, "EUROPE")).toBe("offline");
     expect(detail.queryByRole("button", { name: SWITCH })).toBeNull();
-    expect(screen.getByRole("status", { name: "Power state" }).textContent).toBe("offline");
+    expect(screen.getByRole("status", { name: "Power state" }).textContent).toBe("Offline");
     expect(screen.getByRole("status", { name: "Power refusal" }).textContent).toContain("offline");
   });
 });

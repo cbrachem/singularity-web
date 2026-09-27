@@ -23,6 +23,7 @@ import {
   MAX_ORDER,
   baseKeys,
   compactBaseStatus,
+  powerStateName,
   buildOrder,
   buildProjection,
   buildableBaseTypes,
@@ -453,7 +454,9 @@ function LocationDetail({
           {/*
             Upstream's location list is this table (`screens/location.py:221-269`), and the
             status vocabulary and the CPU cell's reticence are its own — an unfinished base is
-            no longer indistinguishable from a finished one. The type sits under the name in
+            no longer indistinguishable from a finished one. Upstream's Status and Power columns
+            are one State cell here: the power state first, and under it the status when there
+            is something to say — "Complete" and a force_cpu base's blank status say nothing. The type sits under the name in
             the same cell and the building status is compact with the full sentence in title,
             so a row stays one two-line block at the panel's width. The name
             stays the button that opens the detail, so the row's one operable keeps its
@@ -465,8 +468,7 @@ function LocationDetail({
                 <th scope="col" />
                 <th scope="col">Name</th>
                 <th scope="col">CPU</th>
-                <th scope="col">Status</th>
-                <th scope="col">Power</th>
+                <th scope="col">State</th>
               </tr>
             </thead>
             <tbody>
@@ -492,10 +494,20 @@ function LocationDetail({
                       </span>
                     </td>
                     <td class="inspector__cpu">{showsCpu(base) ? toMoney(base.cpu) : ""}</td>
-                    <td class="inspector__status" title={status.title ?? undefined}>
-                      {status.text}
+                    <td class="inspector__state">
+                      <span class="inspector__power-state" data-power={base.powerState}>
+                        {powerStateName(base.powerState)}
+                      </span>
+                      {status.text !== "" && status.text !== "Complete" && (
+                        <span
+                          class="inspector__status"
+                          title={status.title ?? undefined}
+                          data-building={status.title === null ? undefined : "true"}
+                        >
+                          {status.text}
+                        </span>
+                      )}
                     </td>
-                    <td>{base.powerState}</td>
                   </tr>
                 );
               })}
@@ -846,7 +858,7 @@ function BaseDetail({
       <p class="inspector__type">
         {plainLabel(spec?.name ?? base.specId)} ·{" "}
         <output aria-label="Power state" aria-live="polite">
-          {base.powerState}
+          {powerStateName(base.powerState)}
         </output>
       </p>
       {/*

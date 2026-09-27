@@ -18,6 +18,7 @@ import {
   spaceLeftFor,
   specCost,
   type BaseState,
+  type PowerState,
   type BaseType,
   type BuyableState,
   type Command,
@@ -99,6 +100,11 @@ export function baseStatus(base: BaseState): string {
     return slot !== "cpu" && item !== null && !item.buyable.done;
   });
   return buildingExtra ? "Building Item" : "Complete";
+}
+
+/** `Base.power_state_name` (`code/base.py:243`): the word upstream prints for a power state. */
+export function powerStateName(state: PowerState): string {
+  return { offline: "Offline", active: "Active", sleep: "Sleep" }[state];
 }
 
 /**

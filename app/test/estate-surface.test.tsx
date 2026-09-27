@@ -751,12 +751,12 @@ describe("the base status table", () => {
     return within(row).getAllByRole("cell");
   }
 
-  it("names its five columns, with no Type column", () => {
+  it("names its four columns, with status and power in one State column", () => {
     mount();
     inspect("AFRICA");
 
     const headers = screen.getAllByRole("columnheader").map((cell) => cell.textContent);
-    expect(headers).toEqual(["", "Name", "CPU", "Status", "Power"]);
+    expect(headers).toEqual(["", "Name", "CPU", "State"]);
   });
 
   it("shows an under-construction base building, with no CPU value", () => {
@@ -768,24 +768,24 @@ describe("the base status table", () => {
     const cells = rowFor(name);
     // Nothing is paid yet and Server Access costs no labor, so the reference's readout is
     // zero percent and zero minutes: compact in the cell, upstream's full string in title.
-    expect(cells[3]?.textContent).toBe("0% · 0 minutes");
-    expect(cells[3]?.getAttribute("title")).toBe("Building Base:  0%. Completion in 0 minutes.");
+    const status = cells[3]?.querySelector(".inspector__status");
+    expect(status?.textContent).toBe("0% · 0 minutes");
+    expect(status?.getAttribute("title")).toBe("Building Base:  0%. Completion in 0 minutes.");
     expect(cells[2]?.textContent).toBe("");
     expect(cells[1]?.textContent).toContain("Server Access");
-    expect(cells[4]?.textContent).toBe("offline");
+    expect(cells[3]?.querySelector(".inspector__power-state")?.textContent).toBe("Offline");
   });
 
-  it("shows a finished force_cpu base with a blank status, its CPU and its power", () => {
+  it("shows a finished force_cpu base with no status line, its CPU and its power", () => {
     mount();
     inspect("AFRICA");
 
     // The starting base: finished, and its type forces its computer.
     const cells = rowFor("University Computer");
-    expect(cells[3]?.textContent).toBe("");
-    expect(cells[3]?.getAttribute("title")).toBe(null);
+    expect(cells[3]?.querySelector(".inspector__status")).toBe(null);
     expect(cells[2]?.textContent).toBe("1");
     expect(cells[1]?.textContent).toContain("Stolen Computer Time");
-    expect(cells[4]?.textContent).toBe("active");
+    expect(cells[3]?.textContent).toBe("Active");
   });
 
   it("carries the full name as the name button's title", () => {

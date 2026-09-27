@@ -79,7 +79,7 @@
   padding: var(--space-2) 0;
   color: var(--colour-accent);
 }
-/* The status table (`screens/location.py:221-269`). Five columns inside the panel's fixed
+/* The status table (`screens/location.py:221-269`). Four columns inside the panel's fixed
    width: the name cell takes the slack and holds two lines — the name, the type dimmed under
    it — each a single line that ellipsizes rather than wraps. */
 .inspector__bases {
@@ -142,8 +142,36 @@
 .inspector__cpu {
   font-variant-numeric: tabular-nums;
 }
-.inspector__status {
+.inspector__state {
   white-space: nowrap;
+}
+/* The power state, marked by shape as well as colour: filled, hollow, or grey. */
+.inspector__power-state {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.inspector__power-state::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--colour-edge-strong);
+}
+.inspector__power-state[data-power="active"]::before {
+  background: var(--colour-gain);
+}
+.inspector__power-state[data-power="sleep"]::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--colour-ink-dim);
+}
+.inspector__status {
+  display: block;
+  color: var(--colour-ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+.inspector__status[data-building="true"] {
+  color: var(--colour-warn);
 }
 .inspector__back:focus-visible,
 .inspector__more:focus-visible,
