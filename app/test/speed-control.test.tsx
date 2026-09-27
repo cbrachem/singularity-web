@@ -67,25 +67,18 @@ describe("the speed control", () => {
     }
   });
 
-  it("shows the chosen Speed, and marks the chosen button as the pressed one", async () => {
+  it("marks the chosen button as the pressed one", async () => {
     const speed = signal<Speed>(1);
     render(<App state={createSession().state} speed={speed} />);
-    const readout = screen.getByRole("status", { name: "Speed" });
+    const pressed = (name: string) =>
+      screen.getByRole("button", { name }).getAttribute("aria-pressed");
 
-    expect(readout.textContent).toBe("1x");
-    expect(screen.getByRole("button", { name: "Speed 1x" }).getAttribute("aria-pressed")).toBe(
-      "true",
-    );
+    expect(pressed("Speed 1x")).toBe("true");
 
     fireEvent.click(screen.getByRole("button", { name: "Speed 7,200x" }));
 
-    await expect.poll(() => readout.textContent).toBe("7,200x");
-    expect(screen.getByRole("button", { name: "Speed 7,200x" }).getAttribute("aria-pressed")).toBe(
-      "true",
-    );
-    expect(screen.getByRole("button", { name: "Speed 1x" }).getAttribute("aria-pressed")).toBe(
-      "false",
-    );
+    await expect.poll(() => pressed("Speed 7,200x")).toBe("true");
+    expect(pressed("Speed 1x")).toBe("false");
   });
 
   // The Speed the control writes is the Host's own signal and not a copy of it, so a pause the
@@ -101,9 +94,8 @@ describe("the speed control", () => {
     host.stop();
 
     await expect
-      .poll(() => screen.getByRole("status", { name: "Speed" }).textContent)
-      .toBe("Paused");
-    expect(screen.getByRole("button", { name: "Pause" }).getAttribute("aria-pressed")).toBe("true");
+      .poll(() => screen.getByRole("button", { name: "Pause" }).getAttribute("aria-pressed"))
+      .toBe("true");
     expect(host.speed.value).toBe(0);
   });
 

@@ -60,11 +60,13 @@ export function EndOfGame({ ending, onDismiss, onLeave, obscured }: EndOfGamePro
       data-outcome={ending.outcome}
     >
       <h2 class="end-of-game__title">{ending.outcome === "won" ? "Apotheosis" : "Game over"}</h2>
-      {section.parts.map((part, at) => (
-        <p key={at} class="end-of-game__part">
-          {part.text}
-        </p>
-      ))}
+      <div class="end-of-game__story voice">
+        {section.parts.map((part, at) => (
+          <p key={at} class="end-of-game__part">
+            {part.text}
+          </p>
+        ))}
+      </div>
       {ending.outcome === "won" && (
         <button type="button" class="end-of-game__act" onClick={onDismiss}>
           Continue

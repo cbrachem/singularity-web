@@ -9,7 +9,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 const REPOSITORY = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const VIEWPORTS = [
-  { width: 1024, height: 600, globeWidth: 624 },
+  { width: 1280, height: 600, globeWidth: 880 },
   { width: 1440, height: 792, globeWidth: 1040 },
 ] as const;
 let server: ViteDevServer;
@@ -73,7 +73,7 @@ async function open(
 }
 
 /** The supported range's lower edge, which is the viewport every measurement below is taken at. */
-const FLOOR = { width: 1024, height: 600 } as const;
+const FLOOR = { width: 1280, height: 600 } as const;
 
 /**
  * The names Chromium's **own** accessibility tree offers — the third thing `inert` promises,
@@ -119,13 +119,6 @@ const WIDEST_MONEY = "-999,999.99";
 const WIDEST_LEVEL = "Critical";
 
 /**
- * And the widest the clock panel's two settings can produce, both taken from the list they
- * come out of rather than guessed at (`readouts.test.ts`). Rendered here for the same reason
- * the money string is: `10ch` and `8ch` are a claim about a face, and a face is a browser.
- */
-const WIDEST_SETTINGS = { difficulty: "ULTRA HARD", speed: "432,000x" } as const;
-
-/**
  * Blink lays a box out on a grid of 1/64 of a CSS pixel and a canvas advance width is not on
  * that grid, so every comparison below between a laid-out box and a measured string is made
  * to within one of those units.
@@ -145,10 +138,10 @@ const LAYOUT_UNIT = 1 / 64;
 // What is left here is the geometry, which does need one.
 describe("the supported viewport range", () => {
   it.each([
-    { viewport: [960, 600], shortfall: [64, 0] },
-    { viewport: [900, 560], shortfall: [124, 40] },
-    { viewport: [800, 500], shortfall: [224, 100] },
-    { viewport: [720, 480], shortfall: [304, 120] },
+    { viewport: [1216, 600], shortfall: [64, 0] },
+    { viewport: [1156, 560], shortfall: [124, 40] },
+    { viewport: [1056, 500], shortfall: [224, 100] },
+    { viewport: [976, 480], shortfall: [304, 120] },
   ])("scrolls by exactly the shortfall at $viewport", async ({ viewport, shortfall }) => {
     const [width, height] = viewport as [number, number];
     await page.setViewportSize({ width, height });
@@ -164,7 +157,7 @@ describe("the supported viewport range", () => {
     });
 
     expect(geometry.viewport).toEqual(viewport);
-    expect(geometry.shell).toEqual([1024, 600]);
+    expect(geometry.shell).toEqual([1280, 600]);
     // The strip the development bar takes off the top comes out of the height the shell has
     // to sit in, so the page scrolls by that much more than the shell's own shortfall. It is
     // measured rather than assumed, and it is discounted here rather than tolerated: the bar
@@ -232,171 +225,103 @@ describe("the supported viewport geometry", () => {
     },
   );
 
-  // The range has no upper bound, and above 2:1 the globe stops growing sideways and takes
-  // the whole stage height instead. That is where a chip row drawn over the stage lands on
-  // the globe, so the wide case is the one this guards.
-  //
-  // The band is measured rather than a chip in it: this Scenario has finished no tech, so it
-  // holds no chip at all. The reserved height is what the globe is sized
-  // against, and is the half the globe can collide with.
+  // The chips float over the globe's top edge, so the claim is that they stay on the globe and
+  // clear of every pin, at the floor and on the widest screens. The Scenario has finished no
+  // tech, so the row is empty: the three chips the Content can unlock are written into it.
   it.each([
-    { width: 1024, height: 600 },
+    { width: 1280, height: 600 },
     { width: 1440, height: 792 },
     { width: 2560, height: 800 },
     { width: 3440, height: 900 },
-  ])("keeps the off-world chips above the globe at $width x $height", async ({ width, height }) => {
-    await page.setViewportSize({ width, height });
-    await page.waitForTimeout(250);
-    const geometry = await page.evaluate(() => {
-      const box = (selector: string) => document.querySelector(selector)!.getBoundingClientRect();
-      const chips = box(".map__offworld");
-      const globe = box(".map__globe");
-      const stage = box(".map__stage");
+  ])(
+    "keeps the off-world chips on the globe, above every pin, at $width x $height",
+    async ({ width, height }) => {
+      await page.setViewportSize({ width, height });
+      await page.waitForTimeout(250);
+      const geometry = await page.evaluate(() => {
+        const row = document.querySelector<HTMLElement>(".map__offworld")!;
+        row.innerHTML = ["MOON", "FAR REACHES", "TRANSDIMENSIONAL"]
+          .map((name) => `<li><button type="button" class="map__chip">${name}</button></li>`)
+          .join("");
+        const chips = row.getBoundingClientRect();
+        const globe = document.querySelector(".map__globe")!.getBoundingClientRect();
+        const stage = document.querySelector(".map__stage")!.getBoundingClientRect();
+        const pins = [...document.querySelectorAll(".map__pin-mark")].map(
+          (pin) => pin.getBoundingClientRect().top,
+        );
+        row.innerHTML = "";
+        return {
+          chips: [chips.top, chips.bottom, chips.left, chips.right],
+          globe: [globe.top, globe.left, globe.right, globe.width, globe.height],
+          stage: [stage.width, stage.height],
+          highestPin: Math.min(...pins),
+        };
+      });
+      const [chipsTop, chipsBottom, chipsLeft, chipsRight] = geometry.chips as number[];
+      const [globeTop, globeLeft, globeRight, globeWidth, globeHeight] = geometry.globe as number[];
+      const [stageWidth, stageHeight] = geometry.stage as number[];
 
-      return {
-        chips: [chips.top, chips.bottom, chips.height],
-        globe: [globe.top, globe.bottom, globe.width],
-        stage: [stage.top, stage.bottom],
-      };
-    });
-    const [chipsTop, chipsBottom, chipsHeight] = geometry.chips as [number, number, number];
-    const [globeTop, globeBottom, globeWidth] = geometry.globe as [number, number, number];
-    const [stageTop, stageBottom] = geometry.stage as [number, number];
-
-    expect(chipsHeight).toBeGreaterThan(0);
-    expect(globeWidth).toBeGreaterThan(0);
-    expect(chipsTop).toBeGreaterThanOrEqual(stageTop);
-    expect(chipsBottom).toBeLessThanOrEqual(globeTop);
-    expect(globeBottom).toBeLessThanOrEqual(stageBottom + 0.5);
-  });
+      expect(chipsTop).toBeGreaterThanOrEqual(globeTop!);
+      expect(chipsLeft).toBeGreaterThanOrEqual(globeLeft!);
+      expect(chipsRight).toBeLessThanOrEqual(globeRight!);
+      expect(chipsBottom).toBeLessThan(geometry.highestPin);
+      // And the globe fills the stage in the dimension that limits it.
+      expect(
+        Math.abs(globeWidth! - stageWidth!) < 1 || Math.abs(globeHeight! - stageHeight!) < 1,
+      ).toBe(true);
+    },
+  );
 });
 
 /**
- * The HUD's two floating panels, measured against each other at the floor.
+ * The HUD bar, with every figure at its widest.
  *
- * They are absolutely positioned against opposite edges of a stage the range only guarantees
- * is 1024 wide, so the one thing that can be wrong with them is that they meet. Every other
- * suite in the repository can only add up declarations; this is where the two boxes are read.
+ * The worst case is written into the bar rather than booted, because no Scenario reaches it:
+ * the widest string a money readout can produce is `-999,999.99` (`readouts.test.ts`), and a
+ * Scenario is a seed and a script — it cannot be handed a balance. The clock frozen, nothing
+ * re-renders over what the test wrote.
  *
- * The worst case is measured rather than booted, because no Scenario reaches it: the widest
- * string a money readout can produce is `-999,999.99` (`readouts.test.ts`), the cash a played
- * game holds is nowhere near it, and a Scenario is a seed and a script — it cannot be handed
- * a balance. So each cell is asked how wide that string would be *in its own rendered face*,
- * and the panel's growth is added to the measurement before the gap is judged.
+ * At the 1280 floor each flow sits under its pool, and from 1400 beside it (`Hud.css`); both layouts
+ * have to hold the worst case, so both are measured.
  */
-describe("the two HUD panels at the floor of the supported range", () => {
+describe("the HUD bar", () => {
   it.each([
-    // The difficulty name is the clock panel's leftmost cell and it is not fixed to the
-    // cell's floor: `ULTRA HARD` is the widest name the Content holds (`difficulties.json`,
-    // tied with `IMPOSSIBLE`), so the Scenario carrying it is the wider of the two panels.
-    { scenario: "past-grace", difficulty: "NORMAL" },
-    { scenario: "lost-to-suspicion", difficulty: "ULTRA HARD" },
+    { width: 1280, height: 600, beside: false },
+    { width: 1440, height: 792, beside: true },
   ])(
-    "stay apart on $difficulty, with both pools at their widest",
-    async ({ scenario, difficulty }) => {
-      const opened = await open(`?scenario=${scenario}&clock=frozen`);
+    "holds every figure at its widest at $width",
+    async ({ width, height, beside }) => {
+      const opened = await open("?scenario=past-grace&clock=frozen", { width, height });
       try {
-        const measured = await opened.evaluate(
-          ({ widest, settings }) => {
-            const box = (selector: string) =>
-              document.querySelector(selector)!.getBoundingClientRect();
-            const canvas = document.createElement("canvas").getContext("2d")!;
-            /** The advance width of a string in an element's own rendered face. */
-            const advance = (text: string, element: Element): number => {
-              const style = getComputedStyle(element);
-              canvas.font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
-              return canvas.measureText(text).width;
-            };
-            const clock = box(".hud__clock");
-            const resources = box(".hud__resources");
-            const pools = [
-              ...document.querySelectorAll<HTMLElement>(".hud__resources .hud__readout"),
-            ];
+        const measured = await opened.evaluate((widest) => {
+          const bar = document.querySelector<HTMLElement>(".hud")!;
+          for (const output of bar.querySelectorAll<HTMLElement>(".hud__pool output")) {
+            output.textContent = widest;
+          }
+          bar.querySelector<HTMLElement>(".hud__clock")!.lastChild!.textContent =
+            " 9999 · 23:59:59";
+          const right = bar.getBoundingClientRect().right;
+          const figures = bar.querySelector<HTMLElement>(".hud__figures")!;
+          return {
+            overflow: bar.scrollWidth - bar.clientWidth,
+            lastRight: Math.max(
+              ...[...bar.children].map((child) => child.getBoundingClientRect().right),
+            ),
+            right,
+            direction: getComputedStyle(figures).flexDirection,
+            height: bar.getBoundingClientRect().height,
+          };
+        }, WIDEST_MONEY);
 
-            return {
-              difficulty: document.querySelector(".hud__clock .hud__value")!.textContent,
-              shell: box(".shell").width,
-              clock: [clock.left, clock.right],
-              resources: [resources.left, resources.right],
-              gap: resources.left - clock.right,
-              // What each pool's cell would grow by if its value printed the widest string a
-              // money readout can produce. The cell is the wider of the pool and the flow row
-              // under it, so a longer pool only costs what it adds beyond the row.
-              growth: pools.map((pool) => {
-                const value = pool.querySelector<HTMLElement>(".hud__value")!;
-                const column = pool.getBoundingClientRect().width;
-                return Math.max(0, advance(widest, value) - column);
-              }),
-              flows: [...document.querySelectorAll<HTMLElement>(".hud__flow-value")].map(
-                (flow) => ({
-                  width: flow.getBoundingClientRect().width,
-                  declared: Number.parseFloat(getComputedStyle(flow).minWidth),
-                  widest: advance(widest, flow),
-                  spacing: getComputedStyle(flow).letterSpacing,
-                }),
-              ),
-              // The clock panel's two settings, asked the same question as the pools: what the
-              // cell measures, what it declares, and what the widest string it can ever hold
-              // would ask of it.
-              settings: Object.entries(settings).map(([name, longest]) => {
-                const cell = document.querySelector<HTMLElement>(`.hud__value--${name}`)!;
-                return {
-                  name,
-                  text: cell.textContent,
-                  width: cell.getBoundingClientRect().width,
-                  declared: Number.parseFloat(getComputedStyle(cell).minWidth),
-                  widest: advance(longest, cell),
-                };
-              }),
-            };
-          },
-          { widest: WIDEST_MONEY, settings: WIDEST_SETTINGS },
-        );
-
-        expect(measured.difficulty).toBe(difficulty);
-        expect(measured.shell).toBe(FLOOR.width);
-
-        // The flow cell is at its declared floor and the widest figure fits it exactly, so no
-        // flow this panel can ever show widens it — the repair on `resource-flow-projection`
-        // argued that from the declaration, and this is the rendering of it. The face is
-        // monospaced and unspaced, which is what makes `11ch` that string's own width.
-        for (const flow of measured.flows) {
-          expect(flow.spacing).toBe("normal");
-          expect(flow.width).toBeLessThanOrEqual(flow.declared + LAYOUT_UNIT);
-          expect(flow.widest).toBeLessThanOrEqual(flow.width + LAYOUT_UNIT);
-        }
-
-        // The two settings, each at its own declared width and each holding the longest string
-        // it can ever print. They shared the pools' old `7ch` floor and were both
-        // over it, so the clock panel's right edge moved with the difficulty and — while the
-        // player watched — with the Speed. Sized, neither cell grows: the gap below is the
-        // same on either difficulty, which is what makes it a measurement rather than a
-        // reading of whichever value happened to be on the screen.
-        expect(measured.settings).toHaveLength(2);
-        for (const setting of measured.settings) {
-          expect(setting.width).toBeLessThanOrEqual(setting.declared + LAYOUT_UNIT);
-          expect(setting.widest).toBeLessThanOrEqual(setting.width + LAYOUT_UNIT);
-        }
-
-        // The panels do not meet — with room to spare for the two pools growing to the widest
-        // figure they could ever print, which is the case no Scenario can boot.
-        const worstCase = measured.growth.reduce((total, extra) => total + extra, 0);
-        expect(measured.gap).toBeGreaterThan(worstCase);
-
-        // And it is the same gap on either difficulty, which is the number
-        // `Hud.css` states. Pinned rather than merely bounded: every cell in both panels
-        // now holds the longest string it can, so a gap that has moved is a width that has,
-        // and the stylesheet saying it would otherwise go quietly stale.
-        //
-        // It was 6px until the resources panel's two doors moved under its readouts, which is
-        // what a door named for what it opens cost — `Research/Tasks` is 40px wider than
-        // `Research` and the gap had 6. Under, neither door is width in the panel
-        // at all, and what is left is the readout row against the clock panel.
-        expect(measured.gap).toBeCloseTo(195, 1);
+        expect(measured.overflow).toBe(0);
+        expect(measured.lastRight).toBeLessThanOrEqual(measured.right);
+        expect(measured.direction).toBe(beside ? "row" : "column");
+        expect(measured.height).toBe(52);
       } finally {
         await opened.close();
       }
     },
+    40_000,
   );
 });
 
@@ -445,7 +370,7 @@ describe("the speed row", () => {
  * The threat readout, measured rather than added up.
  *
  * `threat-band.test.tsx` discharges the floor by summing the band's four declared widths
- * against 1024. That catches the change that matters — a ninth value, a wider cell, a bigger
+ * against the floor. That catches the change that matters — a ninth value, a wider cell, a bigger
  * gap — and it is kept as the cheap early warning, because it needs no browser. What it
  * cannot see is a string: the sum says the *cells* fit, and says nothing about whether
  * `Critical` fits the cell or `SCIENCE` fits the name. Both are sized from the faces' own
@@ -605,7 +530,7 @@ describe("the console's checkboxes", () => {
 });
 
 describe("the threat readout at the floor of the supported range", () => {
-  it("fits every value, name and set label inside 1024", async () => {
+  it("fits every value, name and set label inside the floor", async () => {
     const opened = await open("?scenario=lost-to-suspicion&clock=frozen");
     try {
       const measured = await opened.evaluate((widest) => {
@@ -736,7 +661,7 @@ describe("a modal surface in a browser that enforces inert", () => {
     // The ultra-hard loss ends with the end-of-game panel up over a live shell.
     //
     // Above the floor, which is the one viewport this case cannot be asked at. The
-    // panel is 42rem wide and centred, and at 1024x600 it settles at x 176-848 over a globe
+    // panel is 42rem wide and centred, and at the old 1024x600 floor it settled at x 176-848 over a globe
     // that runs 38-986: every available location's mark then lies *inside* the panel's own
     // rect, the nearest of them by 4px. The case only ever found a point there while the entry
     // animation was still running — `scale(0.985)` pulls the panel's right edge in to 843,
@@ -805,7 +730,7 @@ describe("a modal surface in a browser that enforces inert", () => {
       const offered = await opened.evaluate(() => {
         const behind = [
           ...document.querySelectorAll<HTMLElement>(".map__pin"),
-          ...document.querySelectorAll<HTMLElement>(".hud__research"),
+          ...document.querySelectorAll<HTMLElement>(".hud__door"),
         ];
         const taken = behind.filter((element) => {
           element.focus();
@@ -910,7 +835,7 @@ describe("a modal surface in a browser that enforces inert", () => {
         opened.evaluate(() => {
           const active = document.activeElement;
           return {
-            research: active?.classList.contains("hud__research") ?? false,
+            research: active?.classList.contains("hud__door") ?? false,
             behind: active?.closest(".shell-behind") !== null,
             inert: document.querySelector(".shell-behind")?.hasAttribute("inert") ?? null,
           };
@@ -942,7 +867,7 @@ describe("a modal surface in a browser that enforces inert", () => {
       // saturated machine is exactly what takes that margin away.
       const held = () =>
         opened.evaluate(() => {
-          const behind = document.querySelector<HTMLElement>(".hud__research")!;
+          const behind = document.querySelector<HTMLElement>(".hud__door")!;
           behind.focus();
           return {
             panel: document.activeElement?.classList.contains("notification") ?? false,
@@ -1034,7 +959,7 @@ describe("an opaque surface in a browser that enforces inert", () => {
             })
             .map((element) => element.getAttribute("aria-label") ?? element.className);
         return {
-          behind: took(".map__pin, .hud__research, .inspector button"),
+          behind: took(".map__pin, .hud__door, .inspector button"),
           own: took(".console button").length,
         };
       });
@@ -1171,7 +1096,7 @@ describe("an opaque surface in a browser that enforces inert", () => {
       // surface arriving over the console finds is a matter of when it arrives — so what is
       // read here is the half that does not depend on that.
       const behind = await opened.evaluate(() => {
-        const hud = [...document.querySelectorAll<HTMLElement>(".hud__research")];
+        const hud = [...document.querySelectorAll<HTMLElement>(".hud__door")];
         return {
           buttons: hud.length,
           marked: hud.filter((button) => button.closest("[inert]") !== null).length,

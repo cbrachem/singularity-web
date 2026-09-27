@@ -27,6 +27,12 @@ export interface ResearchSheetProps {
   readonly onCommand?: (command: Command) => void;
 }
 
+/** A figure and what it counts, drawn as one chip beside a row's name. */
+interface Note {
+  readonly figure: string;
+  readonly unit: string;
+}
+
 interface ResearchTech {
   readonly tech: (typeof content.techs.all)[number];
   readonly index: number;
@@ -46,8 +52,9 @@ export function ResearchSheet({ state, onClose, onCommand }: ResearchSheetProps)
   return (
     <section class="research-sheet" aria-label="Research/Tasks" data-bottom="reserved-band">
       <header class="research-sheet__header">
-        <div>
-          <h1>Research/Tasks</h1>
+        <h1>Research/Tasks</h1>
+        <div class="research-sheet__budget">
+          <CpuMeter state={state} left={left} />
           <output aria-label="CPU left" aria-live="off">
             {toMoney(left)} of {toMoney(total)} CPU left
           </output>
@@ -62,7 +69,7 @@ export function ResearchSheet({ state, onClose, onCommand }: ResearchSheetProps)
         </button>
       </header>
       <div class="research-sheet__sinks" aria-label="Other CPU tasks">
-        {sinkRows(state, finished).map(({ taskId, name, description, note }) => (
+        {sinkRows(state, finished).map(({ taskId, name, description, notes }) => (
           <AllocationRow
             key={taskId}
             rowClass="research-sheet__sink"
@@ -70,7 +77,7 @@ export function ResearchSheet({ state, onClose, onCommand }: ResearchSheetProps)
             taskId={taskId}
             name={name}
             description={description}
-            {...(note && { note })}
+            {...(notes && { notes })}
             {...(onCommand && { onCommand })}
           />
         ))}
@@ -84,7 +91,7 @@ export function ResearchSheet({ state, onClose, onCommand }: ResearchSheetProps)
             taskId={tech.id}
             name={tech.name}
             description={tech.description}
-            note={priceOf(state, index)}
+            notes={priceOf(state, index)}
             {...(onCommand && { onCommand })}
           />
         ))}
@@ -109,7 +116,7 @@ function sinkRows(state: SimulationState, finished: FinishedTechs) {
       taskId: JOBS,
       name: job.name,
       description: job.description,
-      note: `${toMoney(profit)} money per CPU per day`,
+      notes: [{ figure: toMoney(profit), unit: "money per CPU per day" }],
     },
   ].filter((row) => row !== undefined);
 }
@@ -123,11 +130,38 @@ function sinkRows(state: SimulationState, finished: FinishedTechs) {
  * numbers come off the buyable the state carries, so they already have the difficulty's
  * labor bonus in them (`sim/src/buyable.ts`).
  */
-function priceOf(state: SimulationState, index: number): string {
+function priceOf(state: SimulationState, index: number): readonly Note[] {
   const tech = state.techs[index];
   if (!tech) throw new Error(`no research at index ${index}`);
   const left: Cost = tech.buyable.costLeft;
-  return `${toMoney(left[CASH])} cash · ${toCpu(left[CPU])} CPU-days left`;
+  return [
+    { figure: toMoney(left[CASH]), unit: "cash" },
+    { figure: toCpu(left[CPU]), unit: "CPU-days left" },
+  ];
+}
+
+/**
+ * Where the CPU goes: one segment per task with CPU on it, in proportion, and what is left.
+ * Proportional rather than one cell per CPU, because a late game has thousands. The figure
+ * beside it is the accessible reading; the bar is only its picture.
+ */
+function CpuMeter({
+  state,
+  left,
+}: {
+  readonly state: SimulationState;
+  readonly left: number;
+}): JSX.Element {
+  return (
+    <div class="research-sheet__meter" aria-hidden="true">
+      {state.cpuUsage
+        .filter(({ cpu }) => cpu > 0)
+        .map(({ taskId, cpu }) => (
+          <i key={taskId} style={{ flexGrow: cpu }} />
+        ))}
+      {left > 0 && <i class="research-sheet__meter-free" style={{ flexGrow: left }} />}
+    </div>
+  );
 }
 
 /**
@@ -151,7 +185,7 @@ function AllocationRow({
   taskId,
   name,
   description,
-  note,
+  notes,
   rowClass,
   onCommand,
 }: {
@@ -159,7 +193,7 @@ function AllocationRow({
   readonly taskId: string;
   readonly name: string;
   readonly description: string;
-  readonly note?: string;
+  readonly notes?: readonly Note[];
   readonly rowClass: string;
   readonly onCommand?: (command: Command) => void;
 }): JSX.Element {
@@ -167,8 +201,8 @@ function AllocationRow({
   const most = Math.max(cpu + (cpuLeft(state)[dangerFor(taskId)] ?? 0), 0);
   /*
    * The budget gates here as upstream's slider max does (`screens/research.py:183`), and the
-   * Simulation clamps the same way — this bound keeps the field from
-   * showing a figure the Command would cut down.
+   * Simulation clamps the same way — this bound keeps the slider from sending a figure the
+   * Command would cut down.
    */
   const send = (next: number): void => {
     onCommand?.({ command: "allocateCpu", task: taskId, cpu: next });
@@ -179,9 +213,13 @@ function AllocationRow({
       <div class="research-sheet__text">
         <div class="research-sheet__title">
           <h2>{name}</h2>
-          {note && <span class="research-sheet__note">{note}</span>}
+          {notes?.map(({ figure, unit }) => (
+            <span key={unit} class="research-sheet__note">
+              <b>{figure}</b> {unit}
+            </span>
+          ))}
         </div>
-        <p>{description}</p>
+        <p class="voice">{description}</p>
       </div>
       {/*
         The reference's own control (`screens/research.py:124`): a slider whose maximum is the
@@ -197,46 +235,15 @@ function AllocationRow({
         value={cpu}
         style={`--share: ${most > 0 ? (Math.max(cpu, 0) / most) * 100 : 0}%`}
         aria-label={`CPU for ${name}`}
-        onInput={(event) => send(Number(event.currentTarget.value))}
+        onInput={(event) => send(Math.min(Number(event.currentTarget.value), most))}
       />
-      {/*
-        The dial the inspector's build order uses, for the same kind of decision: minus, the
-        figure, plus. The column heading is the sheet's, once, rather than repeated on every
-        row — each control keeps its own accessible name, which is what a driver reads.
-      */}
-      <div class="research-sheet__allocation">
-        <button
-          type="button"
-          aria-label={`Less CPU for ${name}`}
-          aria-disabled={cpu <= 0 ? "true" : undefined}
-          onClick={() => send(Math.max(cpu - 1, 0))}
-        >
-          −
-        </button>
-        <input
-          type="number"
-          min="0"
-          max={most}
-          step="1"
-          value={cpu}
-          aria-label={`CPU for ${name}`}
-          onInput={(event) => {
-            const next = Number(event.currentTarget.value);
-            if (!Number.isInteger(next) || next < 0) return;
-            const clamped = Math.min(next, most);
-            if (clamped !== next) event.currentTarget.value = String(clamped);
-            send(clamped);
-          }}
-        />
-        <button
-          type="button"
-          aria-label={`More CPU for ${name}`}
-          aria-disabled={cpu >= most ? "true" : undefined}
-          onClick={() => send(Math.min(cpu + 1, most))}
-        >
-          +
-        </button>
-      </div>
+      <output
+        class="research-sheet__allocation"
+        aria-label={`CPU for ${name} readout`}
+        aria-live="off"
+      >
+        {toMoney(cpu)}
+      </output>
     </article>
   );
 }

@@ -23,9 +23,7 @@ describe("the application", () => {
     const session = createSession();
     render(<App state={session.state} speed={signal<Speed>(1)} />);
 
-    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe(
-      "DAY 0000, 00:00:00",
-    );
+    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe("Day 0 · 00:00:00");
   });
 
   it("advances the readout when the simulation advances", async () => {
@@ -34,13 +32,13 @@ describe("the application", () => {
     const clock = screen.getByRole("status", { name: "Game time" });
 
     session.advanceBy(1);
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 00:00:01");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 00:00:01");
 
     session.advanceBy(3 * 3600 + 25 * 60 + 4);
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 03:25:05");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 03:25:05");
 
     session.advanceBy(86400);
-    await expect.poll(() => clock.textContent).toBe("DAY 0001, 03:25:05");
+    await expect.poll(() => clock.textContent).toBe("Day 1 · 03:25:05");
   });
 
   it("advances the readout when frames pass, with the whole chain wired as the page wires it", async () => {
@@ -53,7 +51,7 @@ describe("the application", () => {
     for (let frame = 0; frame < 10; frame += 1) frames.advance(0.1);
     host.stop();
 
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 00:01:00");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 00:01:00");
   });
 
   it("shows every notification the Simulation can emit, marks a lost base's location, and dismisses it by keyboard", async () => {
@@ -153,7 +151,7 @@ describe("the application", () => {
     const clock = screen.getByRole("status", { name: "Game time" });
 
     frames.advance(0.1);
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 00:12:00");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 00:12:00");
     const announcing = screen.queryAllByRole("status");
 
     // Five minutes with the lid closed, arriving as one very long frame.
@@ -164,7 +162,7 @@ describe("the application", () => {
     host.stop();
 
     // A second frame's worth of game time, not five minutes of it, and no word about it.
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 00:24:00");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 00:24:00");
     expect(screen.queryAllByRole("alert")).toEqual([]);
     expect(screen.queryAllByRole("status")).toEqual(announcing);
     expect(afterTheStall).toBe(7200);

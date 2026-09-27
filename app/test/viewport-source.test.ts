@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
 /**
  * What the stylesheets have to say for the supported range to hold, read as source.
  *
- * The range has one shell: 1024x600 CSS pixels and up, the shell frozen at that
+ * The range has one shell: 1280x600 CSS pixels and up, the shell frozen at that
  * size below it, and the page scrolling by the shortfall. Two halves of that decision are
  * statements a stylesheet makes rather than geometry a browser reports — the shell has one
  * form and no second one to switch to, and the page is allowed to scroll — so they are
@@ -23,10 +23,10 @@ const REPOSITORY = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const read = (path: string): string => readFileSync(resolve(REPOSITORY, path), "utf8");
 
 describe("the supported viewport range, as the stylesheets state it", () => {
-  it("freezes the one shell at 1024x600 below the supported range", () => {
+  it("freezes the one shell at 1280x600 below the supported range", () => {
     const shell = read("app/src/ui/App.css");
 
-    expect(shell).toMatch(/\.shell\s*{[^}]*min-width:\s*1024px;/s);
+    expect(shell).toMatch(/\.shell\s*{[^}]*min-width:\s*1280px;/s);
     expect(shell).toMatch(/\.shell\s*{[^}]*min-height:\s*600px;/s);
     expect(shell).not.toContain("@media");
   });

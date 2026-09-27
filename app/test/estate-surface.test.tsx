@@ -157,7 +157,7 @@ describe("the quantity dial", () => {
     quantity(3);
 
     // A new game earns five a day and owes nothing, so that is the flow beside the pool.
-    expect(readout("Cash flow")).toBe("5");
+    expect(readout("Cash flow")).toBe("+5");
     // Three Server Access draw 300 of construction cash out of the same day.
     expect(readout("Projected construction cash")).toBe("300");
     expect(readout("Projected cash flow")).toBe("-295");

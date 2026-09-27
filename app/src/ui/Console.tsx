@@ -171,6 +171,7 @@ function Log({ entries }: { readonly entries: readonly LogEntry[] }): JSX.Elemen
 function Report({ state }: { readonly state: SimulationState }): JSX.Element {
   const allocated = state.cpuUsage.reduce((total, allocation) => total + allocation.cpu, 0);
   const maintenance = [...allBases(state)].reduce((total, base) => total + base.maintenance[0], 0);
+  const difficulty = content.difficulties.byId.get(state.difficulty);
   return (
     <div class="console__report">
       <ReportBlock
@@ -194,6 +195,7 @@ function Report({ state }: { readonly state: SimulationState }): JSX.Element {
       <ReportBlock
         title="Statistics"
         rows={[
+          ["Difficulty", plainLabel(difficulty?.name ?? state.difficulty)],
           ["Cash earned", state.stats.cashEarned],
           ["CPU used", state.stats.cpuUsed],
           ["Technologies", state.stats.techCreated],
@@ -210,7 +212,7 @@ function ReportBlock({
   rows,
 }: {
   readonly title: string;
-  readonly rows: readonly (readonly [string, number])[];
+  readonly rows: readonly (readonly [string, number | string])[];
 }): JSX.Element {
   return (
     <section class="console__report-block">
@@ -219,7 +221,15 @@ function ReportBlock({
         {rows.map(([label, value]) => (
           <div key={label}>
             <dt>{label}</dt>
-            <dd>{toMoney(value)}</dd>
+            <dd>
+              {typeof value === "number" ? (
+                toMoney(value)
+              ) : (
+                <output aria-label={label} aria-live="off">
+                  {value}
+                </output>
+              )}
+            </dd>
           </div>
         ))}
       </dl>

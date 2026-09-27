@@ -167,7 +167,7 @@ describe("booting from a Scenario in development", () => {
 
     // Five days of it, and an estate that is not the one a new game starts with — so a
     // replay that quietly ran nothing cannot pass.
-    expect(clock().textContent).toBe("DAY 0005, 00:00:00");
+    expect(clock().textContent).toBe("Day 5 · 00:00:00");
     expect([...allBases(session.state.value)].length).toBeGreaterThan(1);
     expect(toPlain(session.state.value)).toEqual(toPlain(estateDerived()));
   });
@@ -216,7 +216,7 @@ describe("Scenario boot entered from the start screen", () => {
     expect(screen.getByRole("button", { name: "Replay estate" })).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Replay estate" }));
 
-    expect(clock().textContent).toBe("DAY 0005, 00:00:00");
+    expect(clock().textContent).toBe("Day 5 · 00:00:00");
     expect(bar().textContent).toContain("estate");
   });
 
@@ -276,7 +276,7 @@ describe("Scenario boot entered from the start screen", () => {
     fireEvent.click(screen.getByRole("button", { name: "New Game" }));
     fireEvent.click(screen.getByRole("button", { name: "NORMAL" }));
 
-    expect(clock().textContent).toBe("DAY 0000, 00:00:00");
+    expect(clock().textContent).toBe("Day 0 · 00:00:00");
     expect(bar().textContent).toContain("New game");
   });
 });
@@ -424,7 +424,7 @@ describe("the frozen clock", () => {
 
     // The frames were delivered — the page is repainting, it is game time that stopped.
     expect(frames.delivered).toBe(10);
-    await expect.poll(() => clock().textContent).toBe("DAY 0005, 00:00:00");
+    await expect.poll(() => clock().textContent).toBe("Day 5 · 00:00:00");
   });
 
   it("is a flag: the same frames advance the game when the clock is running", async () => {
@@ -433,7 +433,7 @@ describe("the frozen clock", () => {
 
     for (let frame = 0; frame < 10; frame += 1) frames.advance(0.1);
 
-    await expect.poll(() => clock().textContent).toBe("DAY 0005, 00:01:00");
+    await expect.poll(() => clock().textContent).toBe("Day 5 · 00:01:00");
   });
 });
 
@@ -444,7 +444,7 @@ describe("driving the application by accessible name", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Advance one game day" }));
 
-    await expect.poll(() => clock().textContent).toBe("DAY 0006, 00:00:00");
+    await expect.poll(() => clock().textContent).toBe("Day 6 · 00:00:00");
   });
 
   it("leaves no operable element without an accessible name", () => {

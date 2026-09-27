@@ -9,35 +9,25 @@
   --pin-hit: 2.75rem;
   --notification-ring: color-mix(in srgb, var(--colour-accent) 27%, transparent);
   --notification-pin-scale: 1.3;
-  --offworld-band: 2rem;
   --graticule-opacity: 0.18;
   --night-opacity: 0.55;
 
   position: absolute;
-  inset: 0 0 var(--band-height) 0;
+  inset: var(--hud-height) 0 var(--band-height) 0;
   transition: right 0.22s cubic-bezier(0.3, 0.7, 0.3, 1);
 }
 
-/*
- * The stage is the map's box, and it holds two rows: the off-world chips, and the globe
- * below them. The chips take their own band rather than floating over the stage, because a
- * viewport wider than 2:1 gives the globe the whole stage height and a floating row would
- * land on it.
- */
+/* The stage is the map's box, and the globe gets all of it. */
 .map__stage {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-rows: auto 1fr;
-  justify-items: center;
-  row-gap: var(--space-4);
-  padding-top: var(--space-4);
   overflow: hidden;
 }
 
 /*
- * The globe's own box, and a container so the globe is sized against the space the chips
- * leave rather than against the window. A transient surface that insets the map narrows
+ * The globe's own box, and a container so the globe is sized against the stage rather than
+ * against the window. A transient surface that insets the map narrows
  * this and the globe re-fits into what is left, and needs nothing here to change.
  */
 .map__globe-area {
@@ -140,7 +130,6 @@
   border: 1px solid var(--colour-accent);
   background: #0a0d14cc;
   box-shadow: 0 0 0 1px #0a0d1466;
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   font-size: var(--text-small);
   color: var(--colour-accent);
@@ -197,20 +186,19 @@
   color: var(--colour-ink);
 }
 
-/*
- * The row of extraterrestrial chips, above the globe rather than on it. Its band
- * is reserved whether or not a chip is in it: a chip arrives when its tech lands,
- * and a row that collapsed while empty would hand the height to the globe
- * and take it back at the first arrival.
- */
+/* The off-world chips, over the globe's Arctic edge and above the pins (`WorldMap.tsx`). */
 .map__offworld {
+  position: absolute;
+  top: var(--space-2);
+  left: 50%;
+  z-index: 4;
   display: flex;
-  align-items: center;
   gap: var(--space-2);
-  min-height: var(--offworld-band);
+  width: max-content;
   margin: 0;
   padding: 0;
   list-style: none;
+  transform: translateX(-50%);
 }
 
 .map__chip {

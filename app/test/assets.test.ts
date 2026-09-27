@@ -63,6 +63,24 @@ describe("the land path", () => {
     }
   });
 
+  // An edge longer than half the map is a ring crossing the antimeridian the long way, and it
+  // draws as a sliver across the whole map. Only the pole's own edge may be that long.
+  it("crosses the map only along a pole", () => {
+    for (const ring of LAND_PATH.split("Z").filter(Boolean)) {
+      const points = [...ring.matchAll(/[ML](-?[\d.]+) (-?[\d.]+)/g)].map(([, x, y]) => [
+        Number(x),
+        Number(y),
+      ]);
+      points.forEach(([x, y], index) => {
+        const [nextX, nextY] = points[(index + 1) % points.length] as number[];
+        if (Math.abs((x as number) - (nextX as number)) > 50) {
+          expect([0, 100]).toContain(y);
+          expect(nextY).toBe(y);
+        }
+      });
+    }
+  });
+
   it("is one closed ring per island, and as many of them as it claims", () => {
     expect(LAND_PATH.match(/M/g)?.length).toBe(LAND_RING_COUNT);
     expect(LAND_PATH.match(/Z/g)?.length).toBe(LAND_RING_COUNT);

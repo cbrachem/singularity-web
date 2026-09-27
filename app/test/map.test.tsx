@@ -22,15 +22,10 @@ function mount(session: Session = createSession({ seed: 7 }), speed: Speed = 1):
 
 const UI = resolve(dirname(fileURLToPath(import.meta.url)), "..", "src", "ui");
 const MAP_CSS = readFileSync(resolve(UI, "map", "WorldMap.css"), "utf8");
-const HUD_CSS = readFileSync(resolve(UI, "Hud.css"), "utf8");
 
 // The stage's own layout is a stylesheet decision, and the DOM alone cannot show whether a
 // row sits above the globe or over it. Read the rule the layout rests on.
-/*
- * Anchored at the start of a line, so the selector asked for is the rule that is read. Without
- * that, `.hud__readout` also matches inside `.hud__resources .hud__readout + .hud__readout`,
- * and the helper returns whichever of the two happens to be written first in the file.
- */
+// Anchored at the start of a line, so the selector asked for is the rule that is read.
 function ruleIn(stylesheet: string, selector: string): string {
   const block = new RegExp(`^${selector.replace(/[.]/g, "\\.")}\\s*\\{([^}]*)\\}`, "m").exec(
     stylesheet,
@@ -42,12 +37,6 @@ function ruleIn(stylesheet: string, selector: string): string {
 
 function declarations(selector: string): string {
   return ruleIn(MAP_CSS, selector);
-}
-
-// The HUD's is the same kind of decision: whether a readout stacks or spreads is in the rule
-// and nowhere in the DOM.
-function hudDeclarations(selector: string): string {
-  return ruleIn(HUD_CSS, selector);
 }
 
 // The six globe locations that need no tech. ANTARCTIC and OCEAN are gated, so they are not
@@ -211,28 +200,15 @@ describe("the three extraterrestrial locations", () => {
     expect(screen.queryByRole("button", { name: "ORBIT" })).toBe(null);
   });
 
-  // Above the globe is a claim about the layout, not about the paint order. On a viewport
-  // wider than 2:1 the globe takes the whole stage height, so a row drawn over the stage
-  // lands on the globe. The row gets its own band in the stage instead, and the globe is
-  // sized against the space the band leaves.
-  it("take a band of the stage rather than floating over the globe", () => {
+  // The row floats over the globe's Arctic edge rather than taking a band of the stage, so the
+  // globe is sized against the whole stage. Where it lands is measured in `viewport.test.ts`.
+  it("float over the globe rather than taking a band of the stage", () => {
     const container = mount();
-    const stage = container.querySelector(".map__stage") as HTMLElement;
-    const globeArea = container.querySelector(".map__globe-area");
+    const globe = container.querySelector(".map__globe") as HTMLElement;
 
-    expect([...stage.children].map((child) => child.className)).toEqual([
-      "map__offworld",
-      "map__globe-area",
-    ]);
-    expect(globeArea?.querySelector(".map__globe")).toBeTruthy();
-    expect(declarations(".map__offworld")).not.toMatch(/position:\s*absolute/);
-    // The globe measures itself against its own area, so the band is subtracted from it.
+    expect(globe.querySelector(".map__offworld")).toBeTruthy();
+    expect(declarations(".map__offworld")).toMatch(/position:\s*absolute/);
     expect(declarations(".map__globe-area")).toMatch(/container-type:\s*size/);
-    expect(declarations(".map__stage")).not.toMatch(/container-type/);
-    // The band is reserved whether or not a chip is in it: an empty row that
-    // collapsed would give the globe the height back and take it away again at the first
-    // chip, resizing the globe mid-game.
-    expect(declarations(".map__offworld")).toMatch(/min-height:\s*var\(--offworld-band\)/);
   });
 
   it("are absent until the prerequisite tech lands, and a chip when it has", () => {
@@ -268,15 +244,14 @@ describe("the day/night terminator", () => {
 });
 
 describe("the HUD", () => {
-  it("shows difficulty, clock, speed and the resource pools", () => {
+  it("shows the clock, the speed and the resource pools", () => {
     const session = createSession({ seed: 7, difficulty: "normal" });
     mount(session, 60);
 
-    expect(screen.getByRole("status", { name: "Difficulty" }).textContent).toBe("NORMAL");
-    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe(
-      "DAY 0000, 00:00:00",
+    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe("Day 0 · 00:00:00");
+    expect(screen.getByRole("button", { name: "Speed 60x" }).getAttribute("aria-pressed")).toBe(
+      "true",
     );
-    expect(screen.getByRole("status", { name: "Speed" }).textContent).toBe("60x");
     expect(screen.getByRole("status", { name: "Cash" }).textContent).toBe("1,000");
     expect(screen.getByRole("status", { name: "CPU" }).textContent).toBeTruthy();
   });
@@ -294,37 +269,16 @@ describe("the HUD", () => {
     const session = createSession({ seed: 7, difficulty: "normal" });
     mount(session, 60);
 
-    expect(screen.getByRole("status", { name: "Cash flow" }).textContent).toBe("5");
+    expect(screen.getByRole("status", { name: "Cash flow" }).textContent).toBe("+5");
     expect(screen.getByRole("status", { name: "CPU spare" }).textContent).toBe("1");
   });
 
-  /**
-   * And each flow sits *inside* its pool's cell rather than in a cell beside it.
-   *
-   * The two panels are absolutely positioned against opposite edges of a stage that is only
-   * guaranteed 1024 wide, and nothing in this suite can measure a layout — the
-   * one test that can needs a browser. So the arrangement the width argument rests on is
-   * asserted structurally: two cells in the panel, and each flow within one of them.
-   */
-  it("keeps each flow inside its pool's cell rather than beside it", () => {
-    const container = mount(createSession({ seed: 7 }), 60);
-    const panel = container.querySelector(".hud__resources") as HTMLElement;
-    const cellOf = (name: string) => screen.getByRole("status", { name }).closest(".hud__readout");
+  it("keeps each flow inside its pool's cell", () => {
+    mount(createSession({ seed: 7 }), 60);
+    const cellOf = (name: string) => screen.getByRole("status", { name }).closest(".hud__pool");
 
-    expect(panel.querySelectorAll(".hud__readout")).toHaveLength(2);
     expect(cellOf("Cash flow")).toBe(cellOf("Cash"));
     expect(cellOf("CPU spare")).toBe(cellOf("CPU"));
-  });
-
-  /**
-   * The nesting above is half the arrangement, and on its own it is not the half that
-   * matters: a cell holding both a pool and its flow lays them out *beside* each other the
-   * moment the cell is a row, which is the layout the floor rules out. Nothing in
-   * the DOM says which it is. The rule does, so the rule is read — the same measure
-   * `threat-band.test.tsx` takes for the band's own widths.
-   */
-  it("stacks that cell, so the flow is under the pool and not beside it", () => {
-    expect(hudDeclarations(".hud__readout")).toContain("flex-direction: column;");
   });
 
   it("re-reads every value from the one root the host publishes", async () => {
@@ -336,7 +290,7 @@ describe("the HUD", () => {
 
     session.advanceBy(SECONDS_PER_DAY);
 
-    await expect.poll(() => clock.textContent).toBe("DAY 0001, 00:00:00");
+    await expect.poll(() => clock.textContent).toBe("Day 1 · 00:00:00");
     // One publication moved both, which is what "everything derives from the root" means:
     // there is no second source for the cash figure to have come from.
     expect(cash.textContent).not.toBe(before);

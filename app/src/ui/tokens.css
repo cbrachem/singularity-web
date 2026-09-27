@@ -37,6 +37,9 @@
   --colour-warn: #ffb454;
   --colour-danger: #ff5f6d;
 
+  /* A flow that grows a pool. Only the HUD's flows use it; a loss is `--colour-warn`. */
+  --colour-gain: #5fd08a;
+
   /*
    * The danger ramp, one colour per level the reference defines. Shared rather than the
    * threat band's own: the band and the inspector's detection table both
@@ -55,9 +58,16 @@
   --colour-land: #3d4d84;
   --colour-graticule: #6b7cff;
 
-  /* Type. Two families, both self-hosted subsets (./fonts/fonts.css). */
+  /*
+   * Type. Two families, both self-hosted subsets (./fonts/fonts.css). The mono face is the
+   * AI's voice and nothing else (`.voice` below); figures are Archivo's tabular digits.
+   */
   --font-sans: "Archivo", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* The AI's voice: a light tint of the accent, and the accent as the rule beside it. */
+  --colour-voice: #c6cdfb;
+  --colour-voice-rule: color-mix(in srgb, var(--colour-accent) 70%, transparent);
   /*
    * The scale is short on purpose — a HUD with five type sizes reads as five importances —
    * but it was short at both ends: 10, 12 and 14 within four pixels of each other, with the
@@ -108,6 +118,9 @@
    */
   --band-height: 62px;
 
+  /* The HUD bar along the top edge. The map and the inspector start under it. */
+  --hud-height: 52px;
+
   /* The inspector's fixed width, so the stage can inset by it. */
   --inspector-width: 400px;
 
@@ -143,6 +156,24 @@ body {
   caret-color: var(--colour-accent);
   scrollbar-color: var(--colour-edge-strong) transparent;
   scrollbar-width: thin;
+}
+
+/*
+ * The AI speaking in the first person: research and task descriptions, base and item
+ * descriptions, the estate's answers, notifications and the ending. One rule, so the voice
+ * looks the same wherever it is said, and a component that sets text in it only adds the
+ * class. Size and measure stay the component's.
+ */
+.voice {
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--colour-voice-rule);
+  font-family: var(--font-mono);
+  color: var(--colour-voice);
+}
+
+/* A live region that says nothing yet still stands, so it must not draw a rule. */
+.voice:empty {
+  border-left-color: transparent;
 }
 
 ::selection {

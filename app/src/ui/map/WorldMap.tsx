@@ -39,36 +39,35 @@ export function WorldMap({
   return (
     <section class="map" aria-label="World map">
       <div class="map__stage">
-        {/*
-         * The three extraterrestrial locations sit off the globe, as a row of chips above
-         * it. The row is a band of the stage rather than a
-         * layer over it: on a viewport wider than 2:1 the globe fills the stage height, and
-         * a floating row would sit on the globe it is meant to be above.
-         *
-         * A chip appears when its prerequisite tech lands and is not there before, which
-         * reverses epic story 7: played, a locked chip reads as clutter rather than as a
-         * goal. The band keeps its height while it is empty, so the globe is
-         * not resized by the first chip.
-         */}
-        <ul class="map__offworld">
-          {OFF_WORLD_LOCATIONS.filter((location) => isUnlocked(location, finished)).map(
-            (location) => (
-              <li key={location.id}>
-                <button
-                  type="button"
-                  class="map__chip"
-                  aria-label={plainLabel(location.name)}
-                  onClick={() => onInspect(location.id)}
-                >
-                  {plainLabel(location.name)}
-                </button>
-              </li>
-            ),
-          )}
-        </ul>
-
         <div class="map__globe-area">
           <div class="map__globe">
+            {/*
+             * The extraterrestrial locations, as a row of chips floating over the top edge of
+             * the globe. That strip is the Arctic north of about 80°N, where no pin is placed,
+             * and the reference itself draws these locations over the map (13% from the top).
+             * A reserved band above the globe cost the globe 64px of height in every game,
+             * for a row that is empty until the first off-world tech lands.
+             *
+             * A chip appears when its prerequisite tech lands and is not there before: played,
+             * a locked chip reads as clutter rather than as a goal.
+             */}
+            <ul class="map__offworld">
+              {OFF_WORLD_LOCATIONS.filter((location) => isUnlocked(location, finished)).map(
+                (location) => (
+                  <li key={location.id}>
+                    <button
+                      type="button"
+                      class="map__chip"
+                      aria-label={plainLabel(location.name)}
+                      onClick={() => onInspect(location.id)}
+                    >
+                      {plainLabel(location.name)}
+                    </button>
+                  </li>
+                ),
+              )}
+            </ul>
+
             <svg
               class="map__land"
               viewBox="0 0 100 100"

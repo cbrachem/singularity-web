@@ -31,14 +31,13 @@
 
 /*
  * The world telling the player something, in the same voice the research sheet and the ending
- * are in: mono, at a reading measure. This is the quiet member of that family — it is an
+ * are in (`.voice`), at a reading measure. This is the quiet member of that family — it is an
  * interruption to be dismissed, not an occasion (`EndOfGame.css`).
  */
 .notification__message {
   margin: 0;
   max-width: 62ch;
   white-space: pre-wrap;
-  font-family: var(--font-mono);
   font-size: var(--text-body);
   line-height: 1.65;
 }

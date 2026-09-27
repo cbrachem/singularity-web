@@ -119,7 +119,11 @@ describe("the shell the band is subtracted from", () => {
       const block = ruleFor(surface);
       const bottom = bottomOffset(block);
 
-      if (bottom !== null) {
+      if (bottom === "auto") {
+        // Anchored to the top edge instead, so it is clear of the band while its height is a
+        // fixed token rather than whatever its content comes to.
+        expect([surface, declaration(block, "height")]).toEqual([surface, "var(--hud-height)"]);
+      } else if (bottom !== null) {
         // Anchored to the shell's bottom edge, so it stops at the band, at the shared token.
         expect([surface, bottom]).toEqual([surface, "var(--band-height)"]);
       } else {
@@ -283,7 +287,7 @@ describe("the three display_discover levels", () => {
 });
 
 /**
- * The supported range's lower edge is 1024x600, and below it the eight values stop fitting
+ * The supported range's lower edge is 1280x600, and below it the eight values stop fitting
  * side by side. The band's widths are literal numbers for exactly this reason — a ninth value
  * or a wider cell is a change to the supported range, and this sum
  * is what says so before the layout does.
@@ -294,7 +298,7 @@ describe("the three display_discover levels", () => {
  * `app/test/viewport.test.ts`.
  */
 describe("the supported floor", () => {
-  const FLOOR_WIDTH = 1024;
+  const FLOOR_WIDTH = 1280;
 
   function pixels(name: string): number {
     const stylesheet = read("app/src/ui/ThreatBand.css");

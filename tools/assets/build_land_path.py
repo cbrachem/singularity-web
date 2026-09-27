@@ -160,6 +160,57 @@ def enclosed_area(ring: list[tuple[float, float]]) -> float:
     return abs(twice) / 2
 
 
+def unwrapped(points: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    """The ring with each step across the antimeridian taken the short way, off the grid."""
+    out = [points[0]]
+    for x, y in points[1:]:
+        out.append((x + 100.0 * round((out[-1][0] - x) / 100.0), y))
+    return out
+
+
+def closed_over_pole(ring: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    """A ring that goes once round the globe (Antarctica) closes along the pole's edge."""
+    if abs(ring[-1][0] - ring[0][0]) <= 50:
+        return ring
+    pole = 100.0 if sum(y for _, y in ring) / len(ring) > 50 else 0.0
+    return [*ring, (ring[-1][0], pole), (ring[0][0], pole)]
+
+
+def clipped_to(
+    ring: list[tuple[float, float]], edge: float, inside: bool
+) -> list[tuple[float, float]]:
+    """Sutherland-Hodgman against one vertical edge; ``inside`` keeps the side x >= edge."""
+
+    def kept(point: tuple[float, float]) -> bool:
+        return (point[0] >= edge) == inside
+
+    def crossing(a: tuple[float, float], b: tuple[float, float]) -> tuple[float, float]:
+        t = (edge - a[0]) / (b[0] - a[0])
+        return (edge, a[1] + t * (b[1] - a[1]))
+
+    out: list[tuple[float, float]] = []
+    for index, current in enumerate(ring):
+        previous = ring[index - 1]
+        if kept(current):
+            if not kept(previous):
+                out.append(crossing(previous, current))
+            out.append(current)
+        elif kept(previous):
+            out.append(crossing(previous, current))
+    return out
+
+
+def wrapped(ring: list[tuple[float, float]]) -> list[list[tuple[float, float]]]:
+    """The ring, and its copies a globe-width either side, each cut to the 0-100 grid."""
+    pieces = []
+    for shift in (-100.0, 0.0, 100.0):
+        piece = [(x + shift, y) for x, y in ring]
+        piece = clipped_to(clipped_to(piece, 0.0, True), 100.0, False)
+        if piece:
+            pieces.append(piece)
+    return pieces
+
+
 def land_rings(topology: dict) -> list[list[tuple[float, float]]]:
     arcs = decode_arcs(topology)
     rings: list[list[tuple[float, float]]] = []
@@ -167,17 +218,26 @@ def land_rings(topology: dict) -> list[list[tuple[float, float]]]:
         polygons = [geometry["arcs"]] if geometry["type"] == "Polygon" else geometry["arcs"]
         for polygon in polygons:
             for ring in polygon:
-                projected = [project(point) for point in ring_points(ring, arcs)]
+                # Natural Earth keeps Fiji, Chukotka and Antarctica whole across the
+                # antimeridian. Drawn as they come, each step from 180 to -180 is an edge
+                # across the whole map, which rendered as a sliver line at their latitude.
+                projected = unwrapped([project(point) for point in ring_points(ring, arcs)])
                 simplified = rounded(simplify(projected, TOLERANCE))
                 if simplified and simplified[0] == simplified[-1]:
                     simplified = simplified[:-1]
-                # An island the simplification flattened encloses no area at all — its
-                # corners came out collinear. These are the small islands the map drops,
-                # and the rule is what they became rather than how big they were: a ring
-                # with no area draws as a hairline in the ocean, which reads as a defect
-                # rather than as a coastline.
-                if len(simplified) >= 3 and enclosed_area(simplified) > 0:
-                    rings.append(simplified)
+                if len(simplified) < 3:
+                    continue
+                for piece in wrapped(closed_over_pole(simplified)):
+                    piece = rounded(piece)
+                    if piece and piece[0] == piece[-1]:
+                        piece = piece[:-1]
+                    # An island the simplification flattened encloses no area at all — its
+                    # corners came out collinear. These are the small islands the map drops,
+                    # and the rule is what they became rather than how big they were: a ring
+                    # with no area draws as a hairline in the ocean, which reads as a defect
+                    # rather than as a coastline.
+                    if len(piece) >= 3 and enclosed_area(piece) > 0:
+                        rings.append(piece)
     return rings
 
 

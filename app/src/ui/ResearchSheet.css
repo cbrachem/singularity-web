@@ -44,34 +44,50 @@
 
 .research-sheet__header {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: var(--space-4);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--colour-edge);
 }
 
-.research-sheet__header h1,
-.research-sheet__header output {
-  margin: 0;
-}
-
 .research-sheet__header h1 {
+  flex: 1;
+  margin: 0;
   font-size: var(--text-readout);
 }
 
 /*
- * What is left to give out, which is the number every row on this sheet is a claim against.
- * It sits with the title at the display grade rather than under it as a caption: the player
- * opens this surface to spend a budget, and the budget is the headline.
+ * What is left to give out, which is the number every row on this sheet is a claim against:
+ * a bar of where the CPU goes, and the figure beside it.
  */
-.research-sheet__header output {
-  display: block;
-  margin-top: var(--space-1);
-  font-family: var(--font-mono);
-  font-size: var(--text-display);
+.research-sheet__budget {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.research-sheet__budget output {
+  min-width: 18ch;
+  font-size: var(--text-small);
   font-variant-numeric: tabular-nums;
-  line-height: 1.15;
-  color: var(--colour-accent);
+  color: var(--colour-ink-dim);
+}
+
+.research-sheet__meter {
+  display: flex;
+  gap: 2px;
+  width: 14rem;
+  height: 8px;
+}
+
+.research-sheet__meter i {
+  min-width: 2px;
+  border-radius: 1px;
+  background: var(--colour-accent);
+}
+
+.research-sheet__meter .research-sheet__meter-free {
+  background: var(--colour-edge-strong);
 }
 
 .research-sheet__close {
@@ -136,26 +152,31 @@
 /*
  * The description is the AI talking about itself — "As I have no identification, I cannot
  * risk performing many jobs" — and it was set in the same face as a button label, at the
- * size of a caption. It is the one long-form voice in the product, so it takes the mono face
- * and a reading measure: the register is the character's, not a costume for "technical".
+ * size of a caption. It is the AI's voice, so it takes the shared `.voice` rule
+ * (`tokens.css`): the register is the character's, not a costume for "technical".
  */
 /* Wider than a reading measure, on purpose: these are two-sentence asides, not passages, and
    every line the text does not wrap onto is a row the sheet shows more of. */
 .research-sheet__row p,
 .research-sheet__sink p {
   max-width: 102ch;
-  color: var(--colour-ink-dim);
-  font-family: var(--font-mono);
   font-size: var(--text-small);
   line-height: 1.55;
 }
 
 .research-sheet__note {
-  color: var(--colour-accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-small);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-small);
+  background: var(--colour-edge);
+  color: var(--colour-ink-dim);
+  font-size: var(--text-label);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+}
+
+.research-sheet__note b {
+  font-weight: 400;
+  color: var(--colour-ink);
 }
 
 /*
@@ -208,45 +229,11 @@
 }
 
 /*
- * Choosing a quantity, done the way the inspector's build dial does it: minus, the figure,
- * plus. It was a bare number input here and a dial there — the same decision offered through
- * two different controls on two surfaces of the same shell, so the player learned neither.
- * The dial is the one that wins, because it is the one that can be used without typing while
- * the clock runs.
+ * The figure the slider means, as the inspector's dial prints its own. Nine characters hold
+ * the widest CPU figure `toMoney` prints for a whole count, `999,999` or `999.99mi`.
  */
 .research-sheet__allocation {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  gap: var(--space-2);
-}
-
-.research-sheet__allocation button {
-  width: 2rem;
-  padding: var(--space-1) 0;
-  border: 1px solid var(--colour-edge-strong);
-  border-radius: var(--radius-small);
-  background: transparent;
-  color: var(--colour-ink);
-  font: inherit;
-  font-family: var(--font-mono);
-  cursor: pointer;
-}
-
-.research-sheet__allocation button[aria-disabled="true"] {
-  color: var(--colour-ink-faint);
-  cursor: not-allowed;
-}
-
-.research-sheet__allocation input {
-  width: 6ch;
-  padding: var(--space-1) var(--space-2);
-  border: 1px solid var(--colour-edge-strong);
-  border-radius: var(--radius-small);
-  background: var(--colour-ground);
-  color: var(--colour-ink);
-  font: inherit;
-  font-family: var(--font-mono);
+  min-width: 9ch;
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -259,8 +246,6 @@
 }
 
 .research-sheet__close:focus-visible,
-.research-sheet__allocation button:focus-visible,
-.research-sheet__allocation input:focus-visible,
 .research-sheet__share:focus-visible {
   outline: 2px solid var(--colour-accent);
   outline-offset: 2px;

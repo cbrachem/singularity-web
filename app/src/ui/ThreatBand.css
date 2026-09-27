@@ -5,10 +5,10 @@
  *
  * # The four widths below are a budget, not a taste
  *
- * The supported range is 1024x600 and up, and its lower edge is *this*
+ * The supported range is 1280x600 and up, and its lower edge is *this*
  * readout's: below it the eight values stop fitting side by side. So the widths that make up
  * the row are literal numbers rather than references into the spacing scale, and
- * `app/test/threat-band.test.tsx` adds them up against 1024. A wider cell or a ninth value is
+ * `app/test/threat-band.test.tsx` adds them up against 1280. A wider cell or a ninth value is
  * a change to the supported range and the sum is what says so.
  */
 
@@ -123,7 +123,6 @@
 
 .band__value {
   width: var(--threat-value-width);
-  font-family: var(--font-mono);
   font-size: var(--text-body);
   font-variant-numeric: tabular-nums;
   line-height: 1.25;

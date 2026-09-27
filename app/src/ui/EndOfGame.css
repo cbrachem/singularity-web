@@ -7,7 +7,7 @@
  * game whose ending is indistinguishable from its most routine interruption.
  *
  * What separates them here is register, not decoration. The ending is the AI speaking about
- * its own end, so it is set in the mono face at a reading size with a reading measure, given
+ * its own end, so it is set in the AI's voice at a reading size with a reading measure, given
  * the display grade for the word that names the outcome, and lit from one edge in the colour
  * of that outcome. The two endings are as far apart as the game's two endings are: an
  * apotheosis is accent, a loss is danger, and the word says which either way — the colour is
@@ -66,7 +66,6 @@
 
 .end-of-game__title {
   margin: 0;
-  font-family: var(--font-mono);
   font-size: var(--text-display);
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -83,10 +82,13 @@
   margin: 0;
   max-width: 62ch;
   white-space: pre-wrap;
-  font-family: var(--font-mono);
   font-size: var(--text-body);
   line-height: 1.7;
-  color: var(--colour-ink);
+}
+
+.end-of-game__story {
+  display: grid;
+  gap: var(--space-4);
 }
 
 /* Filled, because it is the only thing left to do on this surface. */

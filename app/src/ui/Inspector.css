@@ -3,7 +3,7 @@
   --inspector-warn: var(--colour-warn);
 
   position: absolute;
-  top: 0;
+  top: var(--hud-height);
   right: 0;
   bottom: var(--band-height);
   width: var(--inspector-width);
@@ -140,7 +140,6 @@
   color: var(--colour-ink-dim);
 }
 .inspector__cpu {
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 .inspector__status {
@@ -169,7 +168,6 @@
 }
 .inspector__numbers dd {
   margin: 0;
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   min-width: 7ch;
 }
@@ -202,7 +200,6 @@
 .inspector__detection {
   width: 100%;
   border-collapse: collapse;
-  font-family: var(--font-mono);
   font-size: var(--text-small);
   font-variant-numeric: tabular-nums;
 }
@@ -271,12 +268,10 @@
   outline-offset: 2px;
 }
 
-/* The forced-hardware sentence, in the AI's mono voice like the acknowledgment line. */
+/* The forced-hardware sentence, in the AI's voice like the acknowledgment line. */
 .inspector__fixed {
   margin: var(--space-3) 0;
-  font-family: var(--font-mono);
   font-size: var(--text-small);
-  color: var(--colour-ink-dim);
 }
 
 /*
@@ -393,14 +388,12 @@
   margin-top: var(--space-2);
 }
 /*
- * The estate's answer, in the AI's voice — the mono face. The region stands even
+ * The estate's answer, in the AI's voice (`.voice`). The region stands even
  * while it is empty, so the live announcement works; the gap appears only with the text.
  */
 .inspector__acknowledgment {
   display: block;
-  font-family: var(--font-mono);
   font-size: var(--text-small);
-  color: var(--colour-ink-dim);
 }
 .inspector__acknowledgment:not(:empty) {
   margin-top: var(--space-3);
@@ -467,11 +460,10 @@
 .inspector__type-info .inspector__detection caption {
   padding: 0;
 }
-/* The figure the slider means, in mono so it does not wander as it counts.
+/* The figure the slider means, in tabular digits so it does not wander as it counts.
    `MAX_ORDER` is 99, so two figures is the widest it gets. */
 .inspector__dial output {
   min-width: 2ch;
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -569,7 +561,6 @@
 }
 .inspector__projection dd {
   margin: 0;
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 /*

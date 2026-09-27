@@ -132,7 +132,6 @@
 }
 .console__log-row span,
 .console__report dd {
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   color: var(--colour-ink-dim);
 }
@@ -178,7 +177,6 @@
 
 .console__keys dt {
   min-width: 8ch;
-  font-family: var(--font-mono);
   color: var(--colour-ink-dim);
 }
 

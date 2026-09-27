@@ -45,7 +45,7 @@ export function Notification({
       aria-label="Notification"
       aria-modal="true"
     >
-      <p class="notification__message">{pages[page]}</p>
+      <p class="notification__message voice">{pages[page]}</p>
       {last ? (
         <button type="button" class="notification__dismiss" onClick={onDismiss}>
           Dismiss notification

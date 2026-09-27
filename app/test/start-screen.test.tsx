@@ -157,7 +157,12 @@ function fromAnotherBuild(): string {
 
 const clock = (): HTMLElement => screen.getByRole("status", { name: "Game time" });
 
-const difficultyReadout = (): HTMLElement => screen.getByRole("status", { name: "Difficulty" });
+/** The difficulty is set once, so it lives in the console's report rather than on the HUD. */
+function difficultyReadout(): HTMLElement {
+  fireEvent.click(named("Console"));
+  fireEvent.click(screen.getByRole("tab", { name: "Report" }));
+  return screen.getByRole("status", { name: "Difficulty" });
+}
 
 const named = (name: string): HTMLElement => screen.getByRole("button", { name });
 
@@ -247,7 +252,7 @@ describe("the start screen", () => {
 
     fireEvent.click(named("Continue"));
 
-    expect(clock().textContent).toBe("DAY 0001, 00:00:00");
+    expect(clock().textContent).toBe("Day 1 · 00:00:00");
   });
 
   // A save this build cannot read is not a slot going spare. It is left exactly
@@ -308,7 +313,7 @@ describe("the start screen", () => {
     const shown = document.body.textContent ?? "";
     expect(shown).toContain("replaces the saved game");
     expect(shown).toContain("HARD");
-    expect(shown).toContain("DAY 0001, 00:00:00");
+    expect(shown).toContain("Day 1 · 00:00:00");
   });
 
   /*
@@ -360,7 +365,7 @@ describe("the start screen", () => {
       fireEvent.click(named("Continue"));
     }
     expect(message()).toBe(intro.at(-1)!.text.trimEnd());
-    expect(clock().textContent).toBe("DAY 0000, 00:00:00");
+    expect(clock().textContent).toBe("Day 0 · 00:00:00");
 
     fireEvent.click(named("Dismiss notification"));
     expect(screen.queryByRole("alertdialog", { name: "Notification" })).toBeNull();
@@ -392,7 +397,7 @@ describe("the start screen", () => {
     fireEvent.click(named("New Game"));
     fireEvent.click(named("VERY EASY"));
 
-    expect(clock().textContent).toBe("DAY 0000, 00:00:00");
+    expect(clock().textContent).toBe("Day 0 · 00:00:00");
     expect(difficultyReadout().textContent).toBe("VERY EASY");
   });
 
@@ -410,7 +415,7 @@ describe("the start screen", () => {
     const { frames } = aColdStart({ storage, refuses: "no such tech: not-a-tech" });
 
     fireEvent.click(named("Continue"));
-    expect(clock().textContent).toBe("DAY 0001, 00:00:00");
+    expect(clock().textContent).toBe("Day 1 · 00:00:00");
     // A resumed game starts stopped, so the first Tick is the one the player asks for.
     fireEvent.click(named("Speed 60x"));
     frames.advance(0.1);

@@ -48,6 +48,13 @@ function mount(initial = state()) {
   return { commands, container, published };
 }
 
+/** Every cost or rate chip on the sheet, as the text it reads. */
+function noteTexts(): string[] {
+  return [...document.querySelectorAll(".research-sheet__note")].map(
+    (note) => note.textContent ?? "",
+  );
+}
+
 describe("the research surface", () => {
   /**
    * The sheet allocates every CPU the player has — the pool and the job as well as research
@@ -62,9 +69,9 @@ describe("the research surface", () => {
 
     const sheet = screen.getByRole("region", { name: "Research/Tasks" });
     expect(sheet.querySelector("h1")?.textContent).toBe("Research/Tasks");
-    expect(screen.getByRole("spinbutton", { name: "CPU for CPU Pool" })).toBeTruthy();
-    expect(screen.getByRole("spinbutton", { name: "CPU for Menial Jobs" })).toBeTruthy();
-    expect(screen.getByRole("spinbutton", { name: "CPU for Stealth" })).toBeTruthy();
+    expect(screen.getByRole("slider", { name: "CPU for CPU Pool" })).toBeTruthy();
+    expect(screen.getByRole("slider", { name: "CPU for Menial Jobs" })).toBeTruthy();
+    expect(screen.getByRole("slider", { name: "CPU for Stealth" })).toBeTruthy();
   });
 
   it("opens over the map, stops at the reserved band, and closes with Escape", () => {
@@ -88,10 +95,10 @@ describe("the research surface", () => {
     fireEvent.click(screen.getByRole("button", { name: "Research/Tasks" }));
 
     const before = rows(container);
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Stealth" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Stealth" }), {
       target: { value: "3" },
     });
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Sociology" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Sociology" }), {
       target: { value: "2" },
     });
 
@@ -113,7 +120,7 @@ describe("the research surface", () => {
 
     expect(rows(container)).toEqual(["Intrusion", "Sociology"]);
     published.value = { ...published.value, gameTime: 1 };
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Sociology" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Sociology" }), {
       target: { value: "3" },
     });
 
@@ -121,11 +128,10 @@ describe("the research surface", () => {
   });
 
   /**
-   * The reference's own control (`screens/research.py:124`): one drag spends the budget. It
-   * moves the same value as the field — same accessible name, the role tells them apart —
-   * and its maximum is the row's reach, so the track is the budget made visible.
+   * The reference's own control (`screens/research.py:124`): one drag spends the budget. Its
+   * maximum is the row's reach, so the track is the budget made visible.
    */
-  it("offers a slider over the same budget as the field", () => {
+  it("offers a slider over the budget the row can reach", () => {
     const { commands, container } = mount(stateWithCpu(10));
     fireEvent.click(screen.getByRole("button", { name: "Research/Tasks" }));
 
@@ -139,14 +145,14 @@ describe("the research surface", () => {
     expect(unnamedOperables(container)).toEqual([]);
   });
 
-  it("clamps a typed allocation to the CPU the player actually has", () => {
+  it("clamps an allocation to the CPU the player actually has", () => {
     const { commands } = mount(stateWithCpu(5));
     fireEvent.click(screen.getByRole("button", { name: "Research/Tasks" }));
 
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Menial Jobs" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Menial Jobs" }), {
       target: { value: "3" },
     });
-    const stealth = screen.getByRole("spinbutton", { name: "CPU for Stealth" });
+    const stealth = screen.getByRole("slider", { name: "CPU for Stealth" });
     fireEvent.input(stealth, { target: { value: "99" } });
 
     expect(commands).toEqual([
@@ -154,6 +160,7 @@ describe("the research surface", () => {
       { command: "allocateCpu", task: "Stealth", cpu: 2 },
     ]);
     expect((stealth as HTMLInputElement).value).toBe("2");
+    expect(screen.getByRole("status", { name: "CPU for Stealth readout" }).textContent).toBe("2");
     expect(screen.getByLabelText("CPU left").textContent).toBe("0 of 5 CPU left");
   });
 
@@ -176,9 +183,9 @@ describe("the research surface", () => {
     expect(row.querySelector("p")?.textContent).toBe(
       "By studying human behavior, I can predict their large-scale actions at a basic level.  I can use this knowledge to make my actions seem less interesting to the public.",
     );
-    expect(row.querySelector(".research-sheet__note")?.textContent).toBe(
-      "10 cash · 500 CPU-days left",
-    );
+    expect(
+      [...row.querySelectorAll(".research-sheet__note")].map((note) => note.textContent),
+    ).toEqual(["10 cash", "500 CPU-days left"]);
     expect(sociology.buyable.costLeft[0]).toBe(10);
   });
 
@@ -186,10 +193,10 @@ describe("the research surface", () => {
     const { commands, container } = mount(stateWithCpu(10));
     fireEvent.click(screen.getByRole("button", { name: "Research/Tasks" }));
 
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for CPU Pool" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for CPU Pool" }), {
       target: { value: "2" },
     });
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Menial Jobs" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Menial Jobs" }), {
       target: { value: "4" },
     });
 
@@ -197,7 +204,7 @@ describe("the research surface", () => {
       { command: "allocateCpu", task: "cpu_pool", cpu: 2 },
       { command: "allocateCpu", task: "jobs", cpu: 4 },
     ]);
-    expect(screen.getByText("5 money per CPU per day")).toBeTruthy();
+    expect(noteTexts()).toContain("5 money per CPU per day");
     expect(unnamedOperables(container)).toEqual([]);
   });
 
@@ -205,9 +212,9 @@ describe("the research surface", () => {
     mount(withFinished(stateWithCpu(10), "Personal Identification"));
     fireEvent.click(screen.getByRole("button", { name: "Research/Tasks" }));
 
-    expect(screen.getByRole("spinbutton", { name: "CPU for Basic Jobs" })).toBeTruthy();
-    expect(screen.queryByRole("spinbutton", { name: "CPU for Menial Jobs" })).toBe(null);
-    expect(screen.getByText("20 money per CPU per day")).toBeTruthy();
+    expect(screen.getByRole("slider", { name: "CPU for Basic Jobs" })).toBeTruthy();
+    expect(screen.queryByRole("slider", { name: "CPU for Menial Jobs" })).toBe(null);
+    expect(noteTexts()).toContain("20 money per CPU per day");
   });
 
   it("counts the job and construction against the same CPU budget as research", () => {
@@ -216,20 +223,18 @@ describe("the research surface", () => {
 
     expect(screen.getByLabelText("CPU left").textContent).toBe("10 of 10 CPU left");
 
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Menial Jobs" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Menial Jobs" }), {
       target: { value: "4" },
     });
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for CPU Pool" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for CPU Pool" }), {
       target: { value: "3" },
     });
-    fireEvent.input(screen.getByRole("spinbutton", { name: "CPU for Stealth" }), {
+    fireEvent.input(screen.getByRole("slider", { name: "CPU for Stealth" }), {
       target: { value: "2" },
     });
 
     expect(screen.getByLabelText("CPU left").textContent).toBe("1 of 10 CPU left");
-    expect(screen.getByRole("spinbutton", { name: "CPU for Stealth" }).getAttribute("max")).toBe(
-      "3",
-    );
+    expect(screen.getByRole("slider", { name: "CPU for Stealth" }).getAttribute("max")).toBe("3");
   });
 });
 

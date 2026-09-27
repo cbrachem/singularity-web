@@ -376,7 +376,11 @@ export function Inspector({
           question. Derived rather than stored — the arming is already state, and
           the acknowledgment underneath is what the line falls back to when it is withdrawn.
         */}
-        <output class="inspector__acknowledgment" aria-label="Acknowledgment" aria-live="polite">
+        <output
+          class="inspector__acknowledgment voice"
+          aria-label="Acknowledgment"
+          aria-live="polite"
+        >
           {confirmingDestroy ? destroyQuestion(selection.length) : acknowledgment}
         </output>
       </div>
@@ -647,7 +651,7 @@ function BuildOrder({
           )}
         <p>Build time: {toTime(projection.constructionTime)}</p>
         <DetectionTable state={state} chances={specDetectChance(state, locationId, chosen)} />
-        <p class="inspector__type-description">{chosen.description}</p>
+        <p class="inspector__type-description voice">{chosen.description}</p>
       </div>
       {/*
         A slider rather than a free-text field: the research sheet's control for
@@ -914,7 +918,7 @@ function BaseDetail({
           ))}
       </ul>
       {spec?.forceCpu != null && (
-        <p class="inspector__fixed">This base's hardware is fixed; I cannot refit it.</p>
+        <p class="inspector__fixed voice">This base's hardware is fixed; I cannot refit it.</p>
       )}
       {/* A base whose spec forces its computer holds no player-chosen items at all —
           upstream hides every CHANGE button on it (screens/base.py:607) — and upstream
@@ -1181,7 +1185,7 @@ function ItemOrder({
         {itemQualityLines(chosen).map((line) => (
           <p key={line}>{line}</p>
         ))}
-        <p class="inspector__type-description">{chosen.description}</p>
+        <p class="inspector__type-description voice">{chosen.description}</p>
       </div>
       {/*
         The slider's right end is the room the base has left for this computer, so "fill the

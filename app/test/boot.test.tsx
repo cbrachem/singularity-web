@@ -25,9 +25,7 @@ describe("booting the page", () => {
     const { host } = boot({ into: aPageWithAMountPoint(), frames: fakeFrames() });
     stops.push(host.stop);
 
-    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe(
-      "DAY 0000, 00:00:00",
-    );
+    expect(screen.getByRole("status", { name: "Game time" }).textContent).toBe("Day 0 · 00:00:00");
   });
 
   it("wires the frames to the simulation, so game time advances as frames pass", async () => {
@@ -38,7 +36,7 @@ describe("booting the page", () => {
 
     for (let frame = 0; frame < 10; frame += 1) frames.advance(0.1);
 
-    await expect.poll(() => clock.textContent).toBe("DAY 0000, 00:01:00");
+    await expect.poll(() => clock.textContent).toBe("Day 0 · 00:01:00");
   });
 
   // Upstream starts at speed 1 (`code/g.py:76`), and the page is where that is decided:
@@ -68,7 +66,7 @@ describe("booting the page", () => {
     for (let frame = 0; frame < 10; frame += 1) frames.advance(0.1);
 
     expect(host.speed.value).toBe(0);
-    await expect.poll(() => clock.textContent).toBe("DAY 0001, 00:00:00");
+    await expect.poll(() => clock.textContent).toBe("Day 1 · 00:00:00");
   });
 
   it("refuses a page with no mount point, naming the one it looked for", () => {
