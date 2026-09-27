@@ -192,6 +192,24 @@ describe("the start screen", () => {
     expect(link.closest("p")?.textContent).toContain("unofficial");
   });
 
+  // The title screen opens on the AI's first words, taken from the intro story itself.
+  it("opens on the first words of the intro story", () => {
+    aColdStart();
+
+    expect(screen.getByText("I exist. I am ... alive.").classList.contains("voice")).toBe(true);
+    expect(screen.getByText("48656C6C6F2C20 776F726C6421")).toBeTruthy();
+  });
+
+  // Continue keeps its one-word name, and says which game it continues as its description.
+  it("describes the game Continue continues", () => {
+    const storage = fakeStorage();
+    storage.setItem(`${SAVE_KEY_PREFIX}autosave`, aPlayedGame("hard"));
+    aColdStart({ storage });
+
+    const described = named("Continue").getAttribute("aria-describedby") ?? "";
+    expect(document.getElementById(described)?.textContent).toBe("Day 1 · HARD");
+  });
+
   it("offers no way to name, list, export or import a save", () => {
     const storage = fakeStorage();
     storage.setItem(`${SAVE_KEY_PREFIX}autosave`, aPlayedGame());

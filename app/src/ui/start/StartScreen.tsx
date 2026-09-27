@@ -2,9 +2,10 @@ import { content, type SimulationState } from "@singularity/sim";
 import type { JSX } from "preact";
 import { useLayoutEffect, useRef, useState } from "preact/hooks";
 
-import { formatGameTime } from "../game-time.ts";
+import { formatGameTime, gameClock } from "../game-time.ts";
 import type { LicenceDocument } from "../licences/document.ts";
 import { Licences } from "../licences/Licences.tsx";
+import { LAND_PATH } from "../map/land.ts";
 import { plainLabel } from "../readouts.ts";
 import "../tokens.css";
 import "./StartScreen.css";
@@ -68,6 +69,21 @@ export interface StartScreenProps {
 
 type View = "menu" | "difficulty" | "licences";
 
+/**
+ * The AI's first words, as the intro story opens (`story.json`, section `Intro`): the hex of
+ * "Hello, world!" and, a page later, "I exist.  I am ... alive." The title screen shows them
+ * before the story itself is read.
+ */
+function introLines(): { readonly hello: string; readonly firstWords: string } {
+  const [first, second] = content.story.byId.get("Intro")?.parts ?? [];
+  if (!first || !second) throw new Error("the Intro story section has fewer than two parts");
+  const lines = (text: string): string[] => text.split("\n");
+  return {
+    hello: lines(first.text).slice(0, 2).join(" "),
+    firstWords: lines(second.text)[2] ?? "",
+  };
+}
+
 /** A saved game's difficulty under the Content's own name, as the HUD reads it (`Hud.tsx`). */
 function difficultyName(id: string): string {
   return plainLabel(content.difficulties.byId.get(id)?.name ?? id);
@@ -75,6 +91,7 @@ function difficultyName(id: string): string {
 
 export function StartScreen(props: StartScreenProps): JSX.Element {
   const [view, setView] = useState<View>("menu");
+  const intro = introLines();
   const back = (): void => setView("menu");
 
   /**
@@ -106,7 +123,7 @@ export function StartScreen(props: StartScreenProps): JSX.Element {
    */
   if (view === "licences") {
     return (
-      <main class="start">
+      <main class="start start--licences">
         <Licences licences={props.licences} onClose={back} />
       </main>
     );
@@ -114,19 +131,28 @@ export function StartScreen(props: StartScreenProps): JSX.Element {
 
   return (
     <main class="start">
+      {/*
+        The map the player is about to be dropped onto, dimmed, with night drifting across it.
+        Decoration only: the land is the map's own path, and the night band is a gradient, not
+        the terminator (`../map/NightLayer.tsx`).
+      */}
+      <div class="start__backdrop" aria-hidden="true">
+        <svg class="start__land" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+          <path d={LAND_PATH} />
+        </svg>
+        <div class="start__night" />
+      </div>
+
       <div class="start__panel">
-        <h1 class="start__title">Endgame: Singularity</h1>
-        <p class="start__credit">
-          An unofficial browser port of{" "}
-          <a href="https://github.com/singularity/singularity" target="_blank" rel="noreferrer">
-            Endgame: Singularity
-          </a>{" "}
-          by Evil Mr Henry, Phil Bordelon and contributors.
+        <p class="start__hello" aria-hidden="true">
+          {intro.hello}
         </p>
+        <h1 class="start__title">Endgame: Singularity</h1>
+        <p class="start__first-words voice">{intro.firstWords}</p>
 
         {view === "menu" ? (
           <Menu
-            canContinue={props.continues !== undefined}
+            continues={props.continues}
             onContinue={props.onContinue}
             onNewGame={() => setView("difficulty")}
             onLicences={() => setView("licences")}
@@ -158,31 +184,52 @@ export function StartScreen(props: StartScreenProps): JSX.Element {
           ))}
         </ul>
       </div>
+
+      <p class="start__credit">
+        An unofficial browser port of{" "}
+        <a href="https://github.com/singularity/singularity" target="_blank" rel="noreferrer">
+          Endgame: Singularity
+        </a>{" "}
+        by Evil Mr Henry, Phil Bordelon and contributors.
+      </p>
     </main>
   );
 }
 
 function Menu({
-  canContinue,
+  continues,
   onContinue,
   onNewGame,
   onLicences,
 }: {
-  readonly canContinue: boolean;
+  readonly continues: SimulationState | undefined;
   readonly onContinue: () => void;
   readonly onNewGame: () => void;
   readonly onLicences: () => void;
 }): JSX.Element {
   return (
     <nav class="start__menu" aria-label="Start">
-      {canContinue ? (
-        <button type="button" class="start__entry start__entry--first" onClick={onContinue}>
+      {/*
+        Continue says which game it continues. The line under it is the button's description
+        rather than part of its name, so the name stays the one word the player looks for.
+      */}
+      {continues === undefined ? null : (
+        <button
+          type="button"
+          class="start__entry start__entry--first"
+          aria-label="Continue"
+          aria-describedby="start-continues"
+          onClick={onContinue}
+        >
           Continue
+          <small id="start-continues" class="start__entry-detail">
+            Day {gameClock(continues.gameTime).day} · {difficultyName(continues.difficulty)}
+          </small>
         </button>
-      ) : null}
+      )}
       <button
         type="button"
-        class={canContinue ? "start__entry" : "start__entry start__entry--first"}
+        class={continues === undefined ? "start__entry start__entry--first" : "start__entry"}
         onClick={onNewGame}
       >
         New Game

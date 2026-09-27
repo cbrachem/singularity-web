@@ -5,34 +5,78 @@
  */
 
 /*
- * The ground is not flat. It is the same colour the map's ocean is lit against, and the panel
- * sits in a faint pool of it — the first viewport of a game about a thing waking up in a
- * network was a centred settings dialog on a plain field, which is the one surface in the
- * product where atmosphere costs nothing because no gameplay is in the way.
+ * A title screen rather than a dialog: the map the player is about to be dropped onto fills
+ * the window, and the title and the way in sit on its dark side, left of centre.
  */
 .start {
-  --start-panel-width: 30rem;
+  --start-panel-width: 28rem;
+  --start-inset: 7vw;
 
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: var(--start-inset);
   overflow: hidden;
   background:
-    radial-gradient(70% 55% at 50% 42%, #141c31 0%, transparent 70%), var(--colour-ground);
+    radial-gradient(120% 90% at 70% 40%, #101a2e 0%, var(--colour-ocean) 70%), var(--colour-ground);
 }
 
-/* The graticule of the map the player is about to be dropped onto, at the edge of visible. */
-.start::before {
+/* The licences view replaces the title screen whole, centred as it always was. */
+.start--licences {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.start__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+/* At least as wide as the window and at least as tall, so no viewport shows an edge of it. */
+.start__land {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 200vh);
+  aspect-ratio: 2 / 1;
+  transform: translate(-50%, -50%);
+  fill: var(--colour-land);
+  opacity: 0.5;
+}
+
+/* Two nights across a strip twice the window's width, so the drift loops without a seam. */
+.start__night {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0 20%,
+    #05070cdd 32% 52%,
+    transparent 64% 70%,
+    #05070cdd 82% 100%
+  );
+  animation: start-night 90s linear infinite;
+}
+
+@keyframes start-night {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* The dark side the text sits on. */
+.start__backdrop::after {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.05;
-  background-image:
-    repeating-linear-gradient(90deg, var(--colour-graticule) 0 1px, transparent 1px 80px),
-    repeating-linear-gradient(0deg, var(--colour-graticule) 0 1px, transparent 1px 80px);
-  mask-image: radial-gradient(60% 60% at 50% 45%, #000 0%, transparent 75%);
+  background: linear-gradient(
+    90deg,
+    var(--colour-ground) 0%,
+    color-mix(in srgb, var(--colour-ground) 80%, transparent) 34%,
+    transparent 62%
+  );
 }
 
 .start__panel {
@@ -40,33 +84,47 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  width: min(var(--start-panel-width), calc(100% - var(--space-4) * 2));
-  max-height: calc(100% - var(--space-4) * 2);
+  width: min(var(--start-panel-width), calc(100% - var(--start-inset) - var(--space-4)));
+  max-height: calc(100% - var(--space-4) * 6);
   overflow-y: auto;
-  padding: var(--space-4);
-  border: 1px solid var(--colour-edge);
-  border-radius: var(--radius);
-  background: var(--colour-surface-solid);
-  box-shadow: 0 10px 30px #00000077;
+  padding: var(--space-4) var(--space-2);
+}
+
+/* The hex of "Hello, world!", the first line of the intro story. */
+.start__hello {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.08em;
+  color: var(--colour-ink-faint);
 }
 
 /*
  * The name of the game, in the game's own voice: the mono face the AI speaks in everywhere
- * else in the shell (`EndOfGame.css`). It was set in the same grotesque as the button below
- * it, one grade up, which is a title bar rather than a title.
+ * else in the shell (`tokens.css`, `.voice`).
  */
 .start__title {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: var(--text-display);
+  font-size: 2.75rem;
   font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
   color: var(--colour-ink);
+  text-wrap: balance;
+}
+
+.start__first-words {
+  margin: 0;
+  font-size: var(--text-body);
+  line-height: 1.5;
 }
 
 .start__credit {
-  margin: calc(-1 * var(--space-2)) 0 0;
+  position: absolute;
+  bottom: var(--space-4);
+  left: calc(var(--start-inset) + var(--space-2));
+  margin: 0;
   font-size: var(--text-small);
   line-height: 1.5;
   color: var(--colour-ink-dim);
@@ -85,6 +143,7 @@
 .start__scenarios {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-2);
 }
 
@@ -112,6 +171,7 @@
 }
 
 .start__entry {
+  min-width: 15rem;
   padding: var(--space-3) var(--space-4);
   border: 1px solid var(--colour-edge-strong);
   border-radius: var(--radius-small);
@@ -132,6 +192,14 @@
   border-color: var(--colour-accent);
   background: var(--colour-accent);
   color: var(--colour-accent-ink);
+}
+
+/* Which game Continue continues: its description, under its name. */
+.start__entry-detail {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-small);
+  opacity: 0.8;
 }
 
 .start__entry--quiet {
